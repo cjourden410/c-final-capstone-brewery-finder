@@ -23,3 +23,14 @@ export default {
   }
 }
 </script>
+
+<style>
+.home {
+  background-color: whitesmoke;
+  border-radius: 35%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-bottom: 10px;
+  text-align: center;
+}
+</style>
