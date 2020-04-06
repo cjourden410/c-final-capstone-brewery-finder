@@ -53,6 +53,8 @@ export default {
 .navibar{
   display: inline-block;
   background-color: whitesmoke;
-  padding: 5px;
+  padding: 5px;;
+  height: 50px;
+  
 }
 </style>
