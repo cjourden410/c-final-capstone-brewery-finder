@@ -32,7 +32,7 @@
         v-model="user.confirmPassword"
         required
       />
-      <router-link :to="{ name: 'login' }">
+      <router-link :to="{ name: 'login' }" class="needAccount">
         Have an account?
       </router-link>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
@@ -81,4 +81,7 @@ export default {
 </script>
 
 <style>
+.needAccount{
+  color: white;
+}
 </style>
