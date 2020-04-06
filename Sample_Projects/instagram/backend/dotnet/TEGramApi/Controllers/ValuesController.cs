@@ -20,13 +20,14 @@ namespace TEGramApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public IActionResult Get()
         {
-            string result = $@"
-                Current User: {User.Identity.Name}
-                Id: {CurrentUser.Id}
-            ";
+            string result = "{user:'chrisj'}";
+            //string result = $@"
+            //    Current User: {User.Identity.Name}
+            //    Id: {CurrentUser.Id}
+            //";
             //var result = $"Welcome back {User.Identity.Name}";
             return Ok(result);
         }
