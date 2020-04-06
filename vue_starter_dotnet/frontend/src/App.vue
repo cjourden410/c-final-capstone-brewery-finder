@@ -1,21 +1,23 @@
 <template>
   <div id="app">
     <div id="nav">
-      <div v-if="user">
+      <div class="navibar" v-if="user">
         Logged in
-        <div>
+        <div class="navibar">
           <button v-on:click="logout">Logout</button>
         </div>
       </div>
       <div v-else>
-        <div>
+        <div class="navibar">
           <router-link :to="{name: 'login'}">Login</router-link>
         </div>
-        <div>
+        <div class="navibar">
           <router-link :to="{name: 'register'}">Register</router-link>
         </div>
       </div>
-      <router-link to="/">Home</router-link>
+      
+      <router-link class="navibar" to="/">Home</router-link>
+      
     </div>
     <router-view />
   </div>
@@ -47,3 +49,10 @@ export default {
   }
 };
 </script>
+<style>
+.navibar{
+  display: inline-block;
+  background-color: whitesmoke;
+  padding: 5px;
+}
+</style>
