@@ -24,6 +24,8 @@ export default {
   }
 }
 </script>
+
+<style>
 .breweryList {
   background-color: whitesmoke;
   border-radius: 35%;
@@ -32,6 +34,4 @@ export default {
   padding-bottom: 10px;
   text-align: center;
 }
-<style>
-
 </style>
