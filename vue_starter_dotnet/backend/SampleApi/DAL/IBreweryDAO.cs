@@ -1,4 +1,5 @@
-﻿using SampleApi.Models;
+﻿using System.Collections.Generic;
+using SampleApi.Models;
 
 namespace SampleApi.DAL
 {
@@ -6,5 +7,6 @@ namespace SampleApi.DAL
     {
         int AddBrewery(Brewery brewery);
         Brewery GetBreweryById(int id);
+        IList<Brewery> GetBreweries();
     }
 }
