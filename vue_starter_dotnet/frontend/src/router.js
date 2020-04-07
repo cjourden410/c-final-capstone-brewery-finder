@@ -20,6 +20,71 @@ const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+
+    {
+      path: "/addBeer",
+      name: "addBeer",
+      component: Register,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/deleteBeer",
+      name: "deleteBeer",
+      component: Register,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/beerInfo",
+      name: "beerInfo",
+      component: Register,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/beerReview",
+      name: "beerReview",
+      component: Register,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/addBrewery",
+      name: "addBrewery",
+      component: Register,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/breweryInfo",
+      name: "breweryInfo",
+      component: Register,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/breweryInfoUpdate",
+      name: "breweryInfoUpdate",
+      component: Register,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/breweryList",
+      name: "breweryList",
+      component: Register,
+      meta: {
+        requiresAuth: true
+      }
+    },
     {
       path: '/',
       name: 'home',
@@ -37,13 +102,21 @@ const router = new Router({
       }
     },
     {
+      path: "/ratingsAndReviews",
+      name: "ratingsAndReviews",
+      component: Register,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: "/register",
       name: "register",
       component: Register,
       meta: {
         requiresAuth: false
       }
-    },
+    }
   ]
 })
 

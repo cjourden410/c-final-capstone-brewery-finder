@@ -1,5 +1,10 @@
 <template>
-  <div></div>
+  <div>
+    <h1>Add Brewery</h1>
+    <div>
+      
+    </div>
+  </div>
 </template>
 
 <script>
