@@ -19,7 +19,8 @@ export default {
   },
   data() {
     return{
-      user: null
+      user: null,
+      breweries: []
     }
   },
   methods: {
@@ -40,7 +41,7 @@ export default {
   },
   created() {
     this.user = auth.getUser();
-
+    this.GetBreweries();
   }
 }
 </script>
