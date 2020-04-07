@@ -19,6 +19,10 @@ namespace SampleApi.Models
         /// </summary>
         public string Name { get; set; }
         /// <summary>
+        /// The brewers name.
+        /// </summary>
+        public string Brewer { get; set; }
+        /// <summary>
         /// The brewers user id.
         /// </summary>
         public int UserID { get; set; }

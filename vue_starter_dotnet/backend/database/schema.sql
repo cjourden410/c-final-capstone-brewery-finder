@@ -34,6 +34,7 @@ CREATE TABLE breweries
 (
 	id		    int		    identity(1,1),
 	name	    varchar(50)	not null,
+	brewer	    varchar(50)	not null,
 	userID	    int	        not null,
 	username	varchar(50)	not null,
 

@@ -56,6 +56,7 @@ namespace SampleApi.DAL
             Brewery brewery = new Brewery();
             brewery.Id = Convert.ToInt32(reader["id"]);
             brewery.Name = Convert.ToString(reader["name"]);
+            brewery.Brewer = Convert.ToString(reader["brewer"]);
             brewery.UserID = Convert.ToInt32(reader["userID"]);
             brewery.Username = Convert.ToString(reader["username"]);
             return brewery;
@@ -73,9 +74,10 @@ namespace SampleApi.DAL
                 {
                     conn.Open();
 
-                    string sql = $"INSERT INTO breweries (name, userID, username) VALUES (@name, @userID, @username); Select @@Identity;";
+                    string sql = $"INSERT INTO breweries (name, brewer, userID, username) VALUES (@name, @brewer, @userID, @username); Select @@Identity;";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@name", brewery.Name);
+                    cmd.Parameters.AddWithValue("@brewer", brewery.Brewer);
                     cmd.Parameters.AddWithValue("@userID", brewery.UserID);
                     cmd.Parameters.AddWithValue("@username", brewery.Username);
 

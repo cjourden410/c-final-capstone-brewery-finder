@@ -54,7 +54,7 @@ namespace SampleApi.Controllers
         [HttpPost("")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
-        public IActionResult AddCity([FromBody]Brewery brewery)
+        public IActionResult AddBrewery([FromBody]Brewery brewery)
         {
             if (ModelState.IsValid)
             {

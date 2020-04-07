@@ -24,8 +24,8 @@ VALUES
 
 -- adding brewery to breweries table
 INSERT INTO breweries
-  (name,userID,username)
+  (name,brewer,userID,username)
 VALUES
-  ('Great Lakes Brewing Company', 3, 'Mike');
+  ('Great Lakes Brewing Company', 'Mike', 3, 'Mike');
 
 COMMIT TRANSACTION;
