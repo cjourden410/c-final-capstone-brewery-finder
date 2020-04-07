@@ -21,7 +21,7 @@ export default {
     methods: {
       submit(){
          //if you want to send any data into server before redirection then you can do it here
-        this.$router.push("/BreweryList"+this.Brewery);
+        this.$router.push("/BreweryList");
       }
     }
   }
