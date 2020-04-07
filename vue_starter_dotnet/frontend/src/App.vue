@@ -17,7 +17,7 @@
       </div>
       <router-link class="navibar" to="/">Home</router-link>
       <router-link class="navibar" to="/BreweryList">Brewery List</router-link>
-      
+      <router-link class="navibar" to="/Breweryadd">Add a new Brewery</router-link>
     </div>
     <router-view />
   </div>
