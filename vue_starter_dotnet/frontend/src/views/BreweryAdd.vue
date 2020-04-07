@@ -1,8 +1,12 @@
 <template>
   <div class="BreweryAdd">
     <h1>Add Brewery</h1>
+    <form>
     <div>Name of Brewery: <input placeholder="Billy Bob's Shine Factory" /></div>
-    <div>Name of Head Brewer: <input placeholder="John Doe" /></div>
+    <div>Name of Head Brewer: <input placeholder="Billy Bob" /></div>
+    <div>User ID: <input placeholder="123" /></div>
+    <div>Username: <input placeholder="BillyBob123" /></div>
+    </form>
   </div>
 </template>
 
