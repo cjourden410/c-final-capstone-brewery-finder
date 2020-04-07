@@ -82,4 +82,7 @@ export default {
 input {
   width: 20%;
 }
+form{
+  -webkit-box-align: start;
+}
 </style>
