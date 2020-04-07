@@ -14,6 +14,53 @@ namespace SampleApi.DAL
             this.connectionString = connectionString;
         }
 
+        public Brewery GetBreweryById(int id)
+        {
+            Brewery brewery = null;
+            try
+            {
+                // Create a new connection object
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Open the connection
+                    conn.Open();
+
+                    string sql =
+                        @"SELECT * 
+                        FROM breweries 
+                        where id = @id";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    // Execute the command
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Loop through each row
+                    if (reader.Read())
+                    {
+                        // Create a brewery
+                        brewery = RowToObject(reader);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            return brewery;
+        }
+
+        private Brewery RowToObject(SqlDataReader reader)
+        {
+            // Create a brewery
+            Brewery brewery = new Brewery();
+            brewery.Id = Convert.ToInt32(reader["id"]);
+            brewery.Name = Convert.ToString(reader["name"]);
+            brewery.UserID = Convert.ToInt32(reader["userID"]);
+            brewery.Username = Convert.ToString(reader["username"]);
+            return brewery;
+        }
+
         /// <summary>
         /// Adds a brewery to the database.
         /// </summary>

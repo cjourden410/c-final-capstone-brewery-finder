@@ -52,6 +52,13 @@ namespace SampleApi
                 c.IncludeXmlComments(xmlPath);
             });
 
+            /**** DEPENDENCY INJECTION *****/
+            // First, find the connection string in AppSettings.json using the Configuration object
+            string connectionString = Configuration.GetConnectionString("Default");
+
+            // Setup DI for BreweryDAO
+            services.AddTransient<IBreweryDAO, BrewerySqlDAO>((x) => new BrewerySqlDAO(connectionString));
+
             // Add CORS policy allowing any origin
             services.AddCors(options =>
             {
