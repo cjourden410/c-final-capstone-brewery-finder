@@ -3,24 +3,44 @@
     <div class="breweryList">
     <h1>Brewery List</h1>
     <div>Welcome {{user.sub}}, {{user.rol}}</div>
+    <brewery-list :breweries="breweries"></brewery-list>
   </div>
   </div>
 </template>
 
 <script>
 import auth from '../auth';
+import BreweryList from "@/components/BreweriesList.vue";
+
 export default {
-  name: 'breweryLists',
+  name: 'breweries',
+  components:{
+    "brewery-list": BreweryList
+  },
   data() {
     return{
       user: null
     }
   },
   methods: {
+    GetBreweries(){
+      let url = `${process.env.VUE_APP_REMOTE_API}/breweries`;
+    
+      fetch(url)
+        .then(response => {
+          response.json()
+            .then(json => {
+              this.breweries = json;
+            })
+        }).catch(err => {
+          console.log(err)
+        });
 
+      }
   },
   created() {
     this.user = auth.getUser();
+
   }
 }
 </script>
