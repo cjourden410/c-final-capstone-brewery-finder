@@ -4,11 +4,11 @@ import auth from './auth'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
-import AddBeer from './views/AddBeer.vue'
-import DeleteBeer from './views/DeleteBeer.vue'
+import BeerAdd from './views/BeerAdd.vue'
+import BeerDelete from './views/BeerDelete.vue'
 import BeerInfo from './views/BeerInfo.vue'
 import BeerReview from './views/BeerReview.vue'
-import AddBrewery from './views/AddBrewery.vue'
+import BreweryAdd from './views/BreweryAdd.vue'
 import BreweryInfo from './views/BreweryInfo.vue'
 import BreweryInfoUpdate from './views/BreweryInfoUpdate.vue'
 import BreweryList from './views/BreweryList.vue'
@@ -31,9 +31,9 @@ const router = new Router({
   routes: [
 
     {
-      path: "/addBeer",
-      name: "addBeer",
-      component: AddBeer,
+      path: "/beerAdd",
+      name: "beerAdd",
+      component: BeerAdd,
       meta: {
         requiresAuth: true
       }
@@ -41,7 +41,7 @@ const router = new Router({
     {
       path: "/deleteBeer",
       name: "deleteBeer",
-      component: DeleteBeer,
+      component: BeerDelete,
       meta: {
         requiresAuth: true
       }
@@ -63,9 +63,9 @@ const router = new Router({
       }
     },
     {
-      path: "/addBrewery",
-      name: "addBrewery",
-      component: AddBrewery,
+      path: "/breweryAdd",
+      name: "breweryAdd",
+      component: BreweryAdd,
       meta: {
         requiresAuth: true
       }
