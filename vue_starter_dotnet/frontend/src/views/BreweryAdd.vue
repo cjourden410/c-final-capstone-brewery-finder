@@ -4,19 +4,19 @@
     <form>
       <div>
         Name of Brewery:
-        <input type="text" name="Brewery" v-model="Brewery" placeholder="Billy Bob's Shine Factory" />
+        <input type="text" name="Brewery" v-model="Brewery" class="breweryInput" placeholder="Billy Bob's Shine Factory" />
       </div>
       <div>
         Name of Head Brewer:
-        <input placeholder="Billy Bob" />
+        <input class="breweryInput" placeholder="Billy Bob" />
       </div>
       <div>
         User ID:
-        <input placeholder="123" />
+        <input class="breweryInput" placeholder="123" />
       </div>
       <div>
         Username:
-        <input placeholder="BillyBob123" />
+        <input class="breweryInput" placeholder="BillyBob123" />
       </div>
       <button type="submit" @click.stop.prevent="submit()">Submit</button>
     </form>
@@ -79,7 +79,7 @@ export default {
   padding-bottom: 10px;
   text-align: center;
 }
-input {
+.breweryInput {
   width: 20%;
 }
 form{
