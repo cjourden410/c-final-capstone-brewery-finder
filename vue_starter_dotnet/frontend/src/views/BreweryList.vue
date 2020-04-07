@@ -3,7 +3,7 @@
     <div class="breweryList">
     <h1>Brewery List</h1>
     <div>Welcome {{user.sub}}, {{user.rol}}</div>
-    <brewery-list :breweries="breweries"></brewery-list>
+    <brewery-list :breweries="breweries" class="brewlist"></brewery-list>
   </div>
   </div>
 </template>
@@ -54,5 +54,9 @@ export default {
   margin-right: 15%;
   padding-bottom: 10px;
   text-align: center;
+}
+.brewlist{
+  margin: auto;
+
 }
 </style>
