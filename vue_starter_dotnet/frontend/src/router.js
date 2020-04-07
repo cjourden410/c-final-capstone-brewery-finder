@@ -125,12 +125,7 @@ const router = new Router({
       meta: {
         requiresAuth: false
       }
-<<<<<<< HEAD
     }
-=======
-    },
-   
->>>>>>> 2979b1ad4d76af608c35c6c02f12fe72b0a0841b
   ]
 })
 
