@@ -1,8 +1,8 @@
 <template>
   <div class="BreweryAdd">
     <h1>Add Brewery</h1>
-    <div>Name of Brewery:</div>
-    <div>Name of Head Brewer:</div>
+    <div>Name of Brewery: <input placeholder="Billy Bob's Shine Factory" /></div>
+    <div>Name of Head Brewer: <input placeholder="John Doe" /></div>
   </div>
 </template>
 
@@ -20,5 +20,8 @@ export default {
   margin-right: 15%;
   padding-bottom: 10px;
   text-align: center;
+}
+input{
+  width: 20%;
 }
 </style>
