@@ -29,5 +29,16 @@ CREATE TABLE users
 	constraint pk_users primary key (id)
 );
 
+-- Add breweries table
+CREATE TABLE breweries
+(
+	id		    int		    identity(1,1),
+	name	    varchar(50)	not null,
+	userID	    int	        not null,
+	username	varchar(50)	not null,
+
+	constraint pk_breweries primary key (id),
+    constraint fk_userID FOREIGN KEY (userID) REFERENCES users(id)
+);
 
 COMMIT TRANSACTION;
