@@ -4,6 +4,15 @@ import auth from './auth'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
+import AddBeer from './views/AddBeer.vue'
+import DeleteBeer from './views/DeleteBeer.vue'
+import BeerInfo from './views/BeerInfo.vue'
+import BeerReview from './views/BeerReview.vue'
+import AddBrewery from './views/AddBrewery.vue'
+import BreweryInfo from './views/BreweryInfo.vue'
+import BreweryInfoUpdate from './views/BreweryInfoUpdate.vue'
+import BreweryList from './views/BreweryList.vue'
+import RatingsAndReviews from './views/RatingsAndReviews.vue'
 
 Vue.use(Router)
 
@@ -24,7 +33,7 @@ const router = new Router({
     {
       path: "/addBeer",
       name: "addBeer",
-      component: Register,
+      component: AddBeer,
       meta: {
         requiresAuth: true
       }
@@ -32,7 +41,7 @@ const router = new Router({
     {
       path: "/deleteBeer",
       name: "deleteBeer",
-      component: Register,
+      component: DeleteBeer,
       meta: {
         requiresAuth: true
       }
@@ -40,7 +49,7 @@ const router = new Router({
     {
       path: "/beerInfo",
       name: "beerInfo",
-      component: Register,
+      component: BeerInfo,
       meta: {
         requiresAuth: true
       }
@@ -48,7 +57,7 @@ const router = new Router({
     {
       path: "/beerReview",
       name: "beerReview",
-      component: Register,
+      component: BeerReview,
       meta: {
         requiresAuth: true
       }
@@ -56,7 +65,7 @@ const router = new Router({
     {
       path: "/addBrewery",
       name: "addBrewery",
-      component: Register,
+      component: AddBrewery,
       meta: {
         requiresAuth: true
       }
@@ -64,7 +73,7 @@ const router = new Router({
     {
       path: "/breweryInfo",
       name: "breweryInfo",
-      component: Register,
+      component: BreweryInfo,
       meta: {
         requiresAuth: true
       }
@@ -72,7 +81,7 @@ const router = new Router({
     {
       path: "/breweryInfoUpdate",
       name: "breweryInfoUpdate",
-      component: Register,
+      component: BreweryInfoUpdate,
       meta: {
         requiresAuth: true
       }
@@ -80,7 +89,7 @@ const router = new Router({
     {
       path: "/breweryList",
       name: "breweryList",
-      component: Register,
+      component: BreweryList,
       meta: {
         requiresAuth: true
       }
@@ -104,7 +113,7 @@ const router = new Router({
     {
       path: "/ratingsAndReviews",
       name: "ratingsAndReviews",
-      component: Register,
+      component: RatingsAndReviews,
       meta: {
         requiresAuth: true
       }
