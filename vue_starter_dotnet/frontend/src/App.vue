@@ -9,7 +9,7 @@
       </div>
       <div v-else>
         <div class="navibar">
-          <router-link :to="{name: 'login'}">Login</router-link>
+          <router-link :to="{name: 'login'}" >Login</router-link>
         </div>
         <div class="navibar">
           <router-link :to="{name: 'register'}">Register</router-link>
