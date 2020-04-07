@@ -26,6 +26,16 @@ namespace SampleApi.Controllers
         }
 
         /// <summary>
+        /// Get a list of breweries. 
+        /// </summary>
+        /// <returns>Returns a list of all breweries in the DB.</returns>
+        [HttpGet("")]
+        public IActionResult GetBreweries()
+        {
+            return new JsonResult(breweryDAO.GetBreweries());
+        }
+
+        /// <summary>
         /// Gets a single Brewery by id.
         /// </summary>
         /// <param name="id">Identifier of the brewery</param>

@@ -14,6 +14,51 @@ namespace SampleApi.DAL
             this.connectionString = connectionString;
         }
 
+        /// <summary>
+        /// Returns all of the breweries.
+        /// </summary>
+        /// <returns></returns>
+        public IList<Brewery> GetBreweries()
+        {
+            List<Brewery> output = new List<Brewery>();
+
+            try
+            {
+                // Create a new connection object
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Open the connection
+                    conn.Open();
+
+                    string sql =
+                        @"SELECT * 
+                        FROM breweries";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    // Execute the command
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Loop through each row
+                    while (reader.Read())
+                    {
+                        Brewery brewery = RowToObject(reader);
+                        output.Add(brewery);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// Gets a brewery by it's id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Brewery GetBreweryById(int id)
         {
             Brewery brewery = null;
