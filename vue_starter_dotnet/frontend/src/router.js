@@ -118,14 +118,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
-    {
-      path: "/BreweryList",
-      name: "breweryList",
-      component: BreweryList,
-      meta: {
-        requiresAuth: true
-      }
-    },
+   
   ]
 })
 
