@@ -9,7 +9,7 @@ using SampleApi.Models;
 
 namespace SampleApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/breweryList")]
     [ApiController]
     public class BreweryController : Controller
     {
