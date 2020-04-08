@@ -37,6 +37,12 @@ CREATE TABLE breweries
 	brewer	    varchar(50)	not null,
 	userID	    int	        not null,
 	username	varchar(50)	not null,
+	hours		varchar(100),
+	contactInfo varchar(50),
+	address     varchar(100),
+	history		varchar(200),
+	images		varchar(50),
+	isActive	bit default (1),
 
 	constraint pk_breweries primary key (id),
     constraint fk_userID FOREIGN KEY (userID) REFERENCES users(id)
