@@ -20,7 +20,7 @@
         <td>{{brewery.daysHours}}</td>
       </tr>
       <tr>
-        <td><router-link tag="button" :to="{name: 'BeerList', params: {id:brewery.id}}">{{brewery.name}} Beer List</router-link></td>
+        <td><router-link tag="button" :to="{name: 'beerList', params: {id:brewery.id}}">{{brewery.name}} Beer List</router-link></td>
       </tr>
     </table>
   </div>

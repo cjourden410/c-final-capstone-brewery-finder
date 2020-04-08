@@ -13,6 +13,7 @@ import BreweryInfo from './views/BreweryInfo.vue'
 import BreweryInfoUpdate from './views/BreweryInfoUpdate.vue'
 import BreweryList from './views/BreweryList.vue'
 import RatingsAndReviews from './views/RatingsAndReviews.vue'
+import BeerList from './views/BeerList.vue'
 
 Vue.use(Router)
 
@@ -29,7 +30,14 @@ const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-
+    {
+      path: "breweries/beerList",
+      name: "beerList",
+      component: BeerList,
+      meta: {
+        requiresAuth: true
+      }
+    },
     {
       path: "/breweries/beerAdd",
       name: "beerAdd",
