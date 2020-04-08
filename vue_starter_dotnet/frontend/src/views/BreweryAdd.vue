@@ -130,7 +130,7 @@ export default {
   text-align: center;
 }
 .breweryInput {
-  width: 20%;
+  width: auto;
 }
 form{
   -webkit-box-align: start;
