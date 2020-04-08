@@ -97,7 +97,7 @@ const router = new Router({
     },
 
     {
-      path: "/breweries/:id/breweryInfoUpdate",
+      path: "/breweries/breweryInfoUpdate/",
       name: "breweryInfoUpdate",
       component: BreweryInfoUpdate,
       meta: {
