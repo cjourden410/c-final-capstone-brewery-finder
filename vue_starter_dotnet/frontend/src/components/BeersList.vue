@@ -3,7 +3,7 @@
         <thead>
             <tr>
                 <td>Name</td>
-                <td>Type></td>
+                <td>Type</td>
                 <td>ABV</td>
             </tr>
         </thead>

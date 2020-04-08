@@ -2,6 +2,7 @@
   <div class="home">
     <h1>Home</h1>
     <div>Welcome {{user.sub}}, {{user.rol}}</div>
+    <!-- <img src="..assets/2.jpg" /> -->
   </div>
 </template>
 
