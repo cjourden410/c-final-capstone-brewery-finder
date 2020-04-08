@@ -6,8 +6,12 @@
 import auth from "@/auth.js";
 
 export default {
+data(){
+
+},
 
 }
+
 </script>
 
 <style>
