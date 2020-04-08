@@ -1,7 +1,7 @@
 <template>
   <div class="BreweryInfoUpdate">
     <h1>Update Brewery Info</h1>
-    <div>Welcome {{user.sub}}, {{user.rol}}</div>
+    <!-- <div>Welcome {{user.sub}}, {{user.rol}}</div> -->
     <form>
       <div>
         Brewery ID:
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import auth from "../auth";
+// import auth from "../auth";
 
 export default {
 

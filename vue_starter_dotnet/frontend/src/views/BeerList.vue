@@ -48,6 +48,7 @@ created(){
   margin-right: 15%;
   padding-bottom: 10px;
   text-align: center;
+  margin: auto;
 }
 .beer {
   margin: auto;

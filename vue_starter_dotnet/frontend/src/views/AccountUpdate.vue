@@ -66,6 +66,6 @@ export default {
   margin-right: 15%;
   padding-bottom: 10px;
   text-align: center;
-  margin: auto;
+ 
 }
 </style>
