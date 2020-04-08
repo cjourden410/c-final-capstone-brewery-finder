@@ -1,4 +1,4 @@
-<template>
+  <template v-if="user.rol==='Admin'">
   <div class="BreweryAdd">
     <h1>Add Brewery</h1>
     <form>
@@ -58,7 +58,11 @@ export default {
       registrationErrors: false
     };
   },
+   created() {
+    this.user = auth.getUser();
+  },
   methods: {
+    
     // submit() {
     //   //if you want to send any data into server before redirection then you can do it here
 
@@ -113,7 +117,7 @@ export default {
         }
       });
     }
-  }
+  },
 };
 
 </script>
