@@ -15,11 +15,11 @@
       </tr>
             <tr>
         <td>Contact Info</td>
-        <td>{{brewery.contact}}</td>
+        <td>{{brewery.contactInfo}}</td>
       </tr>
             <tr>
         <td>Hours of Opperation</td>
-        <td>{{brewery.daysHours}}</td>
+        <td>{{brewery.hours}}</td>
       </tr>
       <tr>
         <td><router-link tag="button" :to="{name: 'beerList', params: {id:brewery.id}}">{{brewery.name}} Beer List</router-link></td>

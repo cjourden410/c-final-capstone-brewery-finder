@@ -1,7 +1,7 @@
 <template>
   <div class="beerList">
       <h1>Beer List</h1>
-    <div>Welcome {{user.sub}}, {{user.rol}}</div>
+    <!-- <div>Welcome {{user.sub}}, {{user.rol}}</div> -->
 
       <beer-list :beers="beers" class="beer"></beer-list>
   </div>
