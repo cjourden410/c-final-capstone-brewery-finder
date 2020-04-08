@@ -2,23 +2,40 @@
   <div class="BreweryAdd">
     <h1>Add Brewery</h1>
     <form>
-      <div>
+      <!-- <div>
         Name of Brewery:
         <input type="text" name="Brewery" v-model="Brewery" class="breweryInput" placeholder="Billy Bob's Shine Factory" />
       </div>
       <div>
         Name of Head Brewer:
-        <input class="breweryInput" placeholder="Billy Bob" />
+        <input type="text" class="breweryInput" placeholder="Billy Bob" />
       </div>
       <div>
         User ID:
-        <input class="breweryInput" placeholder="123" />
+        <input type = "number" class="breweryInput" placeholder="123" />
       </div>
       <div>
         Username:
-        <input class="breweryInput" placeholder="BillyBob123" />
+        <input type="text" class="breweryInput" placeholder="BillyBob123" />
+      </div> -->
+      <div>
+        Name of Brewery:
+        <input type="text" v-model="brewery.name" class="breweryInput" placeholder="Billy Bob's Shine Factory" />
       </div>
-      <button type="submit" @click.stop.prevent="submit()">Submit</button>
+      <div>
+        Name of Head Brewer:
+        <input type="text" v-model="brewery.brewer" class="breweryInput" placeholder="Billy Bob" />
+      </div>
+      <div>
+        User ID:
+        <input type = "number" v-model.number="brewery.userID" class="breweryInput" placeholder="123" />
+      </div>
+      <div>
+        Username:
+        <input type="text" v-model="brewery.username" class="breweryInput" placeholder="BillyBob123" />
+      </div>
+      <!-- <button type="submit" @click.stop.prevent="submit()">Submit</button> -->
+      <button v-on:click="register">Submit</button>
     </form>
   </div>
 </template>
@@ -26,44 +43,73 @@
 <script>
 export default {
   name: "breweryAdd",
+  props: {},
   data() {
     return {
-      user: {
+      brewery: {
+        breweryID: 0,
         nameOfBrewery: "",
         HeadBrewer: "",
-        UserID: "",
+        UserID: 0,
         Username: ""
       },
       registrationErrors: false
     };
   },
   methods: {
-    submit() {
-      //if you want to send any data into server before redirection then you can do it here
+    // submit() {
+    //   //if you want to send any data into server before redirection then you can do it here
 
-      this.$router.push("/BreweryList");
-    },
-    register() {
-      fetch(`${process.env.VUE_APP_REMOTE_API}/breweryadd`, {
-        method: "POST",
+    //   this.$router.push("/BreweryList");
+    // },
+    // register() {
+    //   fetch(`${process.env.VUE_APP_REMOTE_API}/breweryadd`, {
+    //     method: "POST",
+    //     headers: {
+    //       Accept: "application/json",
+    //       "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify(this.brewery)
+    //   })
+    //     .then(response => {
+    //       if (response.ok) {
+    //         this.$router.push({
+    //           path: "/breweryAdd",
+    //           query: { registration: "success" }
+    //         });
+    //       } else {
+    //         this.registrationErrors = true;
+    //       }
+    //     })
+
+    //     .then(err => console.error(err));
+    // }
+        register() {
+     // Use fetch to Add the brewery on the server (POST)
+
+      let url = `${process.env.VUE_APP_REMOTE_API}/breweryList`;
+
+      // fetch here...
+      fetch(url, {
+        method: 'POST',
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(this.brewery)
-      })
-        .then(response => {
-          if (response.ok) {
-            this.$router.push({
-              path: "/breweryAdd",
-              query: { registration: "success" }
-            });
-          } else {
-            this.registrationErrors = true;
-          }
-        })
+      }).then( response => {
+        if(response.ok){
+          response.json().then(json => {
+            this.brewery = json;
+            alert(`Brewery with id ${this.brewery.id} was added!`)
 
-        .then(err => console.error(err));
+            // Redirect to the breweryList page
+            this.$router.push("/BreweryList");
+          });
+        }
+        else {
+          alert(`There was an error: ${response.status}: ${response.statusText}`);
+        }
+      });
     }
   }
 };
