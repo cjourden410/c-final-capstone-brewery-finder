@@ -77,6 +77,46 @@ namespace SampleApi.DAL
         }
 
         /// <summary>
+        /// Returns all of the users.
+        /// </summary>
+        /// <returns></returns>
+        public IList<User> GetUsers()
+        {
+            List<User> output = new List<User>();
+
+            try
+            {
+                // Create a new connection object
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Open the connection
+                    conn.Open();
+
+                    string sql =
+                        @"SELECT * 
+                        FROM users";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    // Execute the command
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Loop through each row
+                    while (reader.Read())
+                    {
+                        User user = MapRowToUser(reader);
+                        output.Add(user);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return output;
+        }
+
+        /// <summary>
         /// Gets the user from the database.
         /// </summary>
         /// <param name="username"></param>
@@ -119,9 +159,12 @@ namespace SampleApi.DAL
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE users SET password = @password, salt = @salt, role = @role WHERE id = @id;", conn);                    
-                    cmd.Parameters.AddWithValue("@password", user.Password);
-                    cmd.Parameters.AddWithValue("@salt", user.Salt);
+                    //SqlCommand cmd = new SqlCommand("UPDATE users SET password = @password, salt = @salt, role = @role WHERE id = @id;", conn);                    
+                    //cmd.Parameters.AddWithValue("@password", user.Password);
+                    //cmd.Parameters.AddWithValue("@salt", user.Salt);
+                    //cmd.Parameters.AddWithValue("@role", user.Role);
+                    //cmd.Parameters.AddWithValue("@id", user.Id);
+                    SqlCommand cmd = new SqlCommand("UPDATE users SET role = @role WHERE id = @id;", conn);
                     cmd.Parameters.AddWithValue("@role", user.Role);
                     cmd.Parameters.AddWithValue("@id", user.Id);
 
