@@ -10,10 +10,11 @@
         <tbody>
             <tr v-for="beer in beers" :key="beer.id">
                 <td>
-                    <router-link :to="{name: 'Beer', params:{id:beer.id}}">{{beer.id}}</router-link>
+                    <router-link :to="{name: 'beerInfo', params:{id:beer.id}}">{{beer.id}}</router-link>
                 </td>
                 <td>{{beer.type}}</td>
                 <td>{{beer.abv}}</td>
+            </tr>
         </tbody>
     </table>
 </template>
