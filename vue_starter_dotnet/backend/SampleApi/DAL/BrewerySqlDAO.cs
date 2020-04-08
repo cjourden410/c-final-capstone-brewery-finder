@@ -103,7 +103,6 @@ namespace SampleApi.DAL
             brewery.Name = Convert.ToString(reader["name"]);
             brewery.Brewer = Convert.ToString(reader["brewer"]);
             brewery.UserID = Convert.ToInt32(reader["userID"]);
-            brewery.Username = Convert.ToString(reader["username"]);
             brewery.Hours = Convert.ToString(reader["hours"]);
             brewery.ContactInfo = Convert.ToString(reader["contactInfo"]);
             brewery.Address = Convert.ToString(reader["address"]);

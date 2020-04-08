@@ -27,10 +27,6 @@ namespace SampleApi.Models
         /// </summary>
         public int UserID { get; set; }
         /// <summary>
-        /// The brewers username.
-        /// </summary>
-        public string Username { get; set; }
-        /// <summary>
         /// The breweries hours of operation.
         /// </summary>
         public string Hours { get; set; }
