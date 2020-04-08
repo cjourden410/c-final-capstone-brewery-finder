@@ -35,5 +35,11 @@ namespace SampleApi.DAL
         /// </summary>
         /// <param name="user"></param>
         void DeleteUser(User user);
+
+        /// <summary>
+        /// Gets all users.
+        /// </summary>
+        /// <returns></returns>
+        IList<User> GetUsers();
     }
 }

@@ -1,6 +1,7 @@
   <template v-if="user.rol==='Admin'">
   <div class="BreweryAdd">
     <h1>Add Brewery</h1>
+    <div>Welcome {{user.sub}}, {{user.rol}}</div>
     <form>
       <!-- <div>
         Name of Brewery:

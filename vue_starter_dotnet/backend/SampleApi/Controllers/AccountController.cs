@@ -95,5 +95,39 @@ namespace SampleApi.Controllers
 
             return result;
         }
+
+        /// <summary>
+        /// Update an existing users role
+        /// </summary>
+        /// <param name="user">User data to update. Id must exist in the db.</param>
+        /// <returns>Ok</returns>
+        /// <response code="200">User was updated.</response>
+        /// <response code="400">Data was not valid for updating a user.</response>
+        [HttpPut("{id}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        public IActionResult UpdateCity(User user)
+        {
+            // Should I compare id to City.id?
+            if (ModelState.IsValid)
+            {
+                userDao.UpdateUser(user);
+                return Ok(user);
+            }
+            else
+            {
+                return new BadRequestObjectResult(ModelState);
+            }
+        }
+
+        /// <summary>
+        /// Get a list of users. 
+        /// </summary>
+        /// <returns>Returns a list of all users in the DB.</returns>
+        [HttpGet("")]
+        public IActionResult GetUsers()
+        {
+            return new JsonResult(userDao.GetUsers());
+        }
     }
 }
