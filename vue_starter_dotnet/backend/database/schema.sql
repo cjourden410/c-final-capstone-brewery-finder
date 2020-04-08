@@ -36,7 +36,6 @@ CREATE TABLE breweries
 	name	    varchar(50)	not null,
 	brewer	    varchar(50)	not null,
 	userID	    int	        not null,
-	username	varchar(50)	not null,
 	hours		varchar(100),
 	contactInfo varchar(50),
 	address     varchar(100),
