@@ -93,7 +93,7 @@ export default {
         register() {
      // Use fetch to Add the brewery on the server (POST)
 
-      let url = `${process.env.VUE_APP_REMOTE_API}/breweryList`;
+      let url = `${process.env.VUE_APP_REMOTE_API}/breweries`;
 
       // fetch here...
       fetch(url, {
