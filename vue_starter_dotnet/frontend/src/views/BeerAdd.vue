@@ -24,8 +24,7 @@
       </div>
     </form>
   </div>
-
-
+</template>
 <script>
 import auth from "@/auth.js";
 
@@ -73,7 +72,6 @@ export default {
   }
 };
 </script>
-
 <style>
 
 </style>
