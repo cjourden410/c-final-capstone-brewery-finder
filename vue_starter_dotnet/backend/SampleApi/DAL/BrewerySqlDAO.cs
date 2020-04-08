@@ -125,14 +125,12 @@ namespace SampleApi.DAL
                 {
                     conn.Open();
 
-                    string sql = $"INSERT INTO breweries (name, brewer, userID, username) VALUES (@name, @brewer, @userID, @username); Select @@Identity;";
-                    //string sql = $"INSERT INTO breweries (name, brewer, userID, username) VALUES (@name, @brewer, (SELECT id FROM users where username = @username), @username); Select @@Identity;";
+                    string sql = $"INSERT INTO breweries (name, brewer, userID) VALUES (@name, @brewer, @userID); Select @@Identity;";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@name", brewery.Name);
                     cmd.Parameters.AddWithValue("@brewer", brewery.Brewer);
                     cmd.Parameters.AddWithValue("@userID", brewery.UserID);
-                    //cmd.Parameters.AddWithValue("@username", brewery.UserID);
-                    cmd.Parameters.AddWithValue("@username", brewery.Username);
+                    
 
                     return Convert.ToInt32(cmd.ExecuteScalar());
                 }
