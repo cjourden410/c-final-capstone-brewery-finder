@@ -71,13 +71,14 @@ const router = new Router({
       }
     },
     {
-      path: "/breweryInfo",
+      path: "/breweryInfo/:id",
       name: "breweryInfo",
       component: BreweryInfo,
       meta: {
         requiresAuth: true
       }
     },
+
     {
       path: "/breweryInfoUpdate",
       name: "breweryInfoUpdate",

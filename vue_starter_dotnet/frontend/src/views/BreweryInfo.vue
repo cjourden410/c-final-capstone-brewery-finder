@@ -46,7 +46,7 @@ export default {
  methods: {
     getBrewery(id) {
       // This is the url...
-      let url = `${process.env.VUE_APP_REMOTE_API}/brewery/${id}`;
+      let url = `${process.env.VUE_APP_REMOTE_API}/breweryList/${id}`;
 
       // fetch here...
       fetch(url)
