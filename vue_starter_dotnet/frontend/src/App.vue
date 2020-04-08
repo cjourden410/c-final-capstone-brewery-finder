@@ -15,9 +15,9 @@
           <router-link :to="{name: 'register'}">Register</router-link>
         </div>
       </div>
-      <router-link class="navibar" to="/">Home</router-link>
-      <router-link class="navibar" to="/BreweryList">Brewery List</router-link>
-      <router-link class="navibar" to="/BreweryAdd">Add a new Brewery</router-link>
+      <router-link class="navibar" :to="{name: 'home'}">Home</router-link>
+      <router-link class="navibar" :to="{name: 'breweryList'}">Brewery List</router-link>
+      <router-link class="navibar" :to="{name: 'breweryAdd'}">Add a new Brewery</router-link>
     </div>
     <router-view />
   </div>

@@ -31,7 +31,7 @@ const router = new Router({
   routes: [
 
     {
-      path: "/beerAdd",
+      path: "/breweries/beerAdd",
       name: "beerAdd",
       component: BeerAdd,
       meta: {
@@ -39,7 +39,7 @@ const router = new Router({
       }
     },
     {
-      path: "/deleteBeer",
+      path: "/breweries/:id/deleteBeer",
       name: "deleteBeer",
       component: BeerDelete,
       meta: {
@@ -47,7 +47,7 @@ const router = new Router({
       }
     },
     {
-      path: "/beerInfo",
+      path: "/breweries/beerInfo",
       name: "beerInfo",
       component: BeerInfo,
       meta: {
@@ -55,7 +55,7 @@ const router = new Router({
       }
     },
     {
-      path: "/beerReview",
+      path: "/breweries/beerReview",
       name: "beerReview",
       component: BeerReview,
       meta: {
@@ -63,7 +63,7 @@ const router = new Router({
       }
     },
     {
-      path: "/breweryAdd",
+      path: "/breweries/breweryAdd",
       name: "breweryAdd",
       component: BreweryAdd,
       meta: {
@@ -71,7 +71,7 @@ const router = new Router({
       }
     },
     {
-      path: "/breweryInfo/:id",
+      path: "/breweries/breweryInfo/:id",
       name: "breweryInfo",
       component: BreweryInfo,
       meta: {
@@ -80,7 +80,7 @@ const router = new Router({
     },
 
     {
-      path: "/breweryInfoUpdate",
+      path: "/breweries/:id/breweryInfoUpdate",
       name: "breweryInfoUpdate",
       component: BreweryInfoUpdate,
       meta: {
@@ -88,7 +88,7 @@ const router = new Router({
       }
     },
     {
-      path: "/breweryList",
+      path: "/breweries",
       name: "breweryList",
       component: BreweryList,
       meta: {
@@ -112,7 +112,7 @@ const router = new Router({
       }
     },
     {
-      path: "/ratingsAndReviews",
+      path: "/breweries/ratingsAndReviews",
       name: "ratingsAndReviews",
       component: RatingsAndReviews,
       meta: {
