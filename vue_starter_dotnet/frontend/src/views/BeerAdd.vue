@@ -1,6 +1,5 @@
 <template>
-      <div>Welcome {{user.sub}}, {{user.rol}}</div>
-
+      <div></div>
 </template>
 
 <script>

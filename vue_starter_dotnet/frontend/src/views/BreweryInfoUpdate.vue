@@ -6,7 +6,7 @@
       <div>
         Brewery ID:
         <select>
-          <option v-for="brewery in brweries" type="number" v-value="user.id" :key="user.id">{{user.id}}</option>
+          <option v-for="brewery in brweries" v-value="brewery.id" :key="brewery.id">{{brewery.id}}</option>
         </select>
       </div>
       <div>
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import auth from "@/auth.js";
+import auth from "../auth";
 
 export default {
 
