@@ -41,7 +41,7 @@ CREATE TABLE breweries
 	contactInfo varchar(50),
 	address     varchar(100),
 	history		varchar(200),
-	images		varchar(50),
+	images		varchar(200),
 	isActive	bit default (1),
 
 	constraint pk_breweries primary key (id),

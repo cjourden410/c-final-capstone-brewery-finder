@@ -30,5 +30,29 @@ namespace SampleApi.Models
         /// The brewers username.
         /// </summary>
         public string Username { get; set; }
+        /// <summary>
+        /// The breweries hours of operation.
+        /// </summary>
+        public string Hours { get; set; }
+        /// <summary>
+        /// The breweries contact info.
+        /// </summary>
+        public string ContactInfo { get; set; }
+        /// <summary>
+        /// The breweries address.
+        /// </summary>
+        public string Address { get; set; }
+        /// <summary>
+        /// The breweries history.
+        /// </summary>
+        public string History { get; set; }
+        /// <summary>
+        /// The breweries images.
+        /// </summary>
+        public string Images { get; set; }
+        /// <summary>
+        /// If the brewery is to be shown to the user or not. Defaults to true.
+        /// </summary>
+        public bool IsActive { get; set; }
     }
 }

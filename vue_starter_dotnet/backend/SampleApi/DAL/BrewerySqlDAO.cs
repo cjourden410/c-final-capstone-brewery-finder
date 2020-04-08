@@ -136,5 +136,33 @@ namespace SampleApi.DAL
                 throw ex;
             }
         }
+
+        public void UpdateBreweryInfo(Brewery brewery)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = $"Update breweries Set hours = @hours, contactInfo = @contactInfo, address = @address, history = @history, images = @images, isActive = @isActive Where name = @name";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@hours", brewery.Hours);
+                    cmd.Parameters.AddWithValue("@contactInfo", brewery.ContactInfo);
+                    cmd.Parameters.AddWithValue("@address", brewery.Address);
+                    cmd.Parameters.AddWithValue("@history", brewery.History);
+                    cmd.Parameters.AddWithValue("@images", brewery.Images);
+                    cmd.Parameters.AddWithValue("@isActive", brewery.IsActive);
+                    cmd.Parameters.AddWithValue("@name", brewery.Name);
+
+                    int i = cmd.ExecuteNonQuery();
+                    return;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
