@@ -18,6 +18,8 @@
       <router-link tag="button" class="navibar" :to="{name: 'home'}">Home</router-link>
       <router-link tag="button" class="navibar" :to="{name: 'breweryList'}">Brewery List</router-link>
       <router-link tag="button" class="navibar" :to="{name: 'breweryAdd'}">Add a new Brewery</router-link>
+      <router-link tag="button" class="navibar" :to="{name: 'accountUpdate'}">Update Account</router-link>
+      <router-link tag="button" class="navibar" :to="{name: 'breweryInfoUpdate'}">Update Brewery</router-link>
     </div>
     <router-view />
   </div>

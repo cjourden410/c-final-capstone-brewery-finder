@@ -5,7 +5,7 @@
       <div>
         UserID:
         <select>
-          <option v-for="user in users" type="number" value="{{user.id}}" :key="user.id">{{user.id}}</option>
+          <option v-for="user in users" type="number" v-value="user.id" :key="user.id">{{user.id}}</option>
         </select>
       </div>
       <div>
@@ -59,7 +59,7 @@ export default {
 
 
 <style>
-.userList {
+.AccountUpdate {
   background-color: whitesmoke;
   border-radius: 35%;
   margin-left: 15%;
