@@ -24,7 +24,7 @@
       </div>
     </form>
   </div>
-</template>
+
 
 <script>
 import auth from "@/auth.js";
