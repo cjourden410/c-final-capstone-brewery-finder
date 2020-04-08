@@ -30,10 +30,7 @@
         User ID:
         <input type = "number" v-model.number="brewery.userID" class="breweryInput" placeholder="123" />
       </div>
-      <div>
-        Username:
-        <input type="text" v-model="brewery.username" class="breweryInput" placeholder="BillyBob123" />
-      </div>
+    
       <!-- <button type="submit" @click.stop.prevent="submit()">Submit</button> -->
       <button v-on:click="register">Submit</button>
     </form>
