@@ -10,12 +10,8 @@
       </div>
       <div>
         Role:
-        <select
-          style="width: 30%"
-          type="text"
-          v-model="user.role"
-          class="userInput"
-        ><users-list :users="users" class="userlist"></users-list>
+        <select style="width: 30%" type="text" v-model="user.role" class="userInput">
+          <users-list :users="users" class="userlist"></users-list>
           <option value="User">Beer Lover</option>
           <option value="Brewer">Brewer</option>
         </select>
@@ -36,7 +32,7 @@ export default {
   },
   data() {
     return {
-        user: null
+      user: null
     };
   },
   methods: {
