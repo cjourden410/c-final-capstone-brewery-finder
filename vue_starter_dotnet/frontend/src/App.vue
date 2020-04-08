@@ -9,15 +9,15 @@
       </div>
       <div v-else>
         <div class="navibar">
-          <router-link :to="{name: 'login'}" >Login</router-link>
+          <router-link tag="button" :to="{name: 'login'}" >Login</router-link>
         </div>
         <div class="navibar">
           <router-link :to="{name: 'register'}">Register</router-link>
         </div>
       </div>
-      <router-link class="navibar" :to="{name: 'home'}">Home</router-link>
-      <router-link class="navibar" :to="{name: 'breweryList'}">Brewery List</router-link>
-      <router-link class="navibar" :to="{name: 'breweryAdd'}">Add a new Brewery</router-link>
+      <router-link tag="button" class="navibar" :to="{name: 'home'}">Home</router-link>
+      <router-link tag="button" class="navibar" :to="{name: 'breweryList'}">Brewery List</router-link>
+      <router-link tag="button" class="navibar" :to="{name: 'breweryAdd'}">Add a new Brewery</router-link>
     </div>
     <router-view />
   </div>

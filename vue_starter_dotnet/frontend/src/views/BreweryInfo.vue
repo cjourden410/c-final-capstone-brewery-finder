@@ -19,6 +19,9 @@
         <td>Hours of Opperation</td>
         <td>{{brewery.daysHours}}</td>
       </tr>
+      <tr>
+        <td><router-link tag="button" :to="{name: 'BeerList', params: {id:brewery.id}}">{{brewery.name}} Beer List</router-link></td>
+      </tr>
     </table>
   </div>
 </template>
@@ -65,5 +68,15 @@ export default {
 </script>
 
 <style>
-
+.brewery {
+  background-color: whitesmoke;
+  border-radius: 35%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.form{
+  margin: auto;
+}
 </style>
