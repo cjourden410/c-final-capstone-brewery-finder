@@ -39,12 +39,27 @@ CREATE TABLE breweries
 	hours		varchar(100),
 	contactInfo varchar(50),
 	address     varchar(100),
-	history		varchar(200),
+	history		varchar(1000),
 	images		varchar(200),
 	isActive	bit default (1),
 
 	constraint pk_breweries primary key (id),
     constraint fk_userID FOREIGN KEY (userID) REFERENCES users(id)
+);
+
+-- Add beers table
+CREATE TABLE beers
+(
+	id		    int		     identity(1,1),
+	name	    varchar(50)	 not null,
+	description varchar(300) not null,
+	image	    varchar(200) not null,
+	abv			varchar(50)  not null,
+	beerType    varchar(50)  not null,
+	breweryID   int	         not null,
+
+	constraint pk_beers primary key (id),
+    constraint fk_breweryID FOREIGN KEY (breweryID) REFERENCES breweries(id)
 );
 
 COMMIT TRANSACTION;
