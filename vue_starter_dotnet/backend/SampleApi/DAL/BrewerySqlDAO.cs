@@ -55,7 +55,7 @@ namespace SampleApi.DAL
         }
 
         /// <summary>
-        /// Gets a brewery by it's id.
+        /// Gets a brewery by its id.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -104,6 +104,12 @@ namespace SampleApi.DAL
             brewery.Brewer = Convert.ToString(reader["brewer"]);
             brewery.UserID = Convert.ToInt32(reader["userID"]);
             brewery.Username = Convert.ToString(reader["username"]);
+            brewery.Hours = Convert.ToString(reader["hours"]);
+            brewery.ContactInfo = Convert.ToString(reader["contactInfo"]);
+            brewery.Address = Convert.ToString(reader["address"]);
+            brewery.History = Convert.ToString(reader["history"]);
+            brewery.Images = Convert.ToString(reader["images"]);
+            brewery.IsActive = Convert.ToBoolean(reader["isActive"]);
             return brewery;
         }
 
