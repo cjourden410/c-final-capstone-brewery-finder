@@ -78,5 +78,28 @@ namespace SampleApi.Controllers
                 return new BadRequestObjectResult(ModelState);
             }
         }
+
+        /// <summary>
+        /// Update an existing brewery
+        /// </summary>
+        /// <param name="brewery">Brewery data to update. Id must exist in the db.</param>
+        /// <returns>Ok</returns>
+        /// <response code="200">Brewery was updated.</response>
+        /// <response code="400">Data was not valid for updating a brewery.</response>
+        [HttpPut("{id}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        public IActionResult UpdateBreweryInfo(Brewery brewery)
+        {
+            if (ModelState.IsValid)
+            {
+                breweryDAO.UpdateBreweryInfo(brewery);
+                return Ok(brewery);
+            }
+            else
+            {
+                return new BadRequestObjectResult(ModelState);
+            }
+        }
     }
 }
