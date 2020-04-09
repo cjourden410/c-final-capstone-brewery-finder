@@ -3,8 +3,7 @@
   <div class="beer">
     <h1>{{beer.name}}</h1>
     <h2>Details</h2>
-    <div>Welcome {{user.sub}}, {{user.rol}}</div>
-
+    
     <table class="form">
       <tr>
         <td>{{beer.description}}</td>
@@ -23,7 +22,6 @@
 </template>
 
 <script>
-import auth from "@/auth.js";
 
 export default {
   name: "beer",
