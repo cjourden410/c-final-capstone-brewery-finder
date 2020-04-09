@@ -19,4 +19,15 @@
     </table>
 </template>
 <script>
+export default {
+  name: "beer-list",
+  props: {
+    beers: Array
+  },
+  data() {
+    return {};
+  },
+  methods: {},
+  computed: {}
+};
 </script>
