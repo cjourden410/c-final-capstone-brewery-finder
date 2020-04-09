@@ -49,7 +49,7 @@
               type="text"
               v-model="selectedBrewery.History"
               class="breweryInput history"
-              placeholder="Billy Bob founded this brewery back during The Great Prohibition, makin' shine out back with his cousin LayRee. The outlaw life is the only life they've every known, and they'd be real disappointed to see this here today where people completely unrelated to him and his cousin using their name to turn on profit all LEGALLY at that.."
+              placeholder="Billy Bob founded this brewery back during The Great Prohibition, makin' shine out back with his cousin LayRee. The outlaw life is the only life they've every known. Runnin' shine in the backwoods of Tennessee on the run from the law since they were 15. They'd be real disappointed to see this here today where people completely unrelated to him and his cousin using their name to turn on profit all LEGALLY at that.."
             />
           </div>
           <div>
@@ -58,7 +58,7 @@
               type="text"
               v-model="selectedBrewery.Images"
               class="breweryInput"
-              placeholder="abc.jpeg"
+              placeholder="http://WEBSITE.com/IMGNAME.jpg"
             />
           </div>
           <div>
@@ -95,14 +95,14 @@
 
 export default {
   name: "breweryInfoUpdate",
-  props: {
-    
-  },
+  props: {},
   data() {
     return {
       selectedBrewery: null,
       breweries: [],
-      chosenId: Number
+      chosenId: Number,
+      access: false,
+      user: Object
     };
   },
   methods: {
@@ -139,6 +139,7 @@ export default {
     // }
   },
   created() {
+    this.user = this.$attrs.user;
     this.GetBreweries();
   }
 };
@@ -158,10 +159,10 @@ export default {
   height: 600px;
   background-image: url("../assets/8.jpg");
 }
-.infoList{
+.infoList {
   align-content: right;
 }
-.history{
+.history {
   width: 15%;
   height: 75px;
 }

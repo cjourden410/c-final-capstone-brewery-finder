@@ -36,7 +36,9 @@ const router = new Router({
       name: "accountUpdate",
       component: AccountUpdate,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        isBrewer: true,
+        isAdmin: true   
       }
     },
     {
@@ -52,7 +54,9 @@ const router = new Router({
       name: "beerAdd",
       component: BeerAdd,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        isBrewer: true,
+        isAdmin: true
       }
     },
     {
@@ -60,7 +64,9 @@ const router = new Router({
       name: "deleteBeer",
       component: BeerDelete,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        isBrewer: true,
+        isAdmin: true
       }
     },
     {
@@ -84,7 +90,8 @@ const router = new Router({
       name: "breweryAdd",
       component: BreweryAdd,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        isAdmin: true
       }
     },
     {
@@ -101,7 +108,9 @@ const router = new Router({
       name: "breweryInfoUpdate",
       component: BreweryInfoUpdate,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        isBrewer: true,
+        isAdmin: true
       }
     },
     {
@@ -151,14 +160,25 @@ router.beforeEach((to, from, next) => {
   // Determine if the route requires Authentication
   const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
   const user = auth.getUser();
+  const isAdmin = to.matched.some(x => x.meta.isAdmin);
+  const isBrewer = to.matched.some(x => x.meta.isBrewer);
 
   // If it does and they are not logged in, send the user to "/login"
   if (requiresAuth && !user) {
+    next("/login");
+  }else if (isAdmin && user.rol !=='Admin')
+  {
+    auth.logout();
+    next("/login");
+  }else if ((1 === 0 && user.rol !=='Admin') && (isBrewer && user.rol !== 'Brewer'))
+  {
+    auth.logout();
     next("/login");
   } else {
     // Else let them go to their next destination
     next();
   }
+  
 });
 
 export default router;
