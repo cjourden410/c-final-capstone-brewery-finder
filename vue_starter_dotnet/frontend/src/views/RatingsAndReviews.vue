@@ -1,7 +1,7 @@
 <template>
   <div class="base">
     <div class="home">
-      <h1>Rate {{beer.name}}.</h1>
+      <h1>Rate {{beer.name}}</h1>
       <form>
         <div>Name of Beer: {{beer.name}}</div>
         <div>
