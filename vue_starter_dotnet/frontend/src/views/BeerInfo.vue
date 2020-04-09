@@ -10,7 +10,7 @@
       </tr>
       <tr>
         <td>Beer Type</td>
-        <td>{{beer.type}}</td>
+        <td>{{beer.beerType}}</td>
       </tr>
       <tr>
         <td>Beer ABV</td>
@@ -31,16 +31,17 @@ export default {
 data(){
 return {
   beer:{
+    id: 0,
     name: "",
     discription: "",
-    type: "",
+    beerType: "",
     abv: "",
   }
 }
 },
 methods:{
 getBeer(id){
-   let url = `${process.env.VUE_APP_REMOTE_API}/breweries/${id}`;
+   let url = `${process.env.VUE_APP_REMOTE_API}/beers/${id}`;
     fetch(url)
     .then(response => {
       response.json()
