@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="base">
     <div class="breweryList">
     <h1>Brewery List</h1>
     <div>Welcome {{user.sub}}, {{user.rol}}</div>
@@ -57,6 +57,10 @@ export default {
 }
 .brewlist{
   margin: auto;
-
+}
+.base{
+ width: auto;
+ height: 600px;
+  background-image: url('../assets/1.jpg');
 }
 </style>

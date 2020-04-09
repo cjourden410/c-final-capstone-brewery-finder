@@ -43,6 +43,7 @@ img{
   border-radius: 50%;
 }
 .base{
+  width: auto;
   height: 600px;
   background-image: url('../assets/2.jpg');
 }

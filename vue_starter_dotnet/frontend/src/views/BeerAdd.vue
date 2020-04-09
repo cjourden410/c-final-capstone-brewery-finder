@@ -1,4 +1,5 @@
 <template v-if="user.rol==='Brewer'">
+<div class="base">
   <div class="BeerAdd">
     <h1>Add a New Beer</h1>
     <form>
@@ -24,6 +25,7 @@
       </div>
     </form>
   </div>
+</div>
 </template>
 <script>
 import auth from "@/auth.js";
@@ -83,5 +85,10 @@ export default {
 }
 .beerInput {
   width: auto;
+}
+.base{
+  width: auto;
+  height: 600px;
+  background-image: url('../assets/9.jpg');
 }
 </style>

@@ -1,4 +1,5 @@
 <template>
+<div class="base">
   <div class="brewery">
     <h1>{{brewery.name}}</h1>
     <h1>Details</h1>
@@ -26,6 +27,7 @@
       </tr>
     </table>
   </div>
+</div>
 </template>
 
 <script>
@@ -80,5 +82,10 @@ export default {
 }
 .form{
   margin: auto;
+}
+.base{
+  width: auto;
+  height: 600px;
+  background-image: url('../assets/3.jpg');
 }
 </style>

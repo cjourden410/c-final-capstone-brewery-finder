@@ -1,4 +1,5 @@
   <template v-if="user.rol==='Admin'">
+  <div class="base">
   <div class="BreweryAdd">
     <h1>Add Brewery</h1>
     <div>Welcome {{user.sub}}, {{user.rol}}</div>
@@ -35,6 +36,7 @@
       <!-- <button type="submit" @click.stop.prevent="submit()">Submit</button> -->
       <button v-on:click="register">Submit</button>
     </form>
+  </div>
   </div>
 </template>
 
@@ -134,5 +136,10 @@ export default {
 }
 form{
   -webkit-box-align: start;
+}
+.base{
+  width: auto;
+  height: 600px;
+  background-image: url('../assets/6.jpg');
 }
 </style>

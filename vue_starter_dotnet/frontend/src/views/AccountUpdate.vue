@@ -1,4 +1,5 @@
 <template>
+<div class="base">
   <div class="AccountUpdate">
     <h1>Update Account</h1>
     <form>
@@ -19,6 +20,7 @@
       <button v-on:click="register">Submit</button>
     </form>
   </div>
+</div>
 </template>
 
 <script>
@@ -67,5 +69,10 @@ export default {
   padding-bottom: 10px;
   text-align: center;
  
+}
+.base{
+  width: auto;
+  height: 600px;
+  background-image: url('../assets/7.jpg');
 }
 </style>

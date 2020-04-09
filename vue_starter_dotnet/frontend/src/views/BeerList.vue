@@ -1,10 +1,12 @@
 <template>
+<div class="base">
   <div class="beerList">
       <h1>Beer List</h1>
     <!-- <div>Welcome {{user.sub}}, {{user.rol}}</div> -->
 
       <beer-list :beers="beers" class="beer"></beer-list>
   </div>
+</div>
 </template>
 
 <script>
@@ -51,5 +53,10 @@ created(){
 }
 .beer {
   margin: auto;
+}
+.base{
+  width: auto;
+  height: 600px;
+  background-image: url('../assets/4.jpg');
 }
 </style>

@@ -1,4 +1,5 @@
 <template>
+<div class="base">
   <div class="BreweryInfoUpdate">
     <h1>Update Brewery Info</h1>
     <!-- <div>Welcome {{user.sub}}, {{user.rol}}</div> -->
@@ -54,6 +55,7 @@
     <!-- <button v-on:click="register">Submit</button>
     </form>-->
   </div>
+</div>
 </template>
 
 <script>
@@ -119,5 +121,10 @@ export default {
   margin-right: 15%;
   padding-bottom: 10px;
   text-align: center;
+}
+.base{
+  width: auto;
+  height: 600px;
+  background-image: url('../assets/8.jpg');
 }
 </style>
