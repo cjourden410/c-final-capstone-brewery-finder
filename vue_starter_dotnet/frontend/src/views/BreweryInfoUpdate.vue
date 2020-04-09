@@ -15,7 +15,7 @@
           </select>
         </div>
 
-        <div v-if="selectedBrewery">
+        <div v-if="selectedBrewery" class="infoList">
           <div>
             Days/Hours of Operation:
             <input
@@ -45,11 +45,11 @@
           </div>
           <div>
             History:
-            <input
+            <textarea
               type="text"
               v-model="selectedBrewery.History"
-              class="breweryInput"
-              placeholder="Billy Bob founded this brewery back during The Great Prohibition, makin' shine out back with his cousin LayRee. The outlaw life is the only life they've every known, and they'd be real disappointed to see this here today where people completely unrelated to him and his 'cuz' using their name to turn on profit all LEGALLY at that.."
+              class="breweryInput history"
+              placeholder="Billy Bob founded this brewery back during The Great Prohibition, makin' shine out back with his cousin LayRee. The outlaw life is the only life they've every known, and they'd be real disappointed to see this here today where people completely unrelated to him and his cousin using their name to turn on profit all LEGALLY at that.."
             />
           </div>
           <div>
@@ -157,5 +157,12 @@ export default {
   width: auto;
   height: 600px;
   background-image: url("../assets/8.jpg");
+}
+.infoList{
+  align-content: right;
+}
+.history{
+  width: 15%;
+  height: 75px;
 }
 </style>
