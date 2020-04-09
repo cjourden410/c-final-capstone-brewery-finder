@@ -22,7 +22,7 @@
       </div>
        <div>
         Your Brewery ID:
-        <input type="number" v-model="beer.breweryId" class="beerInput" placeholder="1" />
+        <input type="number" v-model="beer.breweryId" class="beerInput" placeholder="1" min="1"/>
       </div>
       <button v-on:click="addBeer">Submit</button>
     </form>

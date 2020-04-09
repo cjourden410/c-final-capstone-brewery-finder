@@ -30,7 +30,7 @@
       </div>
       <div>
         User ID:
-        <input type = "number" v-model.number="brewery.userID" class="breweryInput" placeholder="123" />
+        <input type = "number" v-model.number="brewery.userID" class="breweryInput" placeholder="123" min="0"/>
       </div>
     
       <!-- <button type="submit" @click.stop.prevent="submit()">Submit</button> -->
