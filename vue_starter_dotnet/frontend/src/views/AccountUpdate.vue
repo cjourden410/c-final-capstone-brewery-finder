@@ -1,26 +1,29 @@
 <template>
-<div class="base">
-  <div class="AccountUpdate">
-    <h1>Update Account</h1>
-    <form>
-      <div>
-        UserID:
-        <select>
-          <option v-for="user in users" type="number" v-value="user.id" :key="user.id">{{user.id}}</option>
-        </select>
-      </div>
-      <div>
-        Role:
-        <select style="width: 30%" type="text" v-model="user.role" class="userInput">
-          <users-list :users="users" class="userlist"></users-list>
-          <option value="User">Beer Lover</option>
-          <option value="Brewer">Brewer</option>
-        </select>
-      </div>
-      <button v-on:click="register">Submit</button>
-    </form>
+  <div class="base">
+    <div class="AccountUpdate">
+      <h1>Update Account</h1>
+      <form>
+        <div>
+          UserID:
+          <select>
+            <option v-for="user in users" type="number" v-value="user.id" :key="user.id">{{this.user.id}}</option>
+          </select>
+        </div>
+        <div>
+          {{user.name}}
+        </div>
+        <div>
+          Role:
+          <select style="width: 30%" type="text" v-model="user.role" class="userInput">
+            <users-list :users="users" class="userlist"></users-list>
+            <option value="User">Beer Lover</option>
+            <option value="Brewer">Brewer</option>
+          </select>
+        </div>
+        <button v-on:click="register">Submit</button>
+      </form>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -68,11 +71,10 @@ export default {
   margin-right: 15%;
   padding-bottom: 10px;
   text-align: center;
- 
 }
-.base{
+.base {
   width: auto;
   height: 600px;
-  background-image: url('../assets/7.jpg');
+  background-image: url("../assets/7.jpg");
 }
 </style>

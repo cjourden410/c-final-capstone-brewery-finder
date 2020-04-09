@@ -1,77 +1,108 @@
 <template>
-<div class="base">
-  <div class="BreweryInfoUpdate">
-    <h1>Update Brewery Info</h1>
-    <!-- <div>Welcome {{user.sub}}, {{user.rol}}</div> -->
-    <form @submit.prevent="HandleChosen">
-      <div>
-        Brewery ID:
-        <select v-model="chosenId">
-          <option v-for="brewery in breweries" :key="brewery.id">{{brewery.id}}</option>
-        </select>
-      </div>
-      <button type="submit">Edit Selected Brewery, Idk, something like that..</button>
-    </form>
-    <div v-if="this.isChosen">
-      <form>
+  <div class="base">
+    <div class="BreweryInfoUpdate">
+      <h1>Update Brewery Info</h1>
+      <!-- <div>Welcome {{user.sub}}, {{user.rol}}</div> -->
+      <form @submit.prevent="HandleChosen">
         <div>
-          Name of Brewery:
-          <input
-            type="text"
-            v-model="brewery.name"
-            class="breweryInput"
-            placeholder="Billy Bob's Shine Factory"
-          />
+          Brewery Name:
+          <select @change="getBrewery(chosenId)" v-model="chosenId">
+            <option
+              v-for="brewery in breweries"
+              :key="brewery.id"
+              v-bind:value="brewery.id"
+            >{{brewery.name}}</option>
+          </select>
         </div>
-        <div>
-          Name of Head Brewer:
-          <input
-            type="text"
-            v-model="brewery.brewer"
-            class="breweryInput"
-            placeholder="Billy Bob"
-          />
-        </div>
-        <div>
-          User ID:
-          <input
-            type="number"
-            v-model.number="brewery.userID"
-            class="breweryInput"
-            placeholder="123"
-          />
+
+        <div v-if="selectedBrewery">
+          <div>
+            Days/Hours of Operation:
+            <input
+              type="text"
+              v-model="selectedBrewery.Hours"
+              class="breweryInput"
+              placeholder="Mon-Thurs 1200 - 0200 Sat 1000 - 0300, Sun Closed"
+            />
+          </div>
+          <div>
+            Contact Information:
+            <input
+              type="text"
+              v-model="selectedBrewery.Contact"
+              class="breweryInput"
+              placeholder="123 456 7890"
+            />
+          </div>
+          <div>
+            Address:
+            <input
+              type="text"
+              v-model="selectedBrewery.Address"
+              class="breweryInput"
+              placeholder="123 Main St, Cleveland, OH, 44111"
+            />
+          </div>
+          <div>
+            History:
+            <input
+              type="text"
+              v-model="selectedBrewery.History"
+              class="breweryInput"
+              placeholder="Billy Bob founded this brewery back during The Great Prohibition, makin' shine out back with his cousin LayRee. The outlaw life is the only life they've every known, and they'd be real disappointed to see this here today where people completely unrelated to him and his 'cuz' using their name to turn on profit all LEGALLY at that.."
+            />
+          </div>
+          <div>
+            Brewery Images:
+            <input
+              type="text"
+              v-model="selectedBrewery.Images"
+              class="breweryInput"
+              placeholder="abc.jpeg"
+            />
+          </div>
+          <div>
+            Active/Inactive:
+            <input
+              type="text"
+              v-model="selectedBrewery.Active"
+              class="breweryInput"
+              placeholder="Active/Inactive"
+            />
+          </div>
+
+          <button type="submit">Edit Selected Brewery</button>
         </div>
       </form>
-    </div>
 
-    <!-- <div>
+      <!-- <div>
         Role:
         <select style="width: 30%" type="text" v-model="user.role" class="userInput">
           <users-list :users="users" class="userlist"></users-list>
           <option value="User">Beer Lover</option>
           <option value="Brewer">Brewer</option>
         </select>
-    </div>-->
-    <!-- <button v-on:click="register">Submit</button>
-    </form>-->
+      </div>-->
+      <!-- <button v-on:click="register">Submit</button>
+      </form>-->
+    </div>
   </div>
-</div>
 </template>
 
 <script>
-import BreweryInfoVue from "./BreweryInfo.vue";
+// import BreweryInfoVue from "./BreweryInfo.vue";
 // import auth from "../auth";
 
 export default {
   name: "breweryInfoUpdate",
   props: {
-    isChosen: false,
-    chosenId: Number
+    
   },
   data() {
     return {
       selectedBrewery: null,
-      breweries: []
+      breweries: [],
+      chosenId: Number
     };
   },
   methods: {
@@ -81,8 +112,8 @@ export default {
 
       // fetch here...
       fetch(url)
-        .then(responce => {
-          responce.json().then(json => {
+        .then(response => {
+          response.json().then(json => {
             this.selectedBrewery = json;
           });
         })
@@ -102,10 +133,10 @@ export default {
         .catch(err => {
           console.log(err);
         });
-    },
-    HandleChosen() {
-      this.isChosen = !this.isChosen;
     }
+    // HandleChosen() {
+    //   this.isChosen = !this.isChosen;
+    // }
   },
   created() {
     this.GetBreweries();
@@ -122,9 +153,9 @@ export default {
   padding-bottom: 10px;
   text-align: center;
 }
-.base{
+.base {
   width: auto;
   height: 600px;
-  background-image: url('../assets/8.jpg');
+  background-image: url("../assets/8.jpg");
 }
 </style>
