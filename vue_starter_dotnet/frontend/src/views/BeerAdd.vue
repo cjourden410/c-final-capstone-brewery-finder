@@ -20,8 +20,8 @@
         <input type="text" v-model="beer.abv" class="beerInput" placeholder="9.0" />
       </div>
        <div>
-        Your Brewery:
-        <input type="text" v-model="beer.brewery" class="beerInput" placeholder="Bob's Brewery" />
+        Your Brewery ID:
+        <input type="number" v-model="beer.breweryId" class="beerInput" placeholder="1" />
       </div>
       <button v-on:click="register">Submit</button>
     </form>
@@ -41,7 +41,7 @@ export default {
         discription: "",
         type: "",
         abv: "",
-        brewery: ""
+        breweryId: ""
       },
       registrationErrors: false
     };
