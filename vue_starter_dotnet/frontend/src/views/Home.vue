@@ -1,9 +1,11 @@
 <template>
+<div>
   <div class="home">
     <h1>Home</h1>
     <div>Welcome {{user.sub}}, {{user.rol}}</div>
-    <!-- <img src="..assets/2.jpg" /> -->
   </div>
+  <img src="../assets/2.jpg" />
+</div>
 </template>
 
 <script>
@@ -33,5 +35,11 @@ export default {
   margin-right: 15%;
   padding-bottom: 10px;
   text-align: center;
+}
+img{
+  display: block;
+  margin: auto;
+  width:50%;
+  border-radius: 50%;
 }
 </style>
