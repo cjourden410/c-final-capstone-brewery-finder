@@ -16,6 +16,9 @@
         <td>Beer ABV</td>
         <td>{{beer.abv}}</td>
       </tr>
+       <tr>
+        <td><router-link tag="button" :to="{name: 'ratingsAndReviews', params: {id:beer.id}}">{{beer.name}} Rate this Beer</router-link></td>
+      </tr>
     </table>
   </div>
 </div>
