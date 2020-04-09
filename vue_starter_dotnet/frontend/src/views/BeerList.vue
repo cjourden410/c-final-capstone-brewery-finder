@@ -23,13 +23,13 @@ data() {
 },
 methods: {
   GetBeers(){
-    let url =`${process.env.VUE_APP_REMOTE_API}/breweries`;
+    let url =`${process.env.VUE_APP_REMOTE_API}/beers`;
 
     fetch(url)
         .then(response => {
           response.json()
             .then(json => {
-              this.breweries = json;
+              this.beers = json;
             })
         }).catch(err => {
           console.log(err)
