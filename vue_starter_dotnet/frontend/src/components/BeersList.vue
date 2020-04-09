@@ -13,7 +13,7 @@
                     <router-link :to="{name: 'beerInfo', params:{id:beer.id}}">{{beer.name}}</router-link>
                 </td>
                 <td>{{beer.beerType}}</td>
-                <td>{{beer.abv}}</td>
+                <td>{{beer.abv}}%</td>
             </tr>
         </tbody>
     </table>

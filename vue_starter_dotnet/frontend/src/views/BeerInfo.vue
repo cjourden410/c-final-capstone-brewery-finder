@@ -14,7 +14,7 @@
       </tr>
       <tr>
         <td>Beer ABV</td>
-        <td>{{beer.abv}}</td>
+        <td>{{beer.abv}}%</td>
       </tr>
        <tr>
         <td><router-link tag="button" :to="{name: 'ratingsAndReviews', params: {id:beer.id}}">Rate: {{beer.name}}</router-link></td>

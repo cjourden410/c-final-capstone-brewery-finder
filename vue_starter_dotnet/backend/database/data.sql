@@ -32,26 +32,26 @@ VALUES
 INSERT INTO beers
   (name,description,image,abv,beerType,breweryID)
 VALUES
-  ('Dortmunder Gold', 'A classic award-winning balance of sweet malt and dry hop flavors, proudly waving the flag for Cleveland and refreshing beer drinkers everywhere since 1988.', 'https://www.greatlakesbrewing.com/sites/default/files/styles/large/public/dort-2020-fixed.png?itok=dDcB5nJS', '5.8%', 'Lager', 1);
+  ('Dortmunder Gold', 'A classic award-winning balance of sweet malt and dry hop flavors, proudly waving the flag for Cleveland and refreshing beer drinkers everywhere since 1988.', 'https://www.greatlakesbrewing.com/sites/default/files/styles/large/public/dort-2020-fixed.png?itok=dDcB5nJS', 5.8, 'Lager', 1);
 
 INSERT INTO beers
   (name,description,image,abv,beerType,breweryID)
 VALUES
-  ('Eliot Ness', 'Admittedly, it’s a bit of a paradox to name our Amber Lager for history’s most famous agent of prohibition. But it’s a smooth, malty (and dare we say, arresting?) paradox.', 'https://www.greatlakesbrewing.com/sites/default/files/styles/large/public/eliotness-fixed_1.png?itok=k-GSENtB', '6.1%', 'Lager', 1);
+  ('Eliot Ness', 'Admittedly, it’s a bit of a paradox to name our Amber Lager for history’s most famous agent of prohibition. But it’s a smooth, malty (and dare we say, arresting?) paradox.', 'https://www.greatlakesbrewing.com/sites/default/files/styles/large/public/eliotness-fixed_1.png?itok=k-GSENtB', 6.1, 'Lager', 1);
 
 INSERT INTO beers
   (name,description,image,abv,beerType,breweryID)
 VALUES
-  ('Holy Moses White Ale', 'Refreshment or bust! Orange peel, coriander, and chamomile stake their claim in this unfiltered White Ale, named for our fair city''s founder, Moses Cleaveland.', 'https://www.greatlakesbrewing.com/sites/default/files/styles/large/public/eliotness-fixed_2020.png?itok=nGi1apTh', '5.4%', 'Witbier', 1);
+  ('Holy Moses White Ale', 'Refreshment or bust! Orange peel, coriander, and chamomile stake their claim in this unfiltered White Ale, named for our fair city''s founder, Moses Cleaveland.', 'https://www.greatlakesbrewing.com/sites/default/files/styles/large/public/eliotness-fixed_2020.png?itok=nGi1apTh', 5.4, 'Witbier', 1);
 
 INSERT INTO beers
   (name,description,image,abv,beerType,breweryID)
 VALUES
-  ('Burning River Pale Ale', 'A toast to the Cuyahoga River Fire! For rekindling an appreciation of the Great Lakes region''s natural resources (like the malt and hops illuminating this fresh Pale Ale).', 'https://www.greatlakesbrewing.com/sites/default/files/styles/large/public/burning-river-combo-2018-290x480.png?itok=EOCDhtVI', '6.0%', 'Pale Ale', 1);
+  ('Burning River Pale Ale', 'A toast to the Cuyahoga River Fire! For rekindling an appreciation of the Great Lakes region''s natural resources (like the malt and hops illuminating this fresh Pale Ale).', 'https://www.greatlakesbrewing.com/sites/default/files/styles/large/public/burning-river-combo-2018-290x480.png?itok=EOCDhtVI', 6.0, 'Pale Ale', 1);
 
   INSERT INTO beers
   (name,description,image,abv,beerType,breweryID)
 VALUES
-  ('Commodore Perry IPA', 'What''s this? A British-style IPA named after the man who defeated His Majesty''s Royal Navy in the War of 1812? Consider this a bold, hoppy (and mildly ironic) plunder of war.', 'https://www.greatlakesbrewing.com/sites/default/files/styles/large/public/commodore-fixed_1.png?itok=s17Bfb8k', '7.7%', 'IPA', 1);
+  ('Commodore Perry IPA', 'What''s this? A British-style IPA named after the man who defeated His Majesty''s Royal Navy in the War of 1812? Consider this a bold, hoppy (and mildly ironic) plunder of war.', 'https://www.greatlakesbrewing.com/sites/default/files/styles/large/public/commodore-fixed_1.png?itok=s17Bfb8k', 7.7, 'IPA', 1);
 
 COMMIT TRANSACTION;
