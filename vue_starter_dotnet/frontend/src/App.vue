@@ -52,7 +52,8 @@ export default {
   }
 };
 </script>
-<style>
+
+<style scoped>
 .navibar{
   display: inline-block;
   background-color: whitesmoke;

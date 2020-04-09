@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .home {
   background-color: whitesmoke;
   border-radius: 35%;

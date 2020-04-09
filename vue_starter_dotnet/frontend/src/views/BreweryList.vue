@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .breweryList {
   background-color: whitesmoke;
   border-radius: 35%;

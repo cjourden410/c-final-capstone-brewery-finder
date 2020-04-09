@@ -72,7 +72,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .BeerAdd {
   background-color: whitesmoke;
   border-radius: 35%;

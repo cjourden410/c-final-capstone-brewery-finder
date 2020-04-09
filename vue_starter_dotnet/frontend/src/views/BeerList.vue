@@ -40,7 +40,7 @@ created(){
 }
 </script>
 
-<style>
+<style scoped>
 .beerList {
   background-color: whitesmoke;
   border-radius: 35%;

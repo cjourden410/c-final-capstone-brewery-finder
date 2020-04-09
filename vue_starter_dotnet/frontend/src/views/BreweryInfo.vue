@@ -69,7 +69,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .brewery {
   background-color: whitesmoke;
   border-radius: 35%;

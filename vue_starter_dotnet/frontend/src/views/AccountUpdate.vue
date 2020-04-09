@@ -58,7 +58,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 .AccountUpdate {
   background-color: whitesmoke;
   border-radius: 35%;

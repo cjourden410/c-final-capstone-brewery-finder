@@ -80,8 +80,19 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .needAccount{
   color: white;
+}
+.register {
+  background-color: whitesmoke;
+  border-radius: 35%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.form-register{
+  margin: auto;
 }
 </style>

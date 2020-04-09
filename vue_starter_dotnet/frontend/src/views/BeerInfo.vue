@@ -57,7 +57,7 @@ created() {
 
 </script>
 
-<style>
+<style scoped>
 .beer {
   background-color: whitesmoke;
   border-radius: 35%;
