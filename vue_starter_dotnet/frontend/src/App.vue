@@ -1,19 +1,18 @@
 <template>
   <div id="app">
     <div id="nav">
-      <div class="navibar" v-if="user">
+      <div v-if="user">
         Logged in
-        <div class="navibar">
+        
           <button v-on:click="logout">Logout</button>
-        </div>
+        
       </div>
       <div v-else>
-        <div class="navibar">
+        <div >
           <router-link tag="button" :to="{name: 'login'}" >Login</router-link>
+          <router-link tag="button" :to="{name: 'register'}">Register</router-link>
         </div>
-        <div class="navibar">
-          <router-link :to="{name: 'register'}">Register</router-link>
-        </div>
+       
       </div>
       <router-link tag="button" class="navibar" :to="{name: 'home'}">Home</router-link>
       <router-link tag="button" class="navibar" :to="{name: 'breweryList'}">Brewery List</router-link>
@@ -58,7 +57,7 @@ export default {
   display: inline-block;
   background-color: whitesmoke;
   padding: 5px;;
-  height: 50px;
+  height: 30px;
   
 }
 </style>

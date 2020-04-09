@@ -112,5 +112,12 @@ export default {
 </script>
 
 <style scoped>
-
+.BreweryInfoUpdate {
+  background-color: whitesmoke;
+  border-radius: 35%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-bottom: 10px;
+  text-align: center;
+}
 </style>
