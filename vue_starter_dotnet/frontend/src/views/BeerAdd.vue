@@ -9,11 +9,11 @@
       </div>
       <div>
         Discription of Beer:
-        <input type="text" v-model="beer.discription" class="beerInput" placeholder="Stuff about your beer" />
+        <input type="text" v-model="beer.description" class="beerInput" placeholder="Stuff about your beer" />
       </div>
       <div>
         Type of Beer:
-        <input type="text" v-model="beer.type" class="beerInput" placeholder="Lager" />
+        <input type="text" v-model="beer.beerType" class="beerInput" placeholder="Lager" />
       </div>
        <div>
         ABV of Beer:
@@ -23,7 +23,7 @@
         Your Brewery ID:
         <input type="number" v-model="beer.breweryId" class="beerInput" placeholder="1" />
       </div>
-      <button v-on:click="register">Submit</button>
+      <button v-on:click="addBeer">Submit</button>
     </form>
   </div>
 </div>
@@ -39,8 +39,8 @@ export default {
       beer:{
         beerId: 0,
         name: "",
-        discription: "",
-        type: "",
+        description: "",
+        beerType: "",
         abv: "",
         breweryId: 0,
         image: ""
