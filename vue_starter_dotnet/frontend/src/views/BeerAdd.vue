@@ -23,6 +23,7 @@
         Your Brewery:
         <input type="text" v-model="beer.brewery" class="beerInput" placeholder="Bob's Brewery" />
       </div>
+      <button v-on:click="register">Submit</button>
     </form>
   </div>
 </div>
