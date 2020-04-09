@@ -1,5 +1,5 @@
 <template>
-<div class="base">
+<div class="base" fluid alt="Responsive image">
   <div class="BreweryInfoUpdate">
     <h1>Update Brewery Info</h1>
     <!-- <div>Welcome {{user.sub}}, {{user.rol}}</div> -->
@@ -10,7 +10,7 @@
           <option v-for="brewery in breweries" :key="brewery.id">{{brewery.id}}</option>
         </select>
       </div>
-      <button type="submit">Edit Selected Brewery, Idk, something like that..</button>
+      <button type="submit" class="btn btn-primary">Edit Selected Brewery</button>
     </form>
     <div v-if="this.isChosen">
       <form>
