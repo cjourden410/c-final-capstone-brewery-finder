@@ -1,5 +1,6 @@
 <template>
-  <div id="register" class="text-center login">
+<div class="base">
+  <div class="register">
     <form class="form-register" @submit.prevent="register">
       <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
@@ -40,6 +41,7 @@
       </button>
     </form>
   </div>
+</div>
 </template>
 
 <script>
@@ -81,9 +83,9 @@ export default {
 </script>
 
 <style scoped>
-.needAccount{
+/* .needAccount{
   color: white;
-}
+} */
 .register {
   background-color: whitesmoke;
   border-radius: 35%;
@@ -93,6 +95,15 @@ export default {
   text-align: center;
 }
 .form-register{
+  display: block;
   margin: auto;
+}
+.sr-only{
+  display: block;
+}
+.base{
+  width: auto;
+  height: 600px;
+  background-image: url('../assets/12.jpg');
 }
 </style>

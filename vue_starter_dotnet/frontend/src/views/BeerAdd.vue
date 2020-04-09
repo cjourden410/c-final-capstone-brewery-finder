@@ -8,7 +8,7 @@
         <input type="text" v-model="beer.name" class="beerInput" placeholder="Bob's Beer" />
       </div>
       <div>
-        Discription of Beer:
+        Description of Beer:
         <input type="text" v-model="beer.description" class="beerInput" placeholder="Stuff about your beer" />
       </div>
       <div>
