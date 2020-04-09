@@ -140,6 +140,10 @@ namespace SampleApi.DAL
             }
         }
 
+        /// <summary>
+        /// Update a brewery in the database.
+        /// </summary>
+        /// <param name="brewery"></param>
         public void UpdateBreweryInfo(Brewery brewery)
         {
             try
@@ -160,6 +164,136 @@ namespace SampleApi.DAL
 
                     int i = cmd.ExecuteNonQuery();
                     return;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Returns all of the beers.
+        /// </summary>
+        /// <returns></returns>
+        public IList<Beer> GetBeers()
+        {
+            List<Beer> output = new List<Beer>();
+
+            try
+            {
+                // Create a new connection object
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Open the connection
+                    conn.Open();
+
+                    string sql =
+                        @"SELECT * 
+                        FROM beers";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    // Execute the command
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Loop through each row
+                    while (reader.Read())
+                    {
+                        Beer beer = RowToObjectBeer(reader);
+                        output.Add(beer);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// Gets a beer by its id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Beer GetBeerById(int id)
+        {
+            Beer beer = null;
+            try
+            {
+                // Create a new connection object
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Open the connection
+                    conn.Open();
+
+                    string sql =
+                        @"SELECT * 
+                        FROM beers 
+                        where id = @id";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    // Execute the command
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Loop through each row
+                    if (reader.Read())
+                    {
+                        // Create a brewery
+                        beer = RowToObjectBeer(reader);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            return beer;
+        }
+
+        private Beer RowToObjectBeer(SqlDataReader reader)
+        {
+            // Create a beer
+            Beer beer = new Beer();
+            beer.Id = Convert.ToInt32(reader["id"]);
+            beer.Name = Convert.ToString(reader["name"]);
+            beer.Description = Convert.ToString(reader["description"]);
+            beer.Image = Convert.ToString(reader["image"]);
+            beer.ABV = Convert.ToString(reader["abv"]);
+            beer.BeerType = Convert.ToString(reader["beerType"]);
+            beer.BreweryID = Convert.ToInt32(reader["breweryID"]);
+            return beer;
+        }
+
+        /// <summary>
+        /// Adds a beer to the database.
+        /// </summary>
+        /// <param name="beer"></param>
+        public int AddBeer(Beer beer)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = 
+                        @"INSERT INTO beers
+                          (name, description, image, abv, beerType, breweryID)
+                        VALUES
+                          (@name, @description, @image, @abv, @beerType, @breweryID); Select @@Identity;";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@name", beer.Name);
+                    cmd.Parameters.AddWithValue("@description", beer.Description);
+                    cmd.Parameters.AddWithValue("@image", beer.Image);
+                    cmd.Parameters.AddWithValue("@abv", beer.ABV);
+                    cmd.Parameters.AddWithValue("@beerType", beer.BeerType);
+                    cmd.Parameters.AddWithValue("@breweryID", beer.BreweryID);
+
+
+                    return Convert.ToInt32(cmd.ExecuteScalar());
                 }
             }
             catch (SqlException ex)

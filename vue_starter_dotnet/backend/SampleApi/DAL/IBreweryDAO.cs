@@ -9,5 +9,8 @@ namespace SampleApi.DAL
         Brewery GetBreweryById(int id);
         IList<Brewery> GetBreweries();
         void UpdateBreweryInfo(Brewery brewery);
+        IList<Beer> GetBeers();
+        Beer GetBeerById(int id);
+        int AddBeer(Beer beer);
     }
 }
