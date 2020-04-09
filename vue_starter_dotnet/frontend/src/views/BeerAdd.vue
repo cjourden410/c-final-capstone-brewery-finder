@@ -37,11 +37,13 @@ export default {
   data(){
     return{
       beer:{
+        beerId: 0,
         name: "",
         discription: "",
         type: "",
         abv: "",
-        breweryId: ""
+        breweryId: 0,
+        image: ""
       },
       registrationErrors: false
     };
@@ -51,7 +53,7 @@ export default {
   },
   methods:{
     addBeer(){
-          let url = `${process.env.VUE_APP_REMOTE_API}/breweries`;
+          let url = `${process.env.VUE_APP_REMOTE_API}/beers`;
 
       fetch(url,{
         method: 'POST',
