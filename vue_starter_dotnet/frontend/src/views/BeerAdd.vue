@@ -8,21 +8,22 @@
         <input type="text" v-model="beer.name" class="beerInput" placeholder="Bob's Beer" />
       </div>
       <div>
-        Discription of Beer:
-        <input type="text" v-model="beer.discription" class="beerInput" placeholder="Stuff about your beer" />
+        Description of Beer:
+        <input type="text" v-model="beer.description" class="beerInput" placeholder="Stuff about your beer" />
       </div>
       <div>
         Type of Beer:
-        <input type="text" v-model="beer.type" class="beerInput" placeholder="Lager" />
+        <input type="text" v-model="beer.beerType" class="beerInput" placeholder="Lager" />
       </div>
        <div>
         ABV of Beer:
         <input type="text" v-model="beer.abv" class="beerInput" placeholder="9.0" />
       </div>
        <div>
-        Your Brewery:
-        <input type="text" v-model="beer.brewery" class="beerInput" placeholder="Bob's Brewery" />
+        Your Brewery ID:
+        <input type="number" v-model="beer.breweryId" class="beerInput" placeholder="1" />
       </div>
+      <button v-on:click="addBeer">Submit</button>
     </form>
   </div>
 </div>
@@ -36,11 +37,13 @@ export default {
   data(){
     return{
       beer:{
+        beerId: 0,
         name: "",
-        discription: "",
-        type: "",
+        description: "",
+        beerType: "",
         abv: "",
-        brewery: ""
+        breweryId: 0,
+        image: ""
       },
       registrationErrors: false
     };
@@ -50,7 +53,7 @@ export default {
   },
   methods:{
     addBeer(){
-          let url = `${process.env.VUE_APP_REMOTE_API}/breweries`;
+          let url = `${process.env.VUE_APP_REMOTE_API}/beers`;
 
       fetch(url,{
         method: 'POST',

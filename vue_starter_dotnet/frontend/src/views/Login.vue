@@ -1,4 +1,5 @@
 <template>
+<div class="base">
   <div id="login" class="text-center login">
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
@@ -34,6 +35,7 @@
       <router-link :to="{ name: 'register' }" id="needAccount">Need an account?</router-link>
       <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
     </form>
+  </div>
   </div>
 </template>
 
@@ -95,5 +97,10 @@ export default {
 }
 .form-signin{
   margin: auto;
+}
+.base{
+  width: auto;
+  height: 600px;
+  background-image: url('../assets/10.jpg');
 }
 </style>

@@ -176,7 +176,7 @@ namespace SampleApi.DAL
         /// Returns all of the beers.
         /// </summary>
         /// <returns></returns>
-        public IList<Beer> GetBeers()
+        public IList<Beer> GetBeersByBrewery(int breweryID)
         {
             List<Beer> output = new List<Beer>();
 
@@ -190,8 +190,10 @@ namespace SampleApi.DAL
 
                     string sql =
                         @"SELECT * 
-                        FROM beers";
+                        FROM beers
+                        WHERE breweryID = @breweryID";
                     SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@breweryID", breweryID);
 
                     // Execute the command
                     SqlDataReader reader = cmd.ExecuteReader();

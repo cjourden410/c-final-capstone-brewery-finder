@@ -22,8 +22,8 @@ data() {
   }
 },
 methods: {
-  GetBeers(){
-    let url =`${process.env.VUE_APP_REMOTE_API}/beers`;
+  GetBeers(breweryID){
+    let url =`${process.env.VUE_APP_REMOTE_API}/beers?breweryID=${breweryID}`;
 
     fetch(url)
         .then(response => {
@@ -37,7 +37,7 @@ methods: {
   }
 },
 created(){
-  this.GetBeers();
+  this.GetBeers(this.$route.params.id);
 }
 }
 </script>
