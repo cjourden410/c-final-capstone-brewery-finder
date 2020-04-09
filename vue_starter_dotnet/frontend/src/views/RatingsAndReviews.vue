@@ -2,6 +2,17 @@
          <div class="base">
                 <div class="home">
                         <h1>Rate this beer.</h1>
+                        <form>
+                          <div>
+                            Name of Beer:
+                          </div>
+                          <div>
+                            Beer Rating (out of 5):
+                          </div>
+                          <div>
+                            Comments:
+                          </div>
+                        </form>
                 </div>
         </div>
 
