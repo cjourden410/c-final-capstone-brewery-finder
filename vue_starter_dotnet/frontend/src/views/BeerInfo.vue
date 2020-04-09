@@ -55,7 +55,7 @@ getBeer(id){
 }
 },
 created() {
-  this.getBeer(this.$route.parms.id);
+  this.getBeer(this.$route.params.id);
 }
 }
 

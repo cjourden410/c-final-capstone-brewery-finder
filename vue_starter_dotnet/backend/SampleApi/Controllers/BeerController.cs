@@ -30,9 +30,9 @@ namespace SampleApi.Controllers
         /// </summary>
         /// <returns>Returns a list of all beers in the DB.</returns>
         [HttpGet("")]
-        public IActionResult GetBeers()
+        public IActionResult GetBeers(int breweryID)
         {
-            return new JsonResult(breweryDAO.GetBeers());
+            return new JsonResult(breweryDAO.GetBeersByBrewery(breweryID));
         }
 
         /// <summary>
