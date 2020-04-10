@@ -15,6 +15,7 @@ import BreweryList from './views/BreweryList.vue'
 import RatingsAndReviews from './views/RatingsAndReviews.vue'
 import BeerList from './views/BeerList.vue'
 import AccountUpdate from './views/AccountUpdate.vue'
+import ViewRatings from './views/ViewRatings.vue'
 
 Vue.use(Router)
 
@@ -89,6 +90,15 @@ const router = new Router({
       path: "/breweries/breweryAdd",
       name: "breweryAdd",
       component: BreweryAdd,
+      meta: {
+        requiresAuth: true,
+        isAdmin: true
+      }
+    },
+    {
+    path: "/breweries/ViewRatings",
+      name: "viewRatings",
+      component: ViewRatings,
       meta: {
         requiresAuth: true,
         isAdmin: true

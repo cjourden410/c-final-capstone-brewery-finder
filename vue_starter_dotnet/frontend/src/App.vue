@@ -20,6 +20,7 @@
       <router-link v-if="user && (user.rol === 'Admin' || user.rol === 'Brewer')" tag="button" class="navibar" :to="{name: 'accountUpdate'}">Update Account</router-link>
       <router-link v-if="user && (user.rol === 'Admin' || user.rol === 'Brewer')" tag="button" class="navibar" :to="{name: 'breweryInfoUpdate'}">Update Brewery</router-link>
       <router-link v-if="user && (user.rol === 'Admin' || user.rol === 'Brewer')" tag="button" class="navibar" :to="{name: 'beerAdd'}">Add a Beer</router-link>
+      <router-link v-if="user && (user.rol === 'Admin' || user.rol === 'Brewer')" tag="button" class="navibar" :to="{name: 'veiwRatings'}">View Ratings</router-link>
     </div>
     <router-view v-bind:user="this.user" />
   </div>
