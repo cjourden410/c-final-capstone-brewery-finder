@@ -305,6 +305,32 @@ namespace SampleApi.DAL
         }
 
         /// <summary>
+        /// Removes a beer from the database.
+        /// </summary>
+        /// <param name="beerID"></param>
+        public void DeleteBeer(int beerID)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = $"Delete from beers where id = @beerID";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@beerID", beerID);
+
+                    cmd.ExecuteNonQuery();
+                    return;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
         /// Returns all of the reviews.
         /// </summary>
         /// <returns></returns>
@@ -500,11 +526,11 @@ namespace SampleApi.DAL
                         @"INSERT INTO beerReviews
                           (review,beerID,beerName, rating)
                         VALUES
-                          (@review, @beerID, ((select name from beers where id = @beerID) = @beerName), @rating); Select @@Identity;";
+                          (@review, @beerID, 'Dortmunder Gold' @rating); Select @@Identity;";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@review", review.Review);
                     cmd.Parameters.AddWithValue("@beerID", review.BeerID);
-                    cmd.Parameters.AddWithValue("@beerName", review.BeerName);
+                    
                     cmd.Parameters.AddWithValue("@rating", review.Rating);
 
                     return Convert.ToInt32(cmd.ExecuteScalar());

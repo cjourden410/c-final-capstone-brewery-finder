@@ -3,6 +3,7 @@
     <div class="home">
       <h1>Rate {{beer.name}}</h1>
       <form>
+        <input type="hidden" v-model="review.beerID"/>
         <div>Name of Beer: {{beer.name}}</div>
         <div>
           Beer Rating (out of 5):
@@ -35,7 +36,7 @@ export default {
       },
       review:{
         id: 0,
-        beerName: "{beer.name}",
+        beerID: 0,
         rating: 0,
         review: ""
       }
@@ -49,6 +50,7 @@ export default {
       response.json()
       .then(json => {
         this.beer = json;
+        this.review.beerID = this.beer.id;
       })
     }).catch(err => {console.log(err)});
 },
