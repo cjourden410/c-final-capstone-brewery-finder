@@ -96,12 +96,11 @@ const router = new Router({
       }
     },
     {
-    path: "/breweries/ViewRatings",
+    path: "/breweries/viewRatings",
       name: "viewRatings",
       component: ViewRatings,
       meta: {
         requiresAuth: true,
-        isAdmin: true
       }
     },
     {
