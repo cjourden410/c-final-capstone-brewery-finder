@@ -12,5 +12,7 @@ namespace SampleApi.DAL
         IList<Beer> GetBeersByBrewery(int breweryID);
         Beer GetBeerById(int id);
         int AddBeer(Beer beer);
+        BeerReview GetReviewById(int id);
+        int AddReview(BeerReview review);
     }
 }

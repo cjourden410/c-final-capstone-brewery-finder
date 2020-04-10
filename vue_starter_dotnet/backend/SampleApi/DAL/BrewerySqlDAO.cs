@@ -303,5 +303,91 @@ namespace SampleApi.DAL
                 throw ex;
             }
         }
+
+        /// <summary>
+        /// Gets a review by its id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public BeerReview GetReviewById(int id)
+        {
+            BeerReview review = null;
+            try
+            {
+                // Create a new connection object
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Open the connection
+                    conn.Open();
+
+                    string sql =
+                        @"SELECT * 
+                        FROM beerReviews 
+                        where id = @id";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    // Execute the command
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Loop through each row
+                    if (reader.Read())
+                    {
+                        // Create a review
+                        review = RowToObjectReview(reader);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            return review;
+        }
+
+        private BeerReview RowToObjectReview(SqlDataReader reader)
+        {
+            // Create a review
+            BeerReview review = new BeerReview();
+            review.Id = Convert.ToInt32(reader["id"]);
+            review.Review = Convert.ToString(reader["review"]);
+            review.BeerID = Convert.ToInt32(reader["beerID"]);
+            review.BeerName = Convert.ToString(reader["beerName"]);
+            review.Rating = Convert.ToInt32(reader["rating"]);
+            return review;
+        }
+
+        /// <summary>
+        /// Add a new review
+        /// </summary>
+        /// <param name="review"></param>
+        /// <returns></returns>
+        public int AddReview(BeerReview review)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql =
+                        @"INSERT INTO beerReviews
+                          (review,beerID,beerName, rating)
+                        VALUES
+                          (@review, @beerID, ((select name from beers where id = @beerID) = @beerName), @rating); Select @@Identity;";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@review", review.Review);
+                    cmd.Parameters.AddWithValue("@beerID", review.BeerID);
+                    cmd.Parameters.AddWithValue("@beerName", review.BeerName);
+                    cmd.Parameters.AddWithValue("@rating", review.Rating);
+
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
