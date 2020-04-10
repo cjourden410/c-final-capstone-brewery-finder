@@ -101,26 +101,26 @@ export default {
         .catch(err => {
           console.log(err);
         });
-    }
-  },
-  saveBrewery() {
-    let url = `${process.env.VUE_APP_REMOTE_API}/breweries/${this.selectedBrewery.id}`;
+    },
+    saveBrewery() {
+      let url = `${process.env.VUE_APP_REMOTE_API}/breweries/${this.selectedBrewery.id}`;
 
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(this.selectedBrewery)
-    }).then(response => {
-      if (response.ok) {
-        alert("Brewery has been updated!");
-      } else {
-        alert(
-          `There was an error updating: ${response.status}: ${response.statusText}`
-        );
-      }
-    });
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(this.selectedBrewery)
+      }).then(response => {
+        if (response.ok) {
+          alert("Brewery has been updated!");
+        } else {
+          alert(
+            `There was an error updating: ${response.status}: ${response.statusText}`
+          );
+        }
+      });
+    }
   },
   created() {
     this.user = this.$attrs.user;

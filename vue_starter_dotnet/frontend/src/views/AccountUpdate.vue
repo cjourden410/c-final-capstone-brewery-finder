@@ -4,17 +4,17 @@
       <h1>Update Account</h1>
       <form>
         <div>
-          UserID:
-          <select @change="GetUser(chosenId)" v-model="chosenId">
+          Username:
+          <select style="width: 30%" @change="getUser(chosenId)" v-model="chosenId">
             <option v-for="user in users"
               :key="user.id"
               v-bind:value="user.id"
-            >{{user.name}}</option>
+            >{{user.username}}</option>
           </select>
         </div>
         <div>
           Role:
-          <select @change="GetUser(chosenId)" style="width: 30%" type="text" v-model="user.rol" class="userInput">
+          <select style="width: 30%" type="text" v-model="user.rol" class="userInput">
             <option value="User">Beer Lover</option>
             <option value="Brewer">Brewer</option>
           </select>
@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     getUser(id) {
-      let url = `${process.env.VUE_APP_REMOTE_API}/userList/${id}`;
+      let url = `${process.env.VUE_APP_REMOTE_API}/accountUpdate/${id}`;
 
       fetch(url)
         .then(response => {
@@ -54,8 +54,8 @@ export default {
           console.log(err);
         });
     },
-    GetUsers() {
-      let url = `${process.env.VUE_APP_REMOTE_API}/userList`;
+    getUsers() {
+      let url = `${process.env.VUE_APP_REMOTE_API}/accountUpdate`;
 
       fetch(url)
         .then(response => {
@@ -69,7 +69,7 @@ export default {
     }
   },
    saveUser() {
-    let url = `${process.env.VUE_APP_REMOTE_API}/userList/${this.selectedUser.id}`;
+    let url = `${process.env.VUE_APP_REMOTE_API}/accountUpdate/${this.selectedUser.id}`;
 
     fetch(url, {
       method: "PUT",
