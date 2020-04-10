@@ -147,7 +147,7 @@ const router = new Router({
       }
     },
     {
-      path: "/breweries/ratingsAndReviews",
+      path: "/breweries/ratingsAndReviews/:id",
       name: "ratingsAndReviews",
       component: RatingsAndReviews,
       meta: {
