@@ -7,7 +7,6 @@ import Register from './views/Register.vue'
 import BeerAdd from './views/BeerAdd.vue'
 import BeerDelete from './views/BeerDelete.vue'
 import BeerInfo from './views/BeerInfo.vue'
-import BeerReview from './views/BeerReview.vue'
 import BreweryAdd from './views/BreweryAdd.vue'
 import BreweryInfo from './views/BreweryInfo.vue'
 import BreweryInfoUpdate from './views/BreweryInfoUpdate.vue'
@@ -78,14 +77,7 @@ const router = new Router({
         requiresAuth: true
       }
     },
-    {
-      path: "/breweries/beerReview",
-      name: "beerReview",
-      component: BeerReview,
-      meta: {
-        requiresAuth: true
-      }
-    },
+  
     {
       path: "/breweries/breweryAdd",
       name: "breweryAdd",
