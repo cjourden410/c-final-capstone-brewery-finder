@@ -26,6 +26,9 @@ name: "rating-list",
 props:{
     ratings: Array
 },
+data(){
+    return{};
+},
 methods: {},
 computed: {}
 };
