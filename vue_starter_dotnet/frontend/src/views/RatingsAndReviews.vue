@@ -35,7 +35,7 @@ export default {
       },
       review:{
         id: 0,
-        beerName: "{{beer.name}}",
+        beerName: "{beer.name}",
         rating: 0,
         review: ""
       }
@@ -52,7 +52,7 @@ export default {
       })
     }).catch(err => {console.log(err)});
 },
-  addReview(id){
+  addReview(){
     let url = `${process.env.VUE_APP_REMOTE_API}/reviews/${id}`;
     fetch(url,{
       method: 'POST',
