@@ -6,10 +6,7 @@
         <div>
           Username:
           <select style="width: 30%" @change="getUser(chosenId)" v-model="chosenId">
-            <option v-for="user in users"
-              :key="user.id"
-              v-bind:value="user.id"
-            >{{user.username}}</option>
+            <option v-for="user in users" :key="user.id" v-bind:value="user.id">{{user.username}}</option>
           </select>
         </div>
         <div>
@@ -30,8 +27,8 @@
 // import UserList from "@/components/UsersList.vue";
 
 export default {
-  name:"accountUpdate",
-  props:{},
+  name: "accountUpdate",
+  props: {},
   data() {
     return {
       selectedUser: null,
@@ -66,26 +63,26 @@ export default {
         .catch(err => {
           console.log(err);
         });
-    }
-  },
-   saveUser() {
-    let url = `${process.env.VUE_APP_REMOTE_API}/accountUpdate/${this.selectedUser.id}`;
+    },
+    saveUser() {
+      let url = `${process.env.VUE_APP_REMOTE_API}/accountUpdate/${this.selectedUser.id}`;
 
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(this.selectedUser)
-    }).then(response => {
-      if (response.ok) {
-        alert("User has been updated!");
-      } else {
-        alert(
-          `There was an error updating: ${response.status}: ${response.statusText}`
-        );
-      }
-    });
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(this.selectedUser)
+      }).then(response => {
+        if (response.ok) {
+          alert("User has been updated!");
+        } else {
+          alert(
+            `There was an error updating: ${response.status}: ${response.statusText}`
+          );
+        }
+      });
+    }
   },
   created() {
     this.user = this.$attrs.user;
