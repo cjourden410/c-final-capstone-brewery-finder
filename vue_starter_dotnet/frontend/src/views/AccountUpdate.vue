@@ -5,49 +5,62 @@
       <form>
         <div>
           UserID:
-          <select>
-            <option v-for="user in users" type="number" v-value="user.id" :key="user.id">{{this.user.id}}</option>
+          <select @change="GetUser(chosenId)" v-model="chosenId">
+            <option v-for="user in users"
+              :key="user.id"
+              v-bind:value="user.id"
+            >{{user.name}}</option>
           </select>
         </div>
         <div>
-          {{user.name}}
-        </div>
-        <div>
           Role:
-          <select style="width: 30%" type="text" v-model="user.role" class="userInput">
-            <users-list :users="users" class="userlist"></users-list>
+          <select @change="GetUser(chosenId)" style="width: 30%" type="text" v-model="user.rol" class="userInput">
             <option value="User">Beer Lover</option>
             <option value="Brewer">Brewer</option>
           </select>
         </div>
-        <button v-on:click="register">Submit</button>
+        <button v-on:click="saveUser">Edit Selected User</button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
-import auth from "../auth";
-import UserList from "@/components/UsersList.vue";
+// import auth from "../auth";
+// import UserList from "@/components/UsersList.vue";
 
 export default {
-  name: "users",
-  components: {
-    "users-list": UserList
-  },
+  name:"accountUpdate",
+  props:{},
   data() {
     return {
-      user: null
+      selectedUser: null,
+      users: [],
+      chosenId: Number,
+      user: Object
     };
   },
   methods: {
+    getUser(id) {
+      let url = `${process.env.VUE_APP_REMOTE_API}/userList/${id}`;
+
+      fetch(url)
+        .then(response => {
+          response.json().then(json => {
+            this.selectedUser = json;
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
     GetUsers() {
       let url = `${process.env.VUE_APP_REMOTE_API}/userList`;
 
       fetch(url)
         .then(response => {
           response.json().then(json => {
-            this.Users = json;
+            this.users = json;
           });
         })
         .catch(err => {
@@ -55,8 +68,27 @@ export default {
         });
     }
   },
+   saveUser() {
+    let url = `${process.env.VUE_APP_REMOTE_API}/userList/${this.selectedUser.id}`;
+
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(this.selectedUser)
+    }).then(response => {
+      if (response.ok) {
+        alert("User has been updated!");
+      } else {
+        alert(
+          `There was an error updating: ${response.status}: ${response.statusText}`
+        );
+      }
+    });
+  },
   created() {
-    this.user = auth.getUser();
+    this.user = this.$attrs.user;
     this.GetUsers();
   }
 };

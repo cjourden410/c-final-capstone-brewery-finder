@@ -13,7 +13,6 @@
             >{{brewery.name}}</option>
           </select>
         </div>
-
         <div v-if="selectedBrewery" class="infoList">
           <div>
             Days/Hours of Operation:
@@ -63,6 +62,8 @@
 </template>
 
 <script>
+// import auth from "../auth";
+
 export default {
   name: "breweryInfoUpdate",
   props: {},
@@ -71,7 +72,6 @@ export default {
       selectedBrewery: null,
       breweries: [],
       chosenId: Number,
-      access: false,
       user: Object
     };
   },
@@ -104,10 +104,8 @@ export default {
     }
   },
   saveBrewery() {
-    // TODO 05: use fetch to Update the city on the server (PUT)
     let url = `${process.env.VUE_APP_REMOTE_API}/breweries/${this.selectedBrewery.id}`;
 
-    // fetch here...
     fetch(url, {
       method: "PUT",
       headers: {
