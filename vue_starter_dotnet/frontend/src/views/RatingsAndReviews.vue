@@ -8,11 +8,14 @@
           Beer Rating (out of 5):
           <input type="number" v-model="review.rating" class="ratingInput" placeholder="1" min="1" max="5" />
           </div>
-        <div>
+        <div class="comments">
           Comments:
-          <input type="text" v-model="review.comments" class="ratingInput" placeholder="Enter your comments here." />
           </div>
+          <textarea type="text" v-model="review.comments" class="ratingInput" rows="4" cols="40" placeholder="Enter your comments here." />
+          
+          <div>
           <button v-on:click="addReview">Submit</button>
+          </div>
       </form>
     </div>
   </div>
@@ -92,5 +95,10 @@ export default {
   width: auto;
   height: 600px;
   background-image: url("../assets/11.jpg");
+}
+.comments{
+  display:inline-block;
+  vertical-align: middle;
+  margin: auto;
 }
 </style>
