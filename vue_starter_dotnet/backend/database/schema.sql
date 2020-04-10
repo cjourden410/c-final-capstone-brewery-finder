@@ -62,4 +62,17 @@ CREATE TABLE beers
     constraint fk_breweryID FOREIGN KEY (breweryID) REFERENCES breweries(id)
 );
 
+-- Add beer reviews table
+CREATE TABLE beerReviews
+(
+	id		    int		     identity(1,1),
+	review	    varchar(300) not null,
+	beerID      int	         not null,
+	beerName    varchar(50)  not null,
+	rating		int			 not null,
+
+	constraint pk_beerReviews primary key (id),
+    constraint fk_beerID FOREIGN KEY (beerID) REFERENCES beers(id)
+);
+
 COMMIT TRANSACTION;

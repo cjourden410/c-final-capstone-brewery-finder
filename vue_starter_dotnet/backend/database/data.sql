@@ -54,4 +54,30 @@ VALUES
 VALUES
   ('Commodore Perry IPA', 'What''s this? A British-style IPA named after the man who defeated His Majesty''s Royal Navy in the War of 1812? Consider this a bold, hoppy (and mildly ironic) plunder of war.', 'https://www.greatlakesbrewing.com/sites/default/files/styles/large/public/commodore-fixed_1.png?itok=s17Bfb8k', 7.7, 'IPA', 1);
 
+-- adding reviews into beer review table
+INSERT INTO beerReviews
+  (review,beerID,beerName, rating)
+VALUES
+  ('Amazing beer, one of my favorites!', 1, (select name from beers where id = 1), 5);
+
+  INSERT INTO beerReviews
+  (review,beerID,beerName, rating)
+VALUES
+  ('Helping me get through the daily grind!', 2, (select name from beers where id = 2), 4);
+
+  INSERT INTO beerReviews
+  (review,beerID,beerName, rating)
+VALUES
+  ('Solid white ale. Even better with a fresh orange slice!', 3, (select name from beers where id = 3), 4);
+
+  INSERT INTO beerReviews
+  (review,beerID,beerName, rating)
+VALUES
+  ('Alright, alright, alright!', 4, (select name from beers where id = 4), 4);
+
+  INSERT INTO beerReviews
+  (review,beerID,beerName, rating)
+VALUES
+  ('Getting me through this quarantine, one bottle at a time!', 5, (select name from beers where id = 5), 5);
+
 COMMIT TRANSACTION;
