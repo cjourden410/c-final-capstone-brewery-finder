@@ -74,7 +74,7 @@ export default {
   },
   created(){
     this.getBeer(this.$route.params.id);
-    this.addReview();
+    // this.addReview();
   }
 };
 </script>
