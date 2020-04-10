@@ -69,7 +69,8 @@ export default {
 
       fetch(url, {
         method: "PUT",
-        headers: {
+        headers: { 
+          Accept: 'application/json',
           "Content-Type": "application/json"
         },
         body: JSON.stringify(this.selectedUser)
