@@ -19,6 +19,11 @@
        <tr>
         <td><router-link tag="button" :to="{name: 'ratingsAndReviews', params: {id:beer.id}}">Rate: {{beer.name}}</router-link></td>
       </tr>
+      <tr v-if="user.rol === 'Brewer' || user.rol ==='Admin'">
+        <td>
+          <router-link tag="button" :to="{name: 'ratingsAndReviews', params: {id:beer.id}}">Rate: {{beer.name}}</router-link>
+        </td>
+      </tr>
     </table>
   </div>
 </div>
