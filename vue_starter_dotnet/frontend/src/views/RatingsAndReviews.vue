@@ -53,7 +53,7 @@ export default {
     }).catch(err => {console.log(err)});
 },
   addReview(){
-    let url = `${process.env.VUE_APP_REMOTE_API}/reviews/${id}`;
+    let url = `${process.env.VUE_APP_REMOTE_API}/reviews`;
     fetch(url,{
       method: 'POST',
       headers: {
