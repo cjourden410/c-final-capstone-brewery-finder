@@ -21,7 +21,7 @@
       </tr>
       <tr>
         <td>
-          <router-link tag="button" class="navibar" :to="{name: 'deleteBeer'}">Delete Beer</router-link>
+          <router-link v-if="user && (user.rol === 'Admin' || user.rol === 'Brewer')" tag="button" class="navibar" :to="{name: 'deleteBeer'}">Delete Beer</router-link>
         </td>
       </tr>
     </table>
@@ -62,6 +62,7 @@ getBeer(id){
 },
 created() {
   this.getBeer(this.$route.params.id);
+  this.user = auth.getUser();
 },
   watch: {
     $route: function() {

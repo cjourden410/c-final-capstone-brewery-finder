@@ -47,7 +47,8 @@ export default {
         daysHours: "",
         picture: "",
         address: ""
-      }
+      },
+      user: Object
     }
   },
  methods: {
@@ -67,6 +68,7 @@ export default {
   },
   created() {
       this.getBrewery(this.$route.params.id);
+      this.user = this.$attrs.user;
   }
 }
 </script>

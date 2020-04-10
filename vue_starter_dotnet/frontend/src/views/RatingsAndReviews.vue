@@ -72,6 +72,7 @@ export default {
   },
   created(){
     this.getBeer(this.$route.params.id);
+    this.user = this.$attrs.user;
     // this.addReview();
   }
 };

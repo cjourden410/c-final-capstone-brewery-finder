@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import auth from "@/auth.js";
+
 export default {
   name: "beer",
   props: {
@@ -50,6 +52,7 @@ export default {
     },
     created() {
       this.getBeer(this.$route.params.id);
+      this.user = auth.getUser();
     }
   }
 };

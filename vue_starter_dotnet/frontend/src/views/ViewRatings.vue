@@ -34,6 +34,7 @@ methods:{
     }
 },
 created(){
+    this.user = this.$attrs.user;
     this.GetRatings(this.$route.params.id);
 }
 }
