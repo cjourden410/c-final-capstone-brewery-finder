@@ -1,10 +1,12 @@
 <template>
-      <div>Welcome {{user.sub}}, {{user.rol}}</div>
+      <div>
+            <h1>Remove this swill from your Beer List</h1>
+      </div>
 
 </template>
 
 <script>
-import auth from "@/auth.js";
+
 
 export default {
 
