@@ -2,8 +2,7 @@
   <div class="base">
     <div class="BreweryInfoUpdate">
       <h1>Update Brewery Info</h1>
-      <!-- <div>Welcome {{user.sub}}, {{user.rol}}</div> -->
-      <form @submit.prevent="HandleChosen">
+      <form>
         <div>
           Brewery Name:
           <select @change="getBrewery(chosenId)" v-model="chosenId">
@@ -34,11 +33,7 @@
           </div>
           <div>
             Address:
-            <input
-              type="text"
-              v-model="selectedBrewery.address"
-              class="breweryInput"
-            />
+            <input type="text" v-model="selectedBrewery.address" class="breweryInput" />
           </div>
           <div>
             History:
@@ -50,11 +45,7 @@
           </div>
           <div>
             Brewery Images:
-            <input
-              type="text"
-              v-model="selectedBrewery.images"
-              class="breweryInput"
-            />
+            <input type="text" v-model="selectedBrewery.images" class="breweryInput" />
           </div>
           <div>
             Active/Inactive:
@@ -64,29 +55,14 @@
               class="breweryInput"
             />
           </div>
-
-          <button type="submit">Edit Selected Brewery</button>
+          <button v-on:click="saveBrewery">Edit Selected Brewery</button>
         </div>
       </form>
-
-      <!-- <div>
-        Role:
-        <select style="width: 30%" type="text" v-model="user.role" class="userInput">
-          <users-list :users="users" class="userlist"></users-list>
-          <option value="User">Beer Lover</option>
-          <option value="Brewer">Brewer</option>
-        </select>
-      </div>-->
-      <!-- <button v-on:click="register">Submit</button>
-      </form>-->
     </div>
   </div>
 </template>
 
 <script>
-// import BreweryInfoVue from "./BreweryInfo.vue";
-// import auth from "../auth";
-
 export default {
   name: "breweryInfoUpdate",
   props: {},
@@ -101,10 +77,8 @@ export default {
   },
   methods: {
     getBrewery(id) {
-      // This is the url...
       let url = `${process.env.VUE_APP_REMOTE_API}/breweries/${id}`;
 
-      // fetch here...
       fetch(url)
         .then(response => {
           response.json().then(json => {
@@ -128,9 +102,27 @@ export default {
           console.log(err);
         });
     }
-    // HandleChosen() {
-    //   this.isChosen = !this.isChosen;
-    // }
+  },
+  saveBrewery() {
+    // TODO 05: use fetch to Update the city on the server (PUT)
+    let url = `${process.env.VUE_APP_REMOTE_API}/breweries/${this.selectedBrewery.id}`;
+
+    // fetch here...
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(this.selectedBrewery)
+    }).then(response => {
+      if (response.ok) {
+        alert("Brewery has been updated!");
+      } else {
+        alert(
+          `There was an error updating: ${response.status}: ${response.statusText}`
+        );
+      }
+    });
   },
   created() {
     this.user = this.$attrs.user;
