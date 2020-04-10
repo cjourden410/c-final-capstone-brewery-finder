@@ -1,4 +1,4 @@
-<template v-if="user.rol==='Brewer'">
+<template>
 <div class="base">
   <div class="BeerAdd">
     <h1>Add a New Beer</h1>
