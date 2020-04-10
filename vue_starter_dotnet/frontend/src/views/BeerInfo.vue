@@ -19,12 +19,16 @@
        <tr>
         <td><router-link tag="button" :to="{name: 'ratingsAndReviews', params: {id:beer.id}}">Rate: {{beer.name}}</router-link></td>
       </tr>
+      <tr>
+        <td><router-link v-if="user && (user.rol === 'Admin' || user.rol === 'Brewer')" tag="button" class="navibar" :to="{name: 'deleteBeer'}">Delete Beer</router-link></td>
+      </tr>
     </table>
   </div>
 </div>
 </template>
 
 <script>
+import auth from "@/auth.js";
 
 export default {
   name: "beer",
@@ -56,7 +60,12 @@ getBeer(id){
 },
 created() {
   this.getBeer(this.$route.params.id);
-}
+},
+  watch: {
+    $route: function() {
+      this.user = auth.getUser();
+    }
+  }
 }
 
 </script>
