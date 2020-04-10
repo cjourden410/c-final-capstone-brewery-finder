@@ -56,28 +56,28 @@ VALUES
 
 -- adding reviews into beer review table
 INSERT INTO beerReviews
-  (review,beerID,beerName, rating)
+  (review,beerID,rating)
 VALUES
-  ('Amazing beer, one of my favorites!', 1, (select name from beers where id = 1), 5);
+  ('Amazing beer, one of my favorites!', 1, 5);
 
   INSERT INTO beerReviews
-  (review,beerID,beerName, rating)
+  (review,beerID,rating)
 VALUES
-  ('Helping me get through the daily grind!', 2, (select name from beers where id = 2), 4);
+  ('Helping me get through the daily grind!', 2, 4);
 
   INSERT INTO beerReviews
-  (review,beerID,beerName, rating)
+  (review,beerID,rating)
 VALUES
-  ('Solid white ale. Even better with a fresh orange slice!', 3, (select name from beers where id = 3), 4);
+  ('Solid white ale. Even better with a fresh orange slice!', 3, 4);
 
   INSERT INTO beerReviews
-  (review,beerID,beerName, rating)
+  (review,beerID,rating)
 VALUES
-  ('Alright, alright, alright!', 4, (select name from beers where id = 4), 4);
+  ('Alright, alright, alright!', 4, 4);
 
   INSERT INTO beerReviews
-  (review,beerID,beerName, rating)
+  (review,beerID,rating)
 VALUES
-  ('Getting me through this quarantine, one bottle at a time!', 5, (select name from beers where id = 5), 5);
+  ('Getting me through this quarantine, one bottle at a time!', 5, 5);
 
 COMMIT TRANSACTION;

@@ -20,10 +20,6 @@ namespace SampleApi.Models
         /// </summary>
         public int BeerID { get; set; }
         /// <summary>
-        /// The beers name.
-        /// </summary>
-        public string BeerName { get; set; }
-        /// <summary>
         /// The beers rating.
         /// </summary>
         public int Rating { get; set; }

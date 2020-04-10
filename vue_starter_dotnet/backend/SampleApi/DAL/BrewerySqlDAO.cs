@@ -470,7 +470,7 @@ namespace SampleApi.DAL
                     conn.Open();
 
                     string sql =
-                        @"SELECT br.id, br.review, br.beerID, br.beerName, br.rating 
+                        @"SELECT br.id, br.review, br.beerID, br.rating 
                         FROM beerReviews br
                         JOIN beers b on br.beerID = b.id
                         JOIN breweries bw on b.breweryID = bw.id
@@ -504,7 +504,6 @@ namespace SampleApi.DAL
             review.Id = Convert.ToInt32(reader["id"]);
             review.Review = Convert.ToString(reader["review"]);
             review.BeerID = Convert.ToInt32(reader["beerID"]);
-            review.BeerName = Convert.ToString(reader["beerName"]);
             review.Rating = Convert.ToInt32(reader["rating"]);
             return review;
         }
@@ -524,13 +523,12 @@ namespace SampleApi.DAL
 
                     string sql =
                         @"INSERT INTO beerReviews
-                          (review,beerID,beerName, rating)
+                          (review,beerID,rating)
                         VALUES
-                          (@review, @beerID, 'Dortmunder Gold' @rating); Select @@Identity;";
+                          (@review, @beerID, @rating); Select @@Identity;";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@review", review.Review);
                     cmd.Parameters.AddWithValue("@beerID", review.BeerID);
-                    
                     cmd.Parameters.AddWithValue("@rating", review.Rating);
 
                     return Convert.ToInt32(cmd.ExecuteScalar());
