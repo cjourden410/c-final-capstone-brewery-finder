@@ -1,7 +1,7 @@
 <template>
   <div class="base">
     <div class="viewRatings">
-      <h1>Veiw Beer Ratings</h1>
+      <h1>View Beer Ratings</h1>
       <form>
         <div>
           Brewery Name:

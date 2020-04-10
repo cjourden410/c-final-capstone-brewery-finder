@@ -67,6 +67,7 @@ export default {
         response.json().then(json => {
           this.review = json;
           alert(`Review for ${this.beer.name} was added!`)
+          this.$router.push({name:'home'});
         });
       }
       else{
