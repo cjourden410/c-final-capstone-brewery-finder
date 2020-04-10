@@ -20,54 +20,48 @@
             Days/Hours of Operation:
             <input
               type="text"
-              v-model="selectedBrewery.Hours"
+              v-model="selectedBrewery.hours"
               class="breweryInput"
-              placeholder="Mon-Thurs 1200 - 0200 Sat 1000 - 0300, Sun Closed"
             />
           </div>
           <div>
             Contact Information:
             <input
               type="text"
-              v-model="selectedBrewery.Contact"
+              v-model="selectedBrewery.contactInfo"
               class="breweryInput"
-              placeholder="123 456 7890"
             />
           </div>
           <div>
             Address:
             <input
               type="text"
-              v-model="selectedBrewery.Address"
+              v-model="selectedBrewery.address"
               class="breweryInput"
-              placeholder="123 Main St, Cleveland, OH, 44111"
             />
           </div>
           <div>
             History:
             <textarea
               type="text"
-              v-model="selectedBrewery.History"
+              v-model="selectedBrewery.history"
               class="breweryInput history"
-              placeholder="Billy Bob founded this brewery back during The Great Prohibition, makin' shine out back with his cousin LayRee. The outlaw life is the only life they've every known. Runnin' shine in the backwoods of Tennessee on the run from the law since they were 15. They'd be real disappointed to see this here today where people completely unrelated to him and his cousin using their name to turn on profit all LEGALLY at that.."
             />
           </div>
           <div>
             Brewery Images:
             <input
               type="text"
-              v-model="selectedBrewery.Images"
+              v-model="selectedBrewery.images"
               class="breweryInput"
-              placeholder="http://WEBSITE.com/IMGNAME.jpg"
             />
           </div>
           <div>
             Active/Inactive:
             <input
               type="text"
-              v-model="selectedBrewery.Active"
+              v-model="selectedBrewery.isActive"
               class="breweryInput"
-              placeholder="Active/Inactive"
             />
           </div>
 
