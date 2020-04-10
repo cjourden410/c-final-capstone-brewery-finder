@@ -173,7 +173,7 @@ namespace SampleApi.DAL
         }
 
         /// <summary>
-        /// Returns all of the beers.
+        /// Returns all of the beers by brewery.
         /// </summary>
         /// <returns></returns>
         public IList<Beer> GetBeersByBrewery(int breweryID)
@@ -305,6 +305,46 @@ namespace SampleApi.DAL
         }
 
         /// <summary>
+        /// Returns all of the reviews.
+        /// </summary>
+        /// <returns></returns>
+        public IList<BeerReview> GetReviews()
+        {
+            List<BeerReview> output = new List<BeerReview>();
+
+            try
+            {
+                // Create a new connection object
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Open the connection
+                    conn.Open();
+
+                    string sql =
+                        @"SELECT * 
+                        FROM beerReviews";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    // Execute the command
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Loop through each row
+                    while (reader.Read())
+                    {
+                        BeerReview review = RowToObjectReview(reader);
+                        output.Add(review);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return output;
+        }
+
+        /// <summary>
         /// Gets a review by its id.
         /// </summary>
         /// <param name="id"></param>
@@ -343,6 +383,92 @@ namespace SampleApi.DAL
                 throw;
             }
             return review;
+        }
+
+        /// <summary>
+        /// Returns all of the reviews by beer.
+        /// </summary>
+        /// <returns></returns>
+        public IList<BeerReview> GetReviewsByBeer(int beerID)
+        {
+            List<BeerReview> output = new List<BeerReview>();
+
+            try
+            {
+                // Create a new connection object
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Open the connection
+                    conn.Open();
+
+                    string sql =
+                        @"SELECT * 
+                        FROM beerReviews
+                        WHERE beerID = @beerID";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@beerID", beerID);
+
+                    // Execute the command
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Loop through each row
+                    while (reader.Read())
+                    {
+                        BeerReview review = RowToObjectReview(reader);
+                        output.Add(review);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// Returns all of the reviews by beer.
+        /// </summary>
+        /// <returns></returns>
+        public IList<BeerReview> GetReviewsByBrewery(int breweryID)
+        {
+            List<BeerReview> output = new List<BeerReview>();
+
+            try
+            {
+                // Create a new connection object
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Open the connection
+                    conn.Open();
+
+                    string sql =
+                        @"SELECT br.id, br.review, br.beerID, br.beerName, br.rating 
+                        FROM beerReviews br
+                        JOIN beers b on br.beerID = b.id
+                        JOIN breweries bw on b.breweryID = bw.id
+                        WHERE bw.id = @breweryID";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@breweryID", breweryID);
+
+                    // Execute the command
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Loop through each row
+                    while (reader.Read())
+                    {
+                        BeerReview review = RowToObjectReview(reader);
+                        output.Add(review);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return output;
         }
 
         private BeerReview RowToObjectReview(SqlDataReader reader)
