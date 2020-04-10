@@ -61,7 +61,7 @@ const router = new Router({
       }
     },
     {
-      path: "/breweries/:id/deleteBeer",
+      path: "/breweries/deleteBeer/:id",
       name: "deleteBeer",
       component: BeerDelete,
       meta: {

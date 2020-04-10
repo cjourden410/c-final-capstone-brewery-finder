@@ -68,8 +68,6 @@ export default {
         alert(`There was an error: ${response.status}: ${response.statusText}`)
       }
     });
-    
-    
 }
   },
   created(){
