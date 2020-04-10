@@ -6,14 +6,14 @@
           <tr>
               <td>Beer Name</td>
               <td>Beer Rating</td>
-              <td>Comments</td>
+              <td>Review</td>
           </tr>
       </thead>
       <tbody>
           <tr v-for="rating in ratings" :key="rating.id">
               <td>{{rating.beerName}}</td>
-              <td>{{rating.beerRating}}</td>
-              <td>{{rating.comments}}</td>
+              <td>{{rating.rating}}</td>
+              <td>{{rating.review}}</td>
           </tr>
       </tbody>
   </table>

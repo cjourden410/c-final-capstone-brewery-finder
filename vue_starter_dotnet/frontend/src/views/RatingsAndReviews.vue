@@ -11,7 +11,7 @@
         <div class="comments">
           Comments:
           </div>
-          <textarea type="text" v-model="review.comments" class="ratingInput" rows="4" cols="40" placeholder="Enter your comments here." />
+          <textarea type="text" v-model="review.review" class="ratingInput" rows="4" cols="40" placeholder="Enter your comments here." />
           
           <div>
           <button v-on:click="addReview">Submit</button>
@@ -35,9 +35,9 @@ export default {
       },
       review:{
         id: 0,
-        name: "",
+        beerName: "{{beer.name}}",
         rating: 0,
-        comments: ""
+        review: ""
       }
     }
   },
@@ -53,7 +53,7 @@ export default {
     }).catch(err => {console.log(err)});
 },
   addReview(id){
-    let url = `${process.env.VUE_APP_REMOTE_API}/beers/${id}`;
+    let url = `${process.env.VUE_APP_REMOTE_API}/reviews/${id}`;
     fetch(url,{
       method: 'POST',
       headers: {
