@@ -51,8 +51,8 @@ CREATE TABLE breweries
 CREATE TABLE beers
 (
 	id		    int		     identity(1,1),
-	name	    varchar(50)	 not null,
-	description varchar(300) not null,
+	name	    varchar(200) not null,
+	description varchar(500) not null,
 	image	    varchar(200),
 	abv			decimal(3,1)  not null,
 	beerType    varchar(50)  not null,

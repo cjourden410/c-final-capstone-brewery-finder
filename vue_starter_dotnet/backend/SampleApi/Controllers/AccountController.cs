@@ -106,9 +106,8 @@ namespace SampleApi.Controllers
         [HttpPut("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        public IActionResult UpdateCity(User user)
+        public IActionResult UpdateUser(User user)
         {
-            // Should I compare id to City.id?
             if (ModelState.IsValid)
             {
                 userDao.UpdateUser(user);
