@@ -148,4 +148,54 @@ VALUES
 VALUES
   ('Getting me through this quarantine, one bottle at a time!', 5, 5);
 
+  INSERT INTO beerReviews
+  (review,beerID,rating)
+VALUES
+  ('Really solid lager with a lot of flavor!', 6, 5);
+
+  INSERT INTO beerReviews
+  (review,beerID,rating)
+VALUES
+  ('Dark creamy and right up my alley.', 7, 4);
+
+  INSERT INTO beerReviews
+  (review,beerID,rating)
+VALUES
+  ('Haha, leghumper.', 8, 4);
+
+  INSERT INTO beerReviews
+  (review,beerID,rating)
+VALUES
+  ('Alright, alright, alright!', 9, 4);
+
+  INSERT INTO beerReviews
+  (review,beerID,rating)
+VALUES
+  ('When paired with a hot summer day and an orange wedge, it doesn''t get better than this.', 10, 5);
+
+  INSERT INTO beerReviews
+  (review,beerID,rating)
+VALUES
+  ('You haven''t had a shandy until you''ve had this. Amazing!!!', 11, 5);
+
+  INSERT INTO beerReviews
+  (review,beerID,rating)
+VALUES
+  ('One of the better oatmeal stouts I''ve had. Really happy that these come in bomber bottles!', 12, 4);
+
+  INSERT INTO beerReviews
+  (review,beerID,rating)
+VALUES
+  ('Not bad. Has an aroma that I can''t place.', 13, 3);
+
+  INSERT INTO beerReviews
+  (review,beerID,rating)
+VALUES
+  ('I''m such a sucker for whiskey barrel. The base packs some serious dark chocolate.', 14, 4);
+
+  INSERT INTO beerReviews
+  (review,beerID,rating)
+VALUES
+  ('Peanut butter and chocolate, but alcoholic...what''s not to love?', 15, 5);
+
 COMMIT TRANSACTION;
