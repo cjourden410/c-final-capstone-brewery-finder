@@ -11,7 +11,6 @@
       </thead>
       <tbody>
           <tr v-for="rating in ratings" :key="rating.id">
-              <td>{{rating.beerName}}</td>
                <td>
                     <router-link :to="{name: 'beerInfo', params:{id:rating.beerID}}">{{rating.beerName}}</router-link>
                 </td>
