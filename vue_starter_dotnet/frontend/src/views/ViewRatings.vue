@@ -14,7 +14,10 @@
           </select>
         </div>
         <div v-if="selectedBrewery" class="infoList">
-          <rating-list :rating="rating" class="rating"></rating-list>
+          <button v-on:click.prevent="GetRatings()">See Reviews</button>
+        </div>
+        <div >
+          <rating-list :ratings="ratings" class="rating"></rating-list>
         </div>
       </form>
     </div>
@@ -65,7 +68,7 @@ export default {
     },
     
     GetRatings() {
-      let url = `${process.env.VUE_APP_REMOTE_API}/reviews?breweryID=${this.selectedBrewery.id}`;
+      let url = `${process.env.VUE_APP_REMOTE_API}/reviews/brewery/${this.selectedBrewery.id}`;
       fetch(url)
         .then(response => {
           response.json().then(json => {
