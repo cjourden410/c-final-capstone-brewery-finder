@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     getUser(id) {
-      let url = `${process.env.VUE_APP_REMOTE_API}/accountUpdate/${id}`;
+      let url = `${process.env.VUE_APP_REMOTE_API}/${id}`;
 
       fetch(url)
         .then(response => {
@@ -52,7 +52,7 @@ export default {
         });
     },
     getUsers() {
-      let url = `${process.env.VUE_APP_REMOTE_API}/accountUpdate`;
+      let url = `${process.env.VUE_APP_REMOTE_API}/`;
 
       fetch(url)
         .then(response => {
@@ -65,12 +65,11 @@ export default {
         });
     },
     saveUser() {
-      let url = `${process.env.VUE_APP_REMOTE_API}/accountUpdate/${this.selectedUser.id}`;
+      let url = `${process.env.VUE_APP_REMOTE_API}/${this.selectedUser.id}`;
 
       fetch(url, {
         method: "PUT",
         headers: { 
-          Accept: 'application/json',
           "Content-Type": "application/json"
         },
         body: JSON.stringify(this.selectedUser)
@@ -87,7 +86,7 @@ export default {
   },
   created() {
     this.user = this.$attrs.user;
-    this.GetUsers();
+    this.getUsers();
   }
 };
 </script>
