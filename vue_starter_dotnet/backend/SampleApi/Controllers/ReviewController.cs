@@ -93,10 +93,10 @@ namespace SampleApi.Controllers
         /// Get a list of reviews for a single breweries beers. 
         /// </summary>
         /// <returns>Returns a list of all reviews in the DB for a single brewery.</returns>
-        [HttpGet("")]
-        public IActionResult GetReviewsByBrewery(int breweryID)
+        [HttpGet("brewery/{id}")]
+        public IActionResult GetReviewsByBrewery(int id)
         {
-            return new JsonResult(breweryDAO.GetReviewsByBrewery(breweryID));
+            return new JsonResult(breweryDAO.GetReviewsByBrewery(id));
         }
     }
 }
