@@ -41,5 +41,12 @@ namespace SampleApi.DAL
         /// </summary>
         /// <returns></returns>
         IList<User> GetUsers();
+
+        /// <summary>
+        /// Retrieves a user from the system by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        User GetUserById(int id);
     }
 }
