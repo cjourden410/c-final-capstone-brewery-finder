@@ -231,9 +231,11 @@ namespace SampleApi.DAL
                     conn.Open();
 
                     string sql =
-                        @"SELECT * 
-                        FROM beers 
-                        where id = @id";
+                        @"SELECT b.id, b.name, b.description, b.image, b.abv, b.beerType, b.breweryID, AVG(rating) avgRating
+                        FROM beers b
+                        JOIN beerReviews br on b.id = br.beerID
+                        WHERE b.id = @id
+                        GROUP BY b.id, b.name, b.description, b.image, b.abv, b.beerType, b.breweryID";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@id", id);
 
