@@ -2,7 +2,10 @@
 <div class="base">
   <div class="home">
     <h1>Home</h1>
-    <div>Welcome {{user.sub}}, {{user.rol}}</div>
+    <div>Welcome {{user.sub}}, to the best craft beer website on the net.  Your current role on ths site is {{user.rol}}.
+      Please enjoy searching for breweries and their beers.  Feel free to rate and leave comments on beers you might have tried inn the past.
+      Thank you for your patronage.
+    </div>
   </div>
   
 </div>
@@ -33,8 +36,8 @@ export default {
   border-radius: 35%;
   margin-left: 15%;
   margin-right: 15%;
- padding: 10px;
-  padding-bottom: 20px;
+ padding: 20px;
+  padding-bottom: 50px;
   text-align: center;
 }
 

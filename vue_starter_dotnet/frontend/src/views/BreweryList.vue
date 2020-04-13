@@ -52,8 +52,8 @@ export default {
   border-radius: 35%;
   margin-left: 15%;
   margin-right: 15%;
- padding: 10px;
-  padding-bottom: 20px;
+ padding: 20px;
+  padding-bottom: 50px;
   text-align: center;
 }
 .brewlist{
