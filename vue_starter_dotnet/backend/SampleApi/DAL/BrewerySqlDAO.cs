@@ -246,7 +246,7 @@ namespace SampleApi.DAL
                     if (reader.Read())
                     {
                         // Create a brewery
-                        beer = RowToObjectBeer(reader);
+                        beer = RowToObjectBeer2(reader);
                     }
                 }
             }
@@ -268,6 +268,21 @@ namespace SampleApi.DAL
             beer.ABV = Convert.ToString(reader["abv"]);
             beer.BeerType = Convert.ToString(reader["beerType"]);
             beer.BreweryID = Convert.ToInt32(reader["breweryID"]);
+            return beer;
+        }
+
+        private Beer RowToObjectBeer2(SqlDataReader reader)
+        {
+            // Create a beer
+            Beer beer = new Beer();
+            beer.Id = Convert.ToInt32(reader["id"]);
+            beer.Name = Convert.ToString(reader["name"]);
+            beer.Description = Convert.ToString(reader["description"]);
+            beer.Image = Convert.ToString(reader["image"]);
+            beer.ABV = Convert.ToString(reader["abv"]);
+            beer.BeerType = Convert.ToString(reader["beerType"]);
+            beer.BreweryID = Convert.ToInt32(reader["breweryID"]);
+            beer.AvgRating = Convert.ToDecimal(reader["avgRating"]);
             return beer;
         }
 

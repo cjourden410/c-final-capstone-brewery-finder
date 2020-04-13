@@ -35,5 +35,9 @@ namespace SampleApi.Models
         /// The brewerys Id to connect beer to a brewery.
         /// </summary>
         public int BreweryID { get; set; }
+        /// <summary>
+        /// The beers average rating
+        /// </summary>
+        public decimal AvgRating { get; set; }
     }
 }
