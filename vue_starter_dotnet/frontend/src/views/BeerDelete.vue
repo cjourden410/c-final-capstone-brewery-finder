@@ -29,11 +29,13 @@ export default {
       let url = `${process.env.VUE_APP_REMOTE_API}/beers/${id}`;
       fetch(url)
         .then(response => {
-          response.json()
-          .then(json => {
+          response.json().then(json => {
             this.beer = json;
-          })
-        }).catch(err => {console.log(err)});
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
     },
     deleteBeer(id) {
       let url = `${process.env.VUE_APP_REMOTE_API}/beers/${id}`;
