@@ -94,7 +94,8 @@ namespace SampleApi.DAL
 
                     string sql =
                         @"SELECT * 
-                        FROM users";
+                        FROM users
+                        WHERE role != 'Admin'";
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
                     // Execute the command
