@@ -9,9 +9,9 @@
             <option v-for="user in users" :key="user.id" v-bind:value="user.id">{{user.username}}</option>
           </select>
         </div>
-        <div>
+        <div v-if="selectedUser">
           Role:
-          <select style="width: 30%" type="text" v-model="user.rol" class="userInput">
+          <select style="width: 30%" type="text" v-model="selectedUser.role" class="userInput">
             <option value="User">Beer Lover</option>
             <option value="Brewer">Brewer</option>
           </select>
