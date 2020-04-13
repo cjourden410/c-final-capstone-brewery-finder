@@ -22,10 +22,10 @@
         <td>Hours of Opperation</td>
         <td>{{brewery.hours}}</td>
       </tr>
-      <tr>
-        <td><router-link tag="button" :to="{name: 'beerList', params: {id:brewery.id}}">{{brewery.name}} Beer List</router-link></td>
-      </tr>
+     
     </table>
+    <router-link tag="button" :to="{name: 'beerList', params: {id:brewery.id}}">{{brewery.name}} Beer List</router-link>
+
   </div>
 </div>
 </template>
@@ -80,7 +80,7 @@ export default {
   margin-left: 15%;
   margin-right: 15%;
   padding: 20px;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
   text-align: center;
 }
 .form{
@@ -88,7 +88,7 @@ export default {
 }
 .base{
   width: auto;
-  height: 600px;
+  height: auto;
   background-image: url('../assets/3.jpg');
 }
 img{
