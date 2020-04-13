@@ -18,7 +18,7 @@
       </tr>
       <tr>
         <td>Beer's Average Rating</td>
-        <td></td>
+        <td>{{beer.avgRating}}</td>
       </tr>
        <tr>
         <td><router-link tag="button" :to="{name: 'ratingsAndReviews', params: {id:beer.id}}">Rate: {{beer.name}}</router-link></td>
@@ -49,6 +49,7 @@ return {
     discription: "",
     beerType: "",
     abv: "",
+    avgRating: 0,
   }
 }
 },
