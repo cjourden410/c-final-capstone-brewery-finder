@@ -103,7 +103,10 @@ export default {
 }
 .base {
   width: auto;
-  height: 600px;
+  height: auto;
   background-image: url("../assets/13.jpg");
+}
+.rating{
+  padding: 50px;
 }
 </style>
