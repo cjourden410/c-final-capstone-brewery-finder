@@ -138,7 +138,7 @@ namespace SampleApi.Controllers
         /// <response code="404">Id was not found</response>
         [HttpGet("{id}", Name = "GetUserById")]
         [ProducesResponseType(404)]
-        public IActionResult GetBrewery(int id)
+        public IActionResult GetUserById(int id)
         {
             User user = userDao.GetUserById(id);
             if (user == null)
