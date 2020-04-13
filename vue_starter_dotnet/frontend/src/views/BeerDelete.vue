@@ -52,11 +52,11 @@ export default {
         }
       });
     },
-    created() {
+  },
+  created() {
       this.getBeer(this.$route.params.id);
       this.user = auth.getUser();
     }
-  }
 };
 </script>
 
