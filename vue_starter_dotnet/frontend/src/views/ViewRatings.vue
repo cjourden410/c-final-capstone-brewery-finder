@@ -37,6 +37,19 @@ export default {
     };
   },
   methods: {
+    getBrewery(id) {
+      let url = `${process.env.VUE_APP_REMOTE_API}/breweries/${id}`;
+
+      fetch(url)
+        .then(response => {
+          response.json().then(json => {
+            this.selectedBrewery = json;
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
     GetBreweries() {
       let url = `${process.env.VUE_APP_REMOTE_API}/breweries`;
 
@@ -50,18 +63,7 @@ export default {
           console.log(err);
         });
     },
-    getBrewery(id) {
-      let url = `${process.env.VUE_APP_REMOTE_API}/breweries/${id}`;
-      fetch(url)
-        .then(response => {
-          response.json().then(json => {
-            this.selectedBrewery = json;
-          });
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    },
+    
     GetRatings(breweryID) {
       let url = `${process.env.VUE_APP_REMOTE_API}/reviews?breweryID=${breweryID}`;
       fetch(url)
@@ -78,7 +80,7 @@ export default {
   created() {
     this.user = this.$attrs.user;
     this.GetRatings(this.$route.params.id);
-    this.getBreweries();
+    this.GetBreweries();
   }
 };
 </script>
