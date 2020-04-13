@@ -23,5 +23,9 @@ namespace SampleApi.Models
         /// The beers rating.
         /// </summary>
         public int Rating { get; set; }
+        /// <summary>
+        /// The beers name
+        /// </summary>
+        public string BeerName { get; set; }
     }
 }

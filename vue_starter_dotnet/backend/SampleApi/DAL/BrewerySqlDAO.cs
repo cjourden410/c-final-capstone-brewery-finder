@@ -347,8 +347,9 @@ namespace SampleApi.DAL
                     conn.Open();
 
                     string sql =
-                        @"SELECT * 
-                        FROM beerReviews";
+                        @"SELECT br.id, br.review, br.beerID, b.name, br.rating 
+                        FROM beerReviews br
+                        JOIN beers b on br.beerID = b.id";
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
                     // Execute the command
@@ -387,9 +388,10 @@ namespace SampleApi.DAL
                     conn.Open();
 
                     string sql =
-                        @"SELECT * 
-                        FROM beerReviews 
-                        where id = @id";
+                        @"SELECT br.id, br.review, br.beerID, b.name, br.rating 
+                        FROM beerReviews br
+                        JOIN beers b on br.beerID = b.id
+                        WHERE br.id = @id";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@id", id);
 
@@ -428,9 +430,10 @@ namespace SampleApi.DAL
                     conn.Open();
 
                     string sql =
-                        @"SELECT * 
-                        FROM beerReviews
-                        WHERE beerID = @beerID";
+                        @"SELECT br.id, br.review, br.beerID, b.name, br.rating 
+                        FROM beerReviews br
+                        JOIN beers b on br.beerID = b.id
+                        WHERE br.beerID = @beerID";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@beerID", beerID);
 
@@ -470,7 +473,7 @@ namespace SampleApi.DAL
                     conn.Open();
 
                     string sql =
-                        @"SELECT br.id, br.review, br.beerID, br.rating 
+                        @"SELECT br.id, br.review, br.beerID, b.name, br.rating 
                         FROM beerReviews br
                         JOIN beers b on br.beerID = b.id
                         JOIN breweries bw on b.breweryID = bw.id
@@ -505,6 +508,7 @@ namespace SampleApi.DAL
             review.Review = Convert.ToString(reader["review"]);
             review.BeerID = Convert.ToInt32(reader["beerID"]);
             review.Rating = Convert.ToInt32(reader["rating"]);
+            review.BeerName = Convert.ToString(reader["name"]);
             return review;
         }
 
