@@ -1,10 +1,10 @@
-<template>
+"<template>
 <div class="base">
   <div class="brewery">
     <h1>{{brewery.name}}</h1>
     <h1>Details</h1>
-    <!-- <div>Welcome {{user.sub}}, {{user.rol}}</div> -->
 
+    <img v-bind:src="`${brewery.images}`" />
     <table class="form">
       <tr>
         <td>Name</td>
@@ -90,5 +90,8 @@ export default {
   width: auto;
   height: 600px;
   background-image: url('../assets/3.jpg');
+}
+img{
+  width: 50%;
 }
 </style>

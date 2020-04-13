@@ -2,6 +2,7 @@
     <table>
         <thead>
             <tr>
+               
                 <td>Id</td>
                 <td>Name</td>
                 <td>Brewer</td>
@@ -9,6 +10,7 @@
         </thead>
         <tbody>
             <tr v-for="brewery in breweries" :key="brewery.id">
+                
                 <td>{{brewery.id}}</td>
                 <td>
                   <router-link :to="{name: 'breweryInfo', params:{id:brewery.id}}">{{brewery.name}}</router-link>
