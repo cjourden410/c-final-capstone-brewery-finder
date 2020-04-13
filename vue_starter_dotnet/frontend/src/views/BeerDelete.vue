@@ -37,8 +37,8 @@ export default {
           console.log(err);
         });
     },
-    deleteBeer(id) {
-      let url = `${process.env.VUE_APP_REMOTE_API}/beers/${id}`;
+    deleteBeer() {
+      let url = `${process.env.VUE_APP_REMOTE_API}/beers/${this.beer.id}`;
       fetch(url, {
         method: "DELETE"
       }).then(response => {
