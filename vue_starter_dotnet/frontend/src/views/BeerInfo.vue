@@ -2,12 +2,9 @@
 <div class="base">
   <div class="beer">
     <h1>{{beer.name}}</h1>
- 
-    <img v-bind:src="`${beer.image}`" />
+    <img v-bind:src="`${beer.image}`" />\
+    <p>{{beer.description}}</p>
     <table class="form">
-      <tr>
-        <td>{{beer.description}}</td>
-      </tr>
       <tr>
         <td>Beer Type</td>
         <td>{{beer.beerType}}</td>
@@ -20,15 +17,10 @@
         <td>Beer's Average Rating</td>
         <td>{{beer.avgRating}}</td>
       </tr>
-       <tr>
-        <td><router-link tag="button" :to="{name: 'ratingsAndReviews', params: {id:beer.id}}">Rate: {{beer.name}}</router-link></td>
-      </tr>
-      <tr>
-        <td>
-          <router-link v-if="user && (user.rol === 'Admin' || user.rol === 'Brewer')" tag="button" class="navibar" :to="{name: 'deleteBeer'}">Delete Beer</router-link>
-        </td>
-      </tr>
     </table>
+    <router-link tag="button" :to="{name: 'ratingsAndReviews', params: {id:beer.id}}">Rate: {{beer.name}}</router-link>
+    <router-link v-if="user && (user.rol === 'Admin' || user.rol === 'Brewer')" tag="button" class="navibar" :to="{name: 'deleteBeer'}">Delete Beer</router-link>
+
   </div>
 </div>
 </template>
