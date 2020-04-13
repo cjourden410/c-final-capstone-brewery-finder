@@ -2,8 +2,8 @@
 <div class="base">
   <div class="beer">
     <h1>{{beer.name}}</h1>
-    <h2>Details</h2>
-    
+ 
+    <img v-bind:src="`${beer.image}`" />
     <table class="form">
       <tr>
         <td>{{beer.description}}</td>
@@ -93,7 +93,10 @@ created() {
 }
 .base{
   width: auto;
-  height: 600px;
+  height: auto;
   background-image: url('../assets/5.jpg');
+}
+img{
+  width: 25%;
 }
 </style>
