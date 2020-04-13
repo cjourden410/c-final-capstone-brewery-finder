@@ -64,8 +64,8 @@ export default {
         });
     },
     
-    GetRatings(breweryID) {
-      let url = `${process.env.VUE_APP_REMOTE_API}/reviews?breweryID=${breweryID}`;
+    GetRatings() {
+      let url = `${process.env.VUE_APP_REMOTE_API}/reviews?breweryID=${this.selectedBrewery.id}`;
       fetch(url)
         .then(response => {
           response.json().then(json => {
@@ -79,7 +79,7 @@ export default {
   },
   created() {
     this.user = this.$attrs.user;
-    this.GetRatings(this.$route.params.id);
+    // this.GetRatings(this.$route.params.id);
     this.GetBreweries();
   }
 };
