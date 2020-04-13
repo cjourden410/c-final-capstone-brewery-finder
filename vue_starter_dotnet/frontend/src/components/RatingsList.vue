@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1>Your Brewery Ratings and Reviews</h1>
+    <h1>Ratings and Reviews</h1>
   <table>
       <thead>
           <tr>
@@ -12,6 +12,9 @@
       <tbody>
           <tr v-for="rating in ratings" :key="rating.id">
               <td>{{rating.beerName}}</td>
+               <!-- <td>
+                    <router-link :to="{name: 'beerInfo', params:{id:rating.beerID}}">{{beer.name}}</router-link>
+                </td> -->
               <td>{{rating.rating}}</td>
               <td>{{rating.review}}</td>
           </tr>
