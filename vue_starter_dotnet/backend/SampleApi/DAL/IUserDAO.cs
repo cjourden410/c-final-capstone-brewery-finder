@@ -53,6 +53,6 @@ namespace SampleApi.DAL
         ///// Gets all users with the role of brewer.
         ///// </summary>
         ///// <returns></returns>
-        //IList<User> GetUserBrewers();
+        //IList<User> GetUserBrewers(string role);
     }
 }

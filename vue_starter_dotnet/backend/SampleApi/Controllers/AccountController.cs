@@ -152,10 +152,11 @@ namespace SampleApi.Controllers
         ///// Get a list of users with the role Brewer. 
         ///// </summary>
         ///// <returns>Returns a list of all users in the DB that are listed as a Brewer.</returns>
-        //[HttpGet("")]
-        //public IActionResult GetUserBrewers()
+        //[HttpGet("{role}")]
+        //public IActionResult GetUserBrewers(string role)
         //{
-        //    return new JsonResult(userDao.GetUserBrewers());
+        //    role = "Brewer";
+        //    return new JsonResult(userDao.GetUserBrewers(role));
         //}
     }
 }

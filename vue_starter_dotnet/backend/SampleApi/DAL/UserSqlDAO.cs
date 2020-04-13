@@ -184,7 +184,7 @@ namespace SampleApi.DAL
         ///// Gets the users with the role of Brewer from the database.
         ///// </summary>
         ///// <returns></returns>
-        //public IList<User> GetUserBrewers()
+        //public IList<User> GetUserBrewers(string role)
         //{
         //    List<User> output = new List<User>();
 
@@ -199,10 +199,10 @@ namespace SampleApi.DAL
         //            string sql =
         //                @"SELECT * 
         //                FROM users
-        //                WHERE role = 'Brewer'";
+        //                WHERE role = @role";
         //            SqlCommand cmd = new SqlCommand(sql, conn);
+        //            cmd.Parameters.AddWithValue("@role", role);
 
-        //            // Execute the command
         //            SqlDataReader reader = cmd.ExecuteReader();
 
         //            // Loop through each row
