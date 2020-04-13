@@ -4,7 +4,7 @@
     <h1>Home</h1>
     <div>Welcome {{user.sub}}, {{user.rol}}</div>
   </div>
-  <!-- <img src="../assets/2.jpg" /> -->
+  
 </div>
 </template>
 
@@ -37,12 +37,7 @@ export default {
   padding-bottom: 20px;
   text-align: center;
 }
-img{
-  display: block;
-  margin: auto;
-  width:50%;
-  border-radius: 50%;
-}
+
 .base{
   width: auto;
   height: 600px;
