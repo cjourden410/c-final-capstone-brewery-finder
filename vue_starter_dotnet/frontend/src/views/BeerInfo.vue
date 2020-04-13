@@ -16,6 +16,10 @@
         <td>Beer ABV</td>
         <td>{{beer.abv}}%</td>
       </tr>
+      <tr>
+        <td>Beer's Average Rating</td>
+        <td></td>
+      </tr>
        <tr>
         <td><router-link tag="button" :to="{name: 'ratingsAndReviews', params: {id:beer.id}}">Rate: {{beer.name}}</router-link></td>
       </tr>
@@ -58,7 +62,8 @@ getBeer(id){
         this.beer = json;
       })
     }).catch(err => {console.log(err)});
-}
+},
+
 },
 created() {
   this.getBeer(this.$route.params.id);
