@@ -10,13 +10,15 @@
           </select>
         </div>
         <div v-if="selectedUser">
+          <div>
           Role:
           <select style="width: 30%" type="text" v-model="selectedUser.role" class="userInput">
             <option value="User">Beer Lover</option>
             <option value="Brewer">Brewer</option>
           </select>
+          </div>
+          <button v-on:click="saveUser">Edit Selected User</button>
         </div>
-        <button v-on:click="saveUser">Edit Selected User</button>
       </form>
     </div>
   </div>
