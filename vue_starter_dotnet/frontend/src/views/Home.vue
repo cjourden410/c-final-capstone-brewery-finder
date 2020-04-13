@@ -39,8 +39,8 @@ export default {
  padding: 20px;
   padding-bottom: 50px;
   text-align: center;
-  height: 500px;
-  vertical-align: middle;
+  height: auto;
+ 
 }
 
 .base{
