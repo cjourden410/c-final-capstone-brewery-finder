@@ -128,5 +128,24 @@ namespace SampleApi.Controllers
         {
             return new JsonResult(userDao.GetUsers());
         }
+
+        /// <summary>
+        /// Gets a single User by id.
+        /// </summary>
+        /// <param name="id">Identifier of the user</param>
+        /// <returns>A User object. 404 if not found.</returns>
+        /// <response code="200">User was not found and returned in body.</response>
+        /// <response code="404">Id was not found</response>
+        [HttpGet("{id}", Name = "GetUserById")]
+        [ProducesResponseType(404)]
+        public IActionResult GetBrewery(int id)
+        {
+            User user = userDao.GetUserById(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return new JsonResult(user);
+        }
     }
 }

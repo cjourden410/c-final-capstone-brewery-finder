@@ -22,6 +22,24 @@ INSERT INTO users
 VALUES
   ('Mike', 'INZ+8Cfe3TLRO5lM2skBfWr7Wkc=', 'K5ZEctZBc+g=', 'Brewer');
 
+-- default username of 'Chris' and default password of 'password'
+INSERT INTO users
+  (username,password,salt,role)
+VALUES
+  ('Chris', '0kilsGIOPQswmXJc/ZgNfaoytq8=', 'ZdtiSGQJw40=', 'Brewer');
+
+-- default username of 'Andrew' and default password of 'password'
+INSERT INTO users
+  (username,password,salt,role)
+VALUES
+  ('Andrew', 'RWFOvW9/Qptuufnz8gs1vRt+CwA=', 'NRI9jbtf3jo=', 'Brewer');
+
+-- default username of 'Fred' and default password of 'password'
+INSERT INTO users
+  (username,password,salt,role)
+VALUES
+  ('Fred', 'rOaJg4ohJrqXWyyVv+d6pGB8BO4=', '+zDfw30D45M=', 'Brewer');
+
 -- adding brewery to breweries table
 INSERT INTO breweries
   (name,brewer,userID,hours,contactInfo,address,history,images)
@@ -31,7 +49,7 @@ VALUES
 INSERT INTO breweries
   (name,brewer,userID,hours,contactInfo,address,history,images)
 VALUES
-  ('Thirsty Dog Brewing Company', 'Mike', 3, 'Mon - Thurs: 12:00PM - 9:00PM, Fri - Sat: 12:00PM - 10:00PM, Sun: 12:00PM - 5:00PM', '234-571-1456', '587 Grant St. Akron, Ohio 44311', 'Here at the Thirsty Dog Brewing Company, full flavor, delicate balance, texture and aroma combine to make beer an infinitely complex and thoroughly enjoyable experience.
+  ('Thirsty Dog Brewing Company', 'Chris', 4, 'Mon - Thurs: 12:00PM - 9:00PM, Fri - Sat: 12:00PM - 10:00PM, Sun: 12:00PM - 5:00PM', '234-571-1456', '587 Grant St. Akron, Ohio 44311', 'Here at the Thirsty Dog Brewing Company, full flavor, delicate balance, texture and aroma combine to make beer an infinitely complex and thoroughly enjoyable experience.
 
 Each of our beers is meticulously hand crafted in small batches using the finest ingredients. High quality malted barley is the source of the beer''s sweetness and body. Select American and European hops are used to balance the malt sweetness, and at times to add special flavors and aromas to the beer.
 
@@ -42,7 +60,7 @@ Our craft brewed beers are far more diverse in range and character than the smal
 INSERT INTO breweries
   (name,brewer,userID,hours,contactInfo,address,history,images)
 VALUES
-  ('Hoppin'' Frog Brewing Company', 'Mike', 3, 'Mon - Thurs: 11:00AM - 6:00PM, Fri - Sat: 11:00AM - 7:00PM', '330-352-4578', '1680 East Waterloo Rd. Akron, OH 44306', 'Hoppin'' Frog is an artisanal brewery in Akron, Ohio making very flavorful beers in the most flavorful styles.  Established in 2006 and brewing with an uncompromising focus on detail from the ingredient selection to the brewing process, the Brewery has become known for quality around the world, and now distributes in 22 states and 38 foreign countries. Hoppin'' Frog has now been rated 20th Best Brewer In The World by RateBeer, the world''s largest and most comprehensive beer-rating website, and thus are One Of The 100 Top Brewers In The World, now for 13 years in-a-row! Hoppin'' Frog is the concept of owner and established brewmaster Fred Karm, a brewer since 1994 who has designed and produced 23 award winning beers at the Great American Beer Festival and World Beer Cup - the two most prestigious contests in the world.', 'https://untappd.akamaized.net/site/brewery_logos_hd/brewery-673_65618_hd.jpeg');
+  ('Hoppin'' Frog Brewing Company', 'Andrew', 5, 'Mon - Thurs: 11:00AM - 6:00PM, Fri - Sat: 11:00AM - 7:00PM', '330-352-4578', '1680 East Waterloo Rd. Akron, OH 44306', 'Hoppin'' Frog is an artisanal brewery in Akron, Ohio making very flavorful beers in the most flavorful styles.  Established in 2006 and brewing with an uncompromising focus on detail from the ingredient selection to the brewing process, the Brewery has become known for quality around the world, and now distributes in 22 states and 38 foreign countries. Hoppin'' Frog has now been rated 20th Best Brewer In The World by RateBeer, the world''s largest and most comprehensive beer-rating website, and thus are One Of The 100 Top Brewers In The World, now for 13 years in-a-row! Hoppin'' Frog is the concept of owner and established brewmaster Fred Karm, a brewer since 1994 who has designed and produced 23 award winning beers at the Great American Beer Festival and World Beer Cup - the two most prestigious contests in the world.', 'https://untappd.akamaized.net/site/brewery_logos_hd/brewery-673_65618_hd.jpeg');
 
 -- adding beers into beers table Great Lakes ID 1
 INSERT INTO beers
