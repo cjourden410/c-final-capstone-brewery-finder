@@ -94,6 +94,7 @@ export default {
   padding: 20px;
   padding-bottom: 50px;
   text-align: center;
+  overflow-y:auto;
 }
 .base {
  width: 100vw;
@@ -107,6 +108,7 @@ export default {
   min-width: 100%;
   min-height: 100%;
   background-image: url("../assets/11.jpg");
+  overflow-y:auto;
 }
 .comments{
   display:inline-block;

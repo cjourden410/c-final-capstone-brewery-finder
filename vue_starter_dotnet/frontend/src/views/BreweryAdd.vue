@@ -167,6 +167,7 @@ export default {
   padding: 20px;
   padding-bottom: 50px;
   text-align: center;
+  overflow-y:auto;
 }
 .breweryInput {
   width: auto;
@@ -186,5 +187,6 @@ form{
   min-width: 100%;
   min-height: 100%;
   background-image: url('../assets/6.jpg');
+  overflow-y:auto;
 }
 </style>

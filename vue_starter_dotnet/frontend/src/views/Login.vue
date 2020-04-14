@@ -98,6 +98,7 @@ export default {
   height: auto;
   text-align: center;
   align-content: center;
+  overflow-y:auto;
 }
 .form-signin {
   margin: auto;
@@ -114,6 +115,7 @@ export default {
   background-attachment: fixed;
   min-width: 100%;
   min-height: 100%;
+  overflow-y:auto;
 }
 .btn {
   width: 30%;

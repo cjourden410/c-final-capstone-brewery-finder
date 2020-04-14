@@ -106,6 +106,7 @@ export default {
   height: auto;
   text-align: center;
   align-content: center;
+  overflow-y:auto;
 }
 .form-register{
   display: block;
@@ -126,6 +127,7 @@ export default {
   min-width: 100%;
   min-height: 100%;
   background-image: url('../assets/12.jpg');
+  overflow-y:auto;
 }
 .btn{
  margin-left: auto;

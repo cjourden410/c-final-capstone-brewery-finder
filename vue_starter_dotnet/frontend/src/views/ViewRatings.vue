@@ -99,6 +99,7 @@ export default {
   padding: 20px;
   padding-bottom: 50px;
   text-align: center;
+  overflow-y:auto;
 }
 .rating {
   margin: auto;
@@ -116,6 +117,7 @@ export default {
   min-height: 100%;
   background-image: url("../assets/13.jpg");
   background-attachment: fixed;
+  overflow-y:auto;
 }
 .rating {
   padding: 50px;

@@ -56,6 +56,7 @@ export default {
   width: 40%;
   margin-left: 30%;
   margin-right: 15%;
+  overflow-y:auto;
 }
 .brewlist{
   margin: auto;
@@ -72,5 +73,6 @@ export default {
   min-width: 100%;
   min-height: 100%;
   background-image: url('../assets/1.jpg');
+  overflow-y:auto;
 }
 </style>

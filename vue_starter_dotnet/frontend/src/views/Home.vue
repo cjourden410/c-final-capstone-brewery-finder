@@ -38,7 +38,8 @@ export default {
   padding: 20px;
   padding-bottom: 50px;
   text-align: center;
-  height: auto;
+  height: auto; 
+  overflow-y:auto;  
 }
 
 .base {
@@ -53,5 +54,6 @@ export default {
   min-width: 100%;
   min-height: 100%;
   background-image: url("../assets/2.jpg");
+  overflow-y:auto;
 }
 </style>

@@ -56,6 +56,7 @@ export default {
   padding: 20px;
   padding-bottom: 50px;
   text-align: center;
+  overflow-y:auto;
 }
 .beer {
   margin: auto;
@@ -72,5 +73,6 @@ export default {
   min-width: 100%;
   min-height: 100%;
   background-image: url("../assets/4.jpg");
+  overflow-y:auto;
 }
 </style>
