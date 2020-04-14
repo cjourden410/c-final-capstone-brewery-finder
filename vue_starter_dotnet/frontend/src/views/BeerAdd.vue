@@ -27,11 +27,13 @@
               v-for="brewery in breweries"
               :key="brewery.id"
               v-bind:value="brewery.id"
-            >{{brewery.id}}</option>
+            >{{brewery.id}} {{brewery.name}}</option>
           </select>
         <!-- <input type="number" v-model="beer.breweryId" class="beerInput" placeholder="1" min="1"/> -->
       </div>
+      <div v-if="selectedBrewery">
       <button v-on:click="addBeer">Submit</button>
+      </div>
     </form>
   </div>
 </div>
