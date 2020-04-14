@@ -1,7 +1,8 @@
 -- *****************************************************************************
 -- This script contains INSERT statements for populating tables with seed data
 -- *****************************************************************************
-
+USE DemoDB
+GO
 BEGIN TRANSACTION;
 
 -- default username of 'user' and default password of 'greatwall'
