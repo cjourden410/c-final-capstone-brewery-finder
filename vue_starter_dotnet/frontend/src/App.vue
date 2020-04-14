@@ -61,6 +61,10 @@ export default {
   padding: 5px;
   padding-bottom: 10px;
   height: 30px;
+}
+button{
+  border: 1px solid black;
+  border-radius: 12px;
   
 }
 </style>

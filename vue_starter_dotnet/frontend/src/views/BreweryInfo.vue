@@ -103,4 +103,9 @@ export default {
 img{
   width: 20%;
 }
+button{
+  border: 1px solid black;
+  border-radius: 12px;
+  
+}
 </style>
