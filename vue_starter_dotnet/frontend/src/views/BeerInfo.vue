@@ -2,7 +2,7 @@
   <div class="base">
     <div class="beer">
       <h1>{{beer.name}}</h1>
-      <img v-bind:src="`${beer.image}`" />\
+      <img v-bind:src="`${beer.image}`" />
       <p>{{beer.description}}</p>
       <table class="form">
         <tr>

@@ -2,7 +2,7 @@
   <div class="base">
     <div class="delete">
       <h1>Remove {{beer.name}} from your Beer List</h1>
-      <button v-on:click="deleteBeer">Delete Beer</button>
+      <button v-on:click.prevent="deleteBeer">Delete Beer</button>
       <router-link tag="button" class="navibar" :to="{name: 'home'}">Cancel and return to Home</router-link>
     </div>
   </div>
