@@ -2,7 +2,6 @@
 <div class="base">
   <div class="brewery">
     <h1>{{brewery.name}}</h1>
-    <h1>Details</h1>
 
     <img v-bind:src="`${brewery.images}`" />
     <table class="form">
