@@ -65,6 +65,7 @@ export default {
   vertical-align: middle;
 }
 button{
+  font-weight: bolder;
   border: 1px solid black;
   border-radius: 12px;
 }

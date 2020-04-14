@@ -37,8 +37,7 @@ const router = new Router({
       component: AccountUpdate,
       meta: {
         requiresAuth: true,
-        isBrewer: true,
-        isAdmin: true   
+        isAdmin: true
       }
     },
     {
@@ -55,8 +54,7 @@ const router = new Router({
       component: BeerAdd,
       meta: {
         requiresAuth: true,
-        isBrewer: true,
-        isAdmin: true
+        isBrewer: true
       }
     },
     {
@@ -66,7 +64,6 @@ const router = new Router({
       meta: {
         requiresAuth: true,
         isBrewer: true,
-        isAdmin: true
       }
     },
     {
@@ -111,7 +108,6 @@ const router = new Router({
       meta: {
         requiresAuth: true,
         isBrewer: true,
-        isAdmin: true
       }
     },
     {
@@ -179,7 +175,6 @@ router.beforeEach((to, from, next) => {
     // Else let them go to their next destination
     next();
   }
-  
 });
 
 export default router;
