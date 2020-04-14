@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <div v-if="user">
-        Logged in
-        
+    <div class="nav">
+      <div class="log" v-if="user">
+        Logged in        
           <button v-on:click="logout">Logout</button>
-        
       </div>
-      <div v-else>
+      <div class="log" v-else>
         <div >
           <router-link tag="button" :to="{name: 'login'}" >Login</router-link>
           <router-link tag="button" :to="{name: 'register'}">Register</router-link>
@@ -58,15 +56,21 @@ export default {
 .navibar{
   font-weight: bolder;
   display: inline-block;
-  background-color: whitesmoke;
-  padding: 5px;
-  padding-bottom: 10px;
+  background-color: gainsboro;
+  padding-left: 5px;
+  margin: 3px;
   height: 30px;
-  vertical-align: middle;
+  
 }
 button{
   font-weight: bolder;
   border: 1px solid black;
   border-radius: 12px;
+}
+.nav{
+  background-color: goldenrod;
+}
+.log{
+  margin-top: 4px;
 }
 </style>

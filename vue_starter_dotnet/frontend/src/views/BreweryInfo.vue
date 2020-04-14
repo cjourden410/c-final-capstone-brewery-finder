@@ -109,6 +109,7 @@ img{
 button{
   border: 1px solid black;
   border-radius: 12px;
-  
+  margin: 3px;
+  background-color: gainsboro;
 }
 </style>
