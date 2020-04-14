@@ -50,20 +50,27 @@ export default {
 .breweryList {
   background-color: whitesmoke;
   border-radius: 35%;
-  margin-left: 15%;
   margin-right: 15%;
  padding: 20px;
   padding-bottom: 50px;
   text-align: center;
+  width: 33%;
+  margin-left: 33%;
 }
 .brewlist{
   margin: auto;
 }
 .base{
- width: 100vw;
+  width: 100vw;
   height: 100vh;
   background-size: cover;
   overflow: hidden;
+  position: fixed; 
+  top: 1; 
+  left: 0;
+  background-attachment: fixed;
+  min-width: 100%;
+  min-height: 100%;
   background-image: url('../assets/1.jpg');
 }
 </style>

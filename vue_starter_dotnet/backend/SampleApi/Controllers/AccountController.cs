@@ -148,15 +148,15 @@ namespace SampleApi.Controllers
             return new JsonResult(user);
         }
 
-        ///// <summary>
-        ///// Get a list of users with the role Brewer. 
-        ///// </summary>
-        ///// <returns>Returns a list of all users in the DB that are listed as a Brewer.</returns>
-        //[HttpGet("{role}")]
-        //public IActionResult GetUserBrewers(string role)
-        //{
-        //    role = "Brewer";
-        //    return new JsonResult(userDao.GetUserBrewers(role));
-        //}
+        /// <summary>
+        /// Get a list of users with the role Brewer. 
+        /// </summary>
+        /// <returns>Returns a list of all users in the DB that are listed as a Brewer.</returns>
+        [HttpGet("brewers")]
+        public IActionResult GetUserBrewers()
+        {
+            string role = "Brewer";
+            return new JsonResult(userDao.GetUserBrewers(role));
+        }
     }
 }

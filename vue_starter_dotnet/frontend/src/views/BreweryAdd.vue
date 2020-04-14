@@ -68,7 +68,7 @@ export default {
   },
    created() {
     this.user = auth.getUser();
-    this.getUsers();
+    this.getBrewers();
   },
   methods: {
     
@@ -112,8 +112,8 @@ export default {
           console.log(err);
         });
     },
-    getUsers() {
-      let url = `${process.env.VUE_APP_REMOTE_API}/`;
+    getBrewers() {
+      let url = `${process.env.VUE_APP_REMOTE_API}/brewers`;
 
       fetch(url)
         .then(response => {
@@ -161,7 +161,8 @@ export default {
 .BreweryAdd {
   background-color: whitesmoke;
   border-radius: 35%;
-  margin-left: 15%;
+  width: 33%;
+  margin-left: 33%;
   margin-right: 15%;
   padding: 20px;
   padding-bottom: 50px;
@@ -178,6 +179,12 @@ form{
   height: 100vh;
   background-size: cover;
   overflow: hidden;
+  position: fixed; 
+  top: 1; 
+  left: 0;
+  background-attachment: fixed;
+  min-width: 100%;
+  min-height: 100%;
   background-image: url('../assets/6.jpg');
 }
 </style>

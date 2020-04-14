@@ -118,6 +118,12 @@ export default {
   height: 100vh;
   background-size: cover;
   overflow: hidden;
+  position: fixed; 
+  top: 1; 
+  left: 0;
+  background-attachment: fixed;
+  min-width: 100%;
+  min-height: 100%;
   background-image: url('../assets/12.jpg');
 }
 .btn{
