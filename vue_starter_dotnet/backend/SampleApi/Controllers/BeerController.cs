@@ -44,12 +44,25 @@ namespace SampleApi.Controllers
         /// <response code="404">Id was not found</response>
         [HttpGet("{id}", Name = "GetBeer")]
         [ProducesResponseType(404)]
+        //public IActionResult GetBeer(int id)
+        //{
+        //    Beer beer = breweryDAO.GetBeerById(id);
+        //    if (beer == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return new JsonResult(beer);
+        //}
         public IActionResult GetBeer(int id)
         {
-            Beer beer = breweryDAO.GetBeerById(id);
+            Beer beer = breweryDAO.GetRatingByBeerById(id);
             if (beer == null)
             {
-                return NotFound();
+                beer = breweryDAO.GetBeerById(id);
+                if (beer == null)
+                {
+                    return NotFound();
+                }
             }
             return new JsonResult(beer);
         }

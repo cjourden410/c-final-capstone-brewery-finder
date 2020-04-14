@@ -35,9 +35,5 @@ namespace SampleApi.Models
         /// The user's role.
         /// </summary>
         public string Role { get; set; }
-        /// <summary>
-        /// The brewerys Id to connect beer to a brewery.
-        /// </summary>
-        public int BreweryID { get; set; }
     }
 }

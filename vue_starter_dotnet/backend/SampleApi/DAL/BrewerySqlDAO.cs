@@ -231,6 +231,47 @@ namespace SampleApi.DAL
                     conn.Open();
 
                     string sql =
+                        @"SELECT *
+                        FROM beers
+                        WHERE id = @id";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    // Execute the command
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Loop through each row
+                    if (reader.Read())
+                    {
+                        // Create a brewery
+                        beer = RowToObjectBeer(reader);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            return beer;
+        }
+
+        /// <summary>
+        /// Gets a beer average rating by its id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Beer GetRatingByBeerById(int id)
+        {
+            Beer beer = null;
+            try
+            {
+                // Create a new connection object
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Open the connection
+                    conn.Open();
+
+                    string sql =
                         @"SELECT b.id, b.name, b.description, b.image, b.abv, b.beerType, b.breweryID, AVG(rating) avgRating
                         FROM beers b
                         JOIN beerReviews br on b.id = br.beerID
