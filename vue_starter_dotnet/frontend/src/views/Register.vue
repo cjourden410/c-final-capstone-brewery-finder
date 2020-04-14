@@ -44,7 +44,7 @@
       <router-link :to="{ name: 'login' }" class="needAccount">
         Have an account?
       </router-link>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
+      <button class="btn btn-sm btn-primary btn-block" type="submit">
         Create Account
       </button>
       </div>
@@ -120,5 +120,10 @@ export default {
   background-size: cover;
   overflow: hidden;
   background-image: url('../assets/12.jpg');
+}
+.btn{
+ margin-left: auto;
+ margin-right: 25%;
+  width: 50%;
 }
 </style>
