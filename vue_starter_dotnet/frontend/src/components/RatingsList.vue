@@ -37,5 +37,14 @@ computed: {}
 </script>
 
 <style>
+table{
+    border-collapse: collapse;
+    border: 1px solid black;
+    table-layout: auto;
+    width: 100%;
+}
+th,td{
+    border: 1px solid black;
+}
 
 </style>
