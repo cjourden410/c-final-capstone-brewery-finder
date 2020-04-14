@@ -2,7 +2,7 @@
   <div class="base">
     <div class="breweryList">
     <h1>Brewery List</h1>
-    <div>Welcome {{user.sub}}, {{user.rol}}</div>
+    
     <brewery-list :breweries="breweries" class="brewlist"></brewery-list>
   </div>
   </div>
