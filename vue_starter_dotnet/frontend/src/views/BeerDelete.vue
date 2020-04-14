@@ -73,5 +73,5 @@ export default {
 .base{
   width: auto;
   height: 600px;
-  background-image: url('../assets/14.jpg');
+}
 </style>
