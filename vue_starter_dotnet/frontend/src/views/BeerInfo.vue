@@ -6,15 +6,15 @@
       <p>{{beer.description}}</p>
       <table class="form">
         <tr>
-          <td>Beer Type</td>
+          <td style="font-weight: bold">Beer Type</td>
           <td>{{beer.beerType}}</td>
         </tr>
         <tr>
-          <td>Beer ABV</td>
+          <td style="font-weight: bold">Beer ABV</td>
           <td>{{beer.abv}}%</td>
         </tr>
         <tr>
-          <td>Beer's Average Rating</td>
+          <td style="font-weight: bold">Beer's Average Rating</td>
           <td>{{beer.avgRating}}</td>
         </tr>
       </table>

@@ -6,19 +6,19 @@
     <img v-bind:src="`${brewery.images}`" />
     <table class="form">
       <tr>
-        <td>Name</td>
+        <td style="font-weight: bold">Name</td>
         <td>{{brewery.name}}</td>
       </tr>
             <tr>
-        <td>Address</td>
+        <td style="font-weight: bold">Address</td>
         <td>{{brewery.address}}</td>
       </tr>
             <tr>
-        <td>Contact Info</td>
+        <td style="font-weight: bold">Contact Info</td>
         <td>{{brewery.contactInfo}}</td>
       </tr>
             <tr>
-        <td>Hours of Opperation</td>
+        <td style="font-weight: bold">Hours of Opperation</td>
         <td>{{brewery.hours}}</td>
       </tr>
      

@@ -46,5 +46,8 @@ table{
 th,td{
     border: 1px solid black;
 }
+thead{
+    font-weight: bold;
+}
 
 </style>
