@@ -70,4 +70,8 @@ export default {
   padding-bottom: 50px;
   text-align: center;
 }
+.base{
+  width: auto;
+  height: 600px;
+  background-image: url('../assets/14.jpg');
 </style>
