@@ -160,7 +160,10 @@ export default {
   align-content: right;
 }
 .history {
-  width: 15%;
+  width: 50%;
   height: 75px;
+}
+.textarea{
+  size:50px;
 }
 </style>
