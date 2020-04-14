@@ -68,7 +68,7 @@ export default {
   },
    created() {
     this.user = auth.getUser();
-    this.getUsers();
+    this.getBrewers();
   },
   methods: {
     
@@ -112,8 +112,8 @@ export default {
           console.log(err);
         });
     },
-    getUsers() {
-      let url = `${process.env.VUE_APP_REMOTE_API}/`;
+    getBrewers() {
+      let url = `${process.env.VUE_APP_REMOTE_API}/brewers`;
 
       fetch(url)
         .then(response => {
