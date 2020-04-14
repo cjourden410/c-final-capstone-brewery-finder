@@ -48,6 +48,7 @@ export default {
 
 <style scoped>
 .breweryList {
+  font-weight: bolder;
   background-color: whitesmoke;
   border-radius: 35%;
  padding: 20px;

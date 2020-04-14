@@ -159,6 +159,7 @@ export default {
 
 <style scoped>
 .BreweryAdd {
+  font-weight: bolder;
   background-color: whitesmoke;
   border-radius: 35%;
   width: 40%;

@@ -12,7 +12,7 @@
         <div class="comments">
           Comments:
           </div>
-          <textarea type="text" v-model="review.review" class="ratingInput" rows="4" cols="40" placeholder="Enter your comments here." />
+          <textarea type="text" v-model="review.review" class="ratingInput textarea" rows="4" cols="40" placeholder="Enter your comments here." />
           
           <div>
           <button v-on:click.prevent="addReview">Submit</button>
@@ -86,6 +86,7 @@ export default {
 
 <style scoped>
 .home {
+  font-weight: bolder;
   background-color: whitesmoke;
   border-radius: 35%;
   width: 40%;
@@ -115,5 +116,8 @@ export default {
   display:inline-block;
   vertical-align: middle;
   margin: auto;
+}
+.textarea{
+  width: 50%;
 }
 </style>

@@ -96,6 +96,7 @@ export default {
   color: white;
 } */
 .register {
+  font-weight: bolder;
   background-color: whitesmoke;
   border-radius: 35%;
   width: 40%;

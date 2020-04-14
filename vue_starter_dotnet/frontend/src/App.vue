@@ -56,6 +56,7 @@ export default {
 
 <style scoped>
 .navibar{
+  font-weight: bolder;
   display: inline-block;
   background-color: whitesmoke;
   padding: 5px;

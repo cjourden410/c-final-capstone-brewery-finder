@@ -131,6 +131,7 @@ export default {
 
 <style scoped>
 .BreweryInfoUpdate {
+  font-weight: bolder;
   background-color: whitesmoke;
   border-radius: 35%;
   width: 40%;

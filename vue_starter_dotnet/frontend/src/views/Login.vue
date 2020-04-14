@@ -88,6 +88,7 @@ export default {
 
 <style scoped>
 .login {
+  font-weight: bolder;
   background-color: whitesmoke;
   border-radius: 35%;
   width: 40%;
