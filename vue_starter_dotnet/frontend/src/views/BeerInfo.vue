@@ -15,7 +15,7 @@
         </tr>
         <tr>
           <td style="font-weight: bold">Beer's Average Rating</td>
-          <td><img :src="require(`../assets/${beer.avgRating}-star.png`)" /></td>
+          <td><img class="stars" :src="require(`../assets/${beer.avgRating}-star.png`)" /></td>
         </tr>
       </table>
       <router-link
@@ -117,5 +117,8 @@ button{
   border: 1px solid black;
   border-radius: 12px;
   
+}
+.stars{
+  width: 75%
 }
 </style>
