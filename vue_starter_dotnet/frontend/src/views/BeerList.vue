@@ -16,8 +16,9 @@ import auth from "@/auth.js";
 export default {
   name: "beers",
   components: {
-    "beer-list": BeerList
+    "beer-list": BeerList,
   },
+
   data() {
     return {
       beers: []
