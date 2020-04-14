@@ -98,7 +98,8 @@ export default {
 .AccountUpdate {
   background-color: whitesmoke;
   border-radius: 35%;
-  margin-left: 15%;
+  width: 33%;
+  margin-left: 33%;
   margin-right: 15%;
   padding: 20px;
   padding-bottom: 50px;
@@ -109,6 +110,12 @@ export default {
   height: 100vh;
   background-size: cover;
   overflow: hidden;
+  position: fixed; 
+  top: 1; 
+  left: 0;
+  background-attachment: fixed;
+  min-width: 100%;
+  min-height: 100%;;
   background-image: url("../assets/7.jpg");
 }
 </style>

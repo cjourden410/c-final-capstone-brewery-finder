@@ -102,17 +102,23 @@ export default {
   margin: auto;
 }
 .base {
+  background-image: url("../assets/10.jpg");
   width: 100vw;
   height: 100vh;
-  background-image: url("../assets/10.jpg");
   background-size: cover;
   overflow: hidden;
+  position: fixed; 
+  top: 1; 
+  left: 0;
+  background-attachment: fixed;
+  min-width: 100%;
+  min-height: 100%;
 }
-.btn{
+.btn {
   width: 30%;
   position: inherit;
 }
-.center{
+.center {
   margin-left: 35%;
   margin-right: 35%;
 }
