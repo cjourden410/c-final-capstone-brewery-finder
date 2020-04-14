@@ -181,46 +181,46 @@ namespace SampleApi.DAL
             }
         }
 
-        ///// <summary>
-        ///// Gets the users with the role of Brewer from the database.
-        ///// </summary>
-        ///// <returns></returns>
-        //public IList<User> GetUserBrewers(string role)
-        //{
-        //    List<User> output = new List<User>();
+        /// <summary>
+        /// Gets the users with the role of Brewer from the database.
+        /// </summary>
+        /// <returns></returns>
+        public IList<User> GetUserBrewers(string role)
+        {
+            List<User> output = new List<User>();
 
-        //    try
-        //    {
-        //        // Create a new connection object
-        //        using (SqlConnection conn = new SqlConnection(connectionString))
-        //        {
-        //            // Open the connection
-        //            conn.Open();
+            try
+            {
+                // Create a new connection object
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Open the connection
+                    conn.Open();
 
-        //            string sql =
-        //                @"SELECT * 
-        //                FROM users
-        //                WHERE role = @role";
-        //            SqlCommand cmd = new SqlCommand(sql, conn);
-        //            cmd.Parameters.AddWithValue("@role", role);
+                    string sql =
+                        @"SELECT * 
+                        FROM users
+                        WHERE role = @role";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@role", role);
 
-        //            SqlDataReader reader = cmd.ExecuteReader();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-        //            // Loop through each row
-        //            while (reader.Read())
-        //            {
-        //                User user = MapRowToUser(reader);
-        //                output.Add(user);
-        //            }
-        //        }
-        //    }
-        //    catch (SqlException)
-        //    {
-        //        throw;
-        //    }
+                    // Loop through each row
+                    while (reader.Read())
+                    {
+                        User user = MapRowToUser(reader);
+                        output.Add(user);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
 
-        //    return output;
-        //}
+            return output;
+        }
 
         /// <summary>
         /// Updates the user in the database.

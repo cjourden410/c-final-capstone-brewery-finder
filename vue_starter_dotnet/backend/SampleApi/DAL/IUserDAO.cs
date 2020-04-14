@@ -49,10 +49,10 @@ namespace SampleApi.DAL
         /// <returns></returns>
         User GetUserById(int id);
 
-        ///// <summary>
-        ///// Gets all users with the role of brewer.
-        ///// </summary>
-        ///// <returns></returns>
-        //IList<User> GetUserBrewers(string role);
+        /// <summary>
+        /// Gets all users with the role of brewer.
+        /// </summary>
+        /// <returns></returns>
+        IList<User> GetUserBrewers(string role);
     }
 }
