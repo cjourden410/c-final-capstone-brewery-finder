@@ -33,7 +33,7 @@
           required
         />
         <router-link :to="{ name: 'register' }" id="needAccount">Need an account?</router-link>
-        <button type="submit" class="btn btn-sm btn-primary btn-block">Sign in</button>
+        <button type="submit" class="btn btn-sm btn-primary btn-block center">Sign in</button>
       </form>
     </div>
   </div>
@@ -110,5 +110,10 @@ export default {
 }
 .btn{
   width: 30%;
+  position: inherit;
+}
+.center{
+  margin-left: 35%;
+  margin-right: 35%;
 }
 </style>

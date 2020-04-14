@@ -98,11 +98,13 @@ export default {
 .register {
   background-color: whitesmoke;
   border-radius: 35%;
-  margin-left: 15%;
-  margin-right: 15%;
- padding: 20px;
+  margin-left: 40%;
+  margin-right: 40%;
+  padding: 20px;
   padding-bottom: 50px;
+  height: auto;
   text-align: center;
+  align-content: center;
 }
 .form-register{
   display: block;
