@@ -2,7 +2,7 @@
   <div class="base">
     <div class="home">
       <h1>Home</h1>
-      <div>
+      <div class="text">
         Welcome {{user.sub}}, to the best craft beer website on the net. Your current role on ths site is {{user.rol}}.
         Please enjoy searching for breweries and their beers. Feel free to rate and leave comments on beers you might have tried inn the past.
         Thank you for your patronage.
@@ -43,8 +43,12 @@ export default {
   padding: 50px;
   background-image: url("../assets/te.png");
   background-size: cover;
+  font-weight: bold;
+ 
 }
-
+.text{
+  font-size: 16pt;
+}
 .base {
   width: 100vw;
   height: 100vh;
