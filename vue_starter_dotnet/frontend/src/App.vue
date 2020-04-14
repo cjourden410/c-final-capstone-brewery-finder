@@ -17,7 +17,7 @@
       <router-link tag="button" class="navibar" :to="{name: 'home'}">Home</router-link>
       <router-link tag="button" class="navibar" :to="{name: 'breweryList'}">Brewery List</router-link>
       <router-link v-if="user && (user.rol === 'Admin')" tag="button" class="navibar" :to="{name: 'breweryAdd'}">Add a new Brewery</router-link>
-      <router-link v-if="user && (user.rol === 'Admin' || user.rol === 'Brewer')" tag="button" class="navibar" :to="{name: 'accountUpdate'}">Update Account</router-link>
+      <router-link v-if="user && (user.rol === 'Admin')" tag="button" class="navibar" :to="{name: 'accountUpdate'}">Update Account</router-link>
       <router-link v-if="user && (user.rol === 'Admin' || user.rol === 'Brewer')" tag="button" class="navibar" :to="{name: 'breweryInfoUpdate'}">Update Brewery</router-link>
       <router-link v-if="user && (user.rol === 'Admin' || user.rol === 'Brewer')" tag="button" class="navibar" :to="{name: 'beerAdd'}">Add a Beer</router-link>
       <router-link v-if="user && (user.rol === 'Admin' || user.rol === 'Brewer' || user.rol === 'User')" tag="button" class="navibar" :to="{name: 'viewRatings'}">View Ratings</router-link>
