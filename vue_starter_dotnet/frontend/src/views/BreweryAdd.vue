@@ -29,7 +29,7 @@
         <input type="text" v-model="brewery.brewer" class="breweryInput" placeholder="Billy Bob" />
       </div>
       <div>
-        User ID:
+        User:
         <!-- <input type = "number" v-model.number="brewery.userID" class="breweryInput" placeholder="123" min="1"/> -->
           <select style="width: 30%" @change="getUser(chosenId)" v-model="brewery.userID">
             <option v-for="user in users" :key="user.id" v-bind:value="user.id">{{user.username}}</option>
@@ -174,8 +174,10 @@ form{
   -webkit-box-align: start;
 }
 .base{
-  width: auto;
-  height: 600px;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  overflow: hidden;
   background-image: url('../assets/6.jpg');
 }
 </style>
