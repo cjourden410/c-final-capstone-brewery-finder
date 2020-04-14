@@ -15,7 +15,7 @@
         </tr>
         <tr>
           <td style="font-weight: bold">Beer's Average Rating</td>
-          <td>{{beer.avgRating}}</td>
+          <td><img :src="require(`../assets/${beer.avgRating}-star.png`)" /></td>
         </tr>
       </table>
       <router-link
