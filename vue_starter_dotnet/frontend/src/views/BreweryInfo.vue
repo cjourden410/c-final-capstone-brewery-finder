@@ -94,6 +94,6 @@ export default {
   background-image: url('../assets/3.jpg');
 }
 img{
-  width: 50%;
+  width: 20%;
 }
 </style>
