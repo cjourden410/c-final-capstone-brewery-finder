@@ -62,6 +62,22 @@ INSERT INTO breweries
 VALUES
   ('Hoppin'' Frog Brewing Company', 'Andrew', 5, 'Mon - Thurs: 11:00AM - 6:00PM, Fri - Sat: 11:00AM - 7:00PM', '330-352-4578', '1680 East Waterloo Rd. Akron, OH 44306', 'Hoppin'' Frog is an artisanal brewery in Akron, Ohio making very flavorful beers in the most flavorful styles.  Established in 2006 and brewing with an uncompromising focus on detail from the ingredient selection to the brewing process, the Brewery has become known for quality around the world, and now distributes in 22 states and 38 foreign countries. Hoppin'' Frog has now been rated 20th Best Brewer In The World by RateBeer, the world''s largest and most comprehensive beer-rating website, and thus are One Of The 100 Top Brewers In The World, now for 13 years in-a-row! Hoppin'' Frog is the concept of owner and established brewmaster Fred Karm, a brewer since 1994 who has designed and produced 23 award winning beers at the Great American Beer Festival and World Beer Cup - the two most prestigious contests in the world.', 'https://untappd.akamaized.net/site/brewery_logos_hd/brewery-673_65618_hd.jpeg');
 
+-- adding brewers and breweries to brewers_breweries table
+INSERT INTO brewers_breweries
+  (userID,breweryID)
+VALUES
+  (3, 1);
+
+INSERT INTO brewers_breweries
+  (userID,breweryID)
+VALUES
+  (4, 2);
+
+INSERT INTO brewers_breweries
+  (userID,breweryID)
+VALUES
+  (5, 3);
+
 -- adding beers into beers table Great Lakes ID 1
 INSERT INTO beers
   (name,description,image,abv,beerType,breweryID)

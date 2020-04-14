@@ -26,7 +26,7 @@ CREATE TABLE users
 	salt		varchar(50)	not null,
 	role		varchar(50)	default('user'),
 
-	constraint pk_users primary key (id)
+	constraint pk_users primary key (id),
 );
 
 -- Add breweries table
@@ -47,6 +47,17 @@ CREATE TABLE breweries
     constraint fk_userID FOREIGN KEY (userID) REFERENCES users(id)
 );
 
+-- Add a table that combines brewers with breweries
+CREATE TABLE brewers_breweries
+(
+	userID		int			not null,
+	breweryID	int			not null,
+
+	constraint pk_brewers_breweries primary key (userID, breweryID),
+	constraint fk_brewers_breweries_userID FOREIGN KEY (userID) REFERENCES users(id),
+	constraint fk_brewers_breweries_breweryID FOREIGN KEY (breweryID) REFERENCES breweries(id)
+);
+
 -- Add beers table
 CREATE TABLE beers
 (
@@ -57,6 +68,7 @@ CREATE TABLE beers
 	abv			decimal(3,1)  not null,
 	beerType    varchar(50)  not null,
 	breweryID   int	         not null,
+	isActive	bit default (1),
 
 	constraint pk_beers primary key (id),
     constraint fk_breweryID FOREIGN KEY (breweryID) REFERENCES breweries(id)

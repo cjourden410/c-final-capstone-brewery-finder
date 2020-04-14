@@ -262,6 +262,7 @@ namespace SampleApi.DAL
                 Password = Convert.ToString(reader["password"]),
                 Salt = Convert.ToString(reader["salt"]),
                 Role = Convert.ToString(reader["role"])
+                //BreweryID = Convert.ToInt32(reader["breweryID"])
             };
         }
     }
