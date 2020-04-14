@@ -61,6 +61,7 @@ export default {
   padding: 5px;
   padding-bottom: 10px;
   height: 30px;
+  vertical-align: middle;
 }
 button{
   border: 1px solid black;
