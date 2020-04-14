@@ -30,7 +30,11 @@
       </div>
       <div>
         User ID:
-        <input type = "number" v-model.number="brewery.userID" class="breweryInput" placeholder="123" min="1"/>
+        <!-- <input type = "number" v-model.number="brewery.userID" class="breweryInput" placeholder="123" min="1"/> -->
+          <select style="width: 30%" @change="getUser(chosenId)" v-model="brewery.userID">
+            <option v-for="user in users" :key="user.id" v-bind:value="user.id">{{user.username}}</option>
+          </select>
+
       </div>
     
       <!-- <button type="submit" @click.stop.prevent="submit()">Submit</button> -->
@@ -48,6 +52,10 @@ export default {
   props: {},
   data() {
     return {
+      selectedUser: null,
+      users: [],
+      chosenId: Number,
+      user: Object,
       brewery: {
         breweryID: 0,
         nameOfBrewery: "",
@@ -60,6 +68,7 @@ export default {
   },
    created() {
     this.user = auth.getUser();
+    this.getUsers();
   },
   methods: {
     
@@ -90,7 +99,33 @@ export default {
 
     //     .then(err => console.error(err));
     // }
-        register() {
+    getUser(id) {
+      let url = `${process.env.VUE_APP_REMOTE_API}/${id}`;
+
+      fetch(url)
+        .then(response => {
+          response.json().then(json => {
+            this.selectedUser = json;
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    getUsers() {
+      let url = `${process.env.VUE_APP_REMOTE_API}/`;
+
+      fetch(url)
+        .then(response => {
+          response.json().then(json => {
+            this.users = json;
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    register() {
      // Use fetch to Add the brewery on the server (POST)
 
       let url = `${process.env.VUE_APP_REMOTE_API}/breweries`;
