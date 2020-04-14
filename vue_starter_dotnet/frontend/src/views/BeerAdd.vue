@@ -22,7 +22,14 @@
       </div>
        <div>
         Your Brewery ID:
-        <input type="number" v-model="beer.breweryId" class="beerInput" placeholder="1" min="1"/>
+        <select @change="getBrewery(chosenId)" v-model="chosenId">
+            <option
+              v-for="brewery in breweries"
+              :key="brewery.id"
+              v-bind:value="brewery.id"
+            >{{brewery.id}}</option>
+          </select>
+        <!-- <input type="number" v-model="beer.breweryId" class="beerInput" placeholder="1" min="1"/> -->
       </div>
       <button v-on:click="addBeer">Submit</button>
     </form>
@@ -37,6 +44,9 @@ export default {
   props: {},
   data(){
     return{
+      breweries: [],
+      chosenId: Number,
+      selectedBrewery: null,
       beer:{
         beerId: 0,
         name: "",
@@ -49,10 +59,34 @@ export default {
       registrationErrors: false
     };
   },
-  created(){
-    this.user = auth.getUser();
-  },
+  
   methods:{
+    getBrewery(id) {
+      let url = `${process.env.VUE_APP_REMOTE_API}/breweries/${id}`;
+
+      fetch(url)
+        .then(response => {
+          response.json().then(json => {
+            this.selectedBrewery = json;
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+     GetBreweries() {
+      let url = `${process.env.VUE_APP_REMOTE_API}/breweries`;
+
+      fetch(url)
+        .then(response => {
+          response.json().then(json => {
+            this.breweries = json;
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
     addBeer(){
           let url = `${process.env.VUE_APP_REMOTE_API}/beers`;
 
@@ -73,8 +107,11 @@ export default {
           alert(`There was an error: ${response.status}: ${response.statusText}`)
         }
       });
-    }
-
+    },
+created(){
+    this.user = auth.getUser();
+    this.GetBreweries();
+  },
   }
 };
 </script>

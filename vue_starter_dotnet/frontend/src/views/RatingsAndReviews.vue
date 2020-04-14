@@ -15,7 +15,7 @@
           <textarea type="text" v-model="review.review" class="ratingInput" rows="4" cols="40" placeholder="Enter your comments here." />
           
           <div>
-          <button v-on:click="addReview">Submit</button>
+          <button v-on:click.prevent="addReview">Submit</button>
           </div>
       </form>
     </div>
