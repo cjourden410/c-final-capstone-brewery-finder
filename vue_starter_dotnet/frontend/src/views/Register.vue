@@ -98,8 +98,9 @@ export default {
 .register {
   background-color: whitesmoke;
   border-radius: 35%;
-  margin-left: 40%;
-  margin-right: 40%;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 15%;
   padding: 20px;
   padding-bottom: 50px;
   height: auto;

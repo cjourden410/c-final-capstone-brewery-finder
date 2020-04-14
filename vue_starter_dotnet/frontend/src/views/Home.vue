@@ -32,13 +32,13 @@ export default {
 .home {
   background-color: whitesmoke;
   border-radius: 35%;
-  margin-left: 33%;
+  width: 40%;
+  margin-left: 30%;
   margin-right: 15%;
   padding: 20px;
   padding-bottom: 50px;
   text-align: center;
   height: auto;
-  width: 33%;
 }
 
 .base {

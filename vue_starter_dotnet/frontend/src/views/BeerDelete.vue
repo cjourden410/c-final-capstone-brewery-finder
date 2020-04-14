@@ -64,8 +64,8 @@ export default {
 .delete {
   background-color: whitesmoke;
   border-radius: 35%;
-  width: 33%;
-  margin-left: 33%;
+  width: 40%;
+  margin-left: 30%;
   margin-right: 15%;
   padding: 20px;
   padding-bottom: 50px;

@@ -16,7 +16,7 @@
         <div v-if="selectedBrewery" class="infoList">
           <button v-on:click.prevent="GetRatings()">See Reviews</button>
         </div>
-        <div >
+        <div>
           <rating-list :ratings="ratings" class="rating"></rating-list>
         </div>
       </form>
@@ -66,7 +66,7 @@ export default {
           console.log(err);
         });
     },
-    
+
     GetRatings() {
       let url = `${process.env.VUE_APP_REMOTE_API}/reviews/brewery/${this.selectedBrewery.id}`;
       fetch(url)
@@ -92,11 +92,12 @@ export default {
 .viewRatings {
   background-color: whitesmoke;
   border-radius: 35%;
-  margin-left: 33%;
+  width: 40%;
+  margin-left: 30%;
   margin-right: 15%;
- padding: 20px;
+  margin-left: 30%;
+  padding: 20px;
   padding-bottom: 50px;
-  width: 33%;
   text-align: center;
 }
 .rating {
@@ -107,15 +108,16 @@ export default {
   height: 100vh;
   background-size: cover;
   overflow: hidden;
-  position: fixed; 
-  top: 1; 
+  position: fixed;
+  top: 1;
   left: 0;
   background-attachment: fixed;
   min-width: 100%;
   min-height: 100%;
   background-image: url("../assets/13.jpg");
+  background-attachment: fixed;
 }
-.rating{
+.rating {
   padding: 50px;
 }
 </style>
