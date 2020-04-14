@@ -60,8 +60,10 @@ export default {
   margin: auto;
 }
 .base{
- width: auto;
- height: 600px;
+ width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  overflow: hidden;
   background-image: url('../assets/1.jpg');
 }
 </style>

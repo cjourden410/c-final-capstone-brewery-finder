@@ -4,7 +4,7 @@
       <div v-if="user">
         Logged in
         
-          <button v-on:click="logout">Logout</button>
+          <button class="btn" v-on:click="logout">Logout</button>
         
       </div>
       <div v-else>

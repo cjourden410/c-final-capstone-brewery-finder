@@ -140,8 +140,10 @@ export default {
   text-align: center;
 }
 .base {
-  width: auto;
-  height: 600px;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  overflow: hidden;
   background-image: url("../assets/8.jpg");
 }
 .infoList {
