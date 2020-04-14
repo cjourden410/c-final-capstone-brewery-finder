@@ -30,7 +30,7 @@
       />
       </div>
       <div class="drew">
-        <label>Confirm Password</label>
+        <!-- <label>Confirm Password</label> -->
       <input
         type="password"
         id="confirmPassword"
@@ -112,8 +112,11 @@ export default {
   display: block;
 }
 .base{
-  width: auto;
-  height: 600px;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/10.jpg");
+  background-size: cover;
+  overflow: hidden;
   background-image: url('../assets/12.jpg');
 }
 </style>
