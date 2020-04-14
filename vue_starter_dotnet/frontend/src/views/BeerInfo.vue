@@ -85,8 +85,10 @@ created() {
   margin: auto;
 }
 .base{
-  width: auto;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  overflow: hidden;
   background-image: url('../assets/5.jpg');
 }
 img{

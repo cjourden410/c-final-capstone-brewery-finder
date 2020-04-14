@@ -87,8 +87,10 @@ export default {
   margin: auto;
 }
 .base{
-  width: auto;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  overflow: hidden;
   background-image: url('../assets/3.jpg');
 }
 img{

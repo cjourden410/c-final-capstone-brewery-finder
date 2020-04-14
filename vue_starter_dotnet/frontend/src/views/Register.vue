@@ -116,7 +116,6 @@ export default {
 .base{
   width: 100vw;
   height: 100vh;
-  background-image: url("../assets/10.jpg");
   background-size: cover;
   overflow: hidden;
   background-image: url('../assets/12.jpg');
