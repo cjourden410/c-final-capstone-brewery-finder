@@ -83,6 +83,7 @@ export default {
   padding-bottom: 75px;
   text-align: center;
   overflow-y:auto;
+  padding: 50px;
 }
 .form{
   margin: auto;

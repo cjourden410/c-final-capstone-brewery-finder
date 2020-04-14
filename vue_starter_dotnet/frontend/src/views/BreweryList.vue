@@ -57,6 +57,7 @@ export default {
   margin-left: 30%;
   margin-right: 15%;
   overflow-y:auto;
+  padding: 50px;
 }
 .brewlist{
   margin: auto;

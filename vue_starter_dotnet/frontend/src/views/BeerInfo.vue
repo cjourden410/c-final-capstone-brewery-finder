@@ -89,6 +89,7 @@ export default {
   padding-bottom: 50px;
   text-align: center;
   overflow-y:auto;
+  padding: 50px;
 }
 .form {
   margin: auto;
@@ -106,6 +107,7 @@ export default {
   min-height: 100%;
   background-image: url("../assets/5.jpg");
   overflow-y:auto;
+  padding: 50px;
 }
 img {
   width: 25%;

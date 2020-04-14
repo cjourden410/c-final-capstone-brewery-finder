@@ -71,6 +71,7 @@ export default {
   padding-bottom: 50px;
   text-align: center;
   overflow-y:auto;
+  padding: 50px;
 }
 .base{
   width: 100vw;

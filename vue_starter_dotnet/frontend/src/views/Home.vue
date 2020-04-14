@@ -40,6 +40,7 @@ export default {
   text-align: center;
   height: auto; 
   overflow-y:auto;  
+  padding: 50px;
 }
 
 .base {

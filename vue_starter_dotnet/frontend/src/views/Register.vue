@@ -107,6 +107,7 @@ export default {
   text-align: center;
   align-content: center;
   overflow-y:auto;
+  padding: 50px;
 }
 .form-register{
   display: block;
