@@ -41,6 +41,8 @@ export default {
   height: auto; 
   overflow-y:auto;  
   padding: 50px;
+  background-image: url("../assets/te.png");
+  background-size: cover;
 }
 
 .base {
