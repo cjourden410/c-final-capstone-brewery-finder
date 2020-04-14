@@ -22,7 +22,7 @@
       </div>
        <div>
         Your Brewery ID:
-        <select @change="getBrewery(chosenId)" v-model="chosenId">
+        <select @change="getBrewery(chosenId)" v-model="beer.breweryId">
             <option
               v-for="brewery in breweries"
               :key="brewery.id"
@@ -109,11 +109,11 @@ export default {
           alert(`There was an error: ${response.status}: ${response.statusText}`)
         }
       });
-    },
-created(){
+    }
+  },
+  created(){
     this.user = auth.getUser();
     this.GetBreweries();
-  },
   }
 };
 </script>
