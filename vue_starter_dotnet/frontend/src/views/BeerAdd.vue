@@ -21,7 +21,7 @@
         <input type="number" v-model="beer.abv" class="beerInput" placeholder="9.0" step="0.1" min="0" max="99.9"/>
       </div>
       <div>
-        Type of Beer:
+        Image of your:
         <input type="text" v-model="beer.image" class="beerInput" placeholder="Link to your image" />
       </div>
        <div>
