@@ -3,6 +3,7 @@
 -- *****************************************************************************
 USE DemoDB
 GO
+
 BEGIN TRANSACTION;
 
 -- default username of 'user' and default password of 'greatwall'
