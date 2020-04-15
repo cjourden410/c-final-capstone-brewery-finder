@@ -100,7 +100,18 @@ namespace SampleApi.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteBeer(int id)
         {
-            breweryDAO.DeleteBeer(id);
+            //breweryDAO.DeleteBeer(id);
+            //return Ok();
+            Beer beer = breweryDAO.GetRatingByBeerById(id);
+            if (beer == null)
+            {
+                breweryDAO.DeleteBeer(id);
+            }
+            else
+            {
+                breweryDAO.DeleteReview(id);
+                breweryDAO.DeleteBeer(id);
+            }
             return Ok();
         }
     }

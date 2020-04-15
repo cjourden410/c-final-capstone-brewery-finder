@@ -55,6 +55,25 @@ namespace SampleApi.Controllers
         }
 
         /// <summary>
+        /// Gets a single Brewery by brewers userID.
+        /// </summary>
+        /// <param name="id">Identifier of the brewery</param>
+        /// <returns>A Brewery object. 404 if not found.</returns>
+        /// <response code="200">Brewery was not found and returned in body.</response>
+        /// <response code="404">Id was not found</response>
+        [HttpGet("brewer")]
+        [ProducesResponseType(404)]
+        public IActionResult GetBreweryByBrewerId(int id)
+        {
+            Brewery brewery = breweryDAO.GetBreweryByBrewerId(id);
+            if (brewery == null)
+            {
+                return NotFound();
+            }
+            return new JsonResult(brewery);
+        }
+
+        /// <summary>
         /// Insert a Brewery into the DB
         /// </summary>
         /// <param name="brewery">Brewery object to add to the DB.</param>

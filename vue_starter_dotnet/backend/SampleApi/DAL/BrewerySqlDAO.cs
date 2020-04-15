@@ -95,6 +95,47 @@ namespace SampleApi.DAL
             return brewery;
         }
 
+        /// <summary>
+        /// Gets a brewery by the userID (brewer).
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Brewery GetBreweryByBrewerId(int id)
+        {
+            Brewery brewery = null;
+            try
+            {
+                // Create a new connection object
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Open the connection
+                    conn.Open();
+
+                    string sql =
+                        @"SELECT * 
+                        FROM breweries 
+                        where userID = @userID";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@userID", id);
+
+                    // Execute the command
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Loop through each row
+                    if (reader.Read())
+                    {
+                        // Create a brewery
+                        brewery = RowToObject(reader);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            return brewery;
+        }
+
         private Brewery RowToObject(SqlDataReader reader)
         {
             // Create a brewery
@@ -594,6 +635,32 @@ namespace SampleApi.DAL
                     cmd.Parameters.AddWithValue("@rating", review.Rating);
 
                     return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Removes a review from the database.
+        /// </summary>
+        /// <param name="beerID"></param>
+        public void DeleteReview(int beerID)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = $"Delete from beerReviews where beerID = @beerID";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@beerID", beerID);
+
+                    cmd.ExecuteNonQuery();
+                    return;
                 }
             }
             catch (SqlException ex)
