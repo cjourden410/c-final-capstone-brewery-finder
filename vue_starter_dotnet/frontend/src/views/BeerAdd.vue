@@ -108,8 +108,7 @@ export default {
     else if (this.user.rol === 'Brewer'){
         let username = this.user.sub;
         let url = `${process.env.VUE_APP_REMOTE_API}/breweries/brewer/${username}`;
-        let url2 = `${process.env.VUE_APP_REMOTE_API}/breweries`;
-
+        
       fetch(url)
         .then(response => {
           response.json().then(json => {
