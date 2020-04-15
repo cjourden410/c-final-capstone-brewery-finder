@@ -7,6 +7,9 @@
         Please enjoy searching for breweries and their beers. Feel free to rate and leave comments on beers you might have tried in the past.
         Thank you for your patronage.
       </div>
+      <div>
+        <img class="te" src="../assets/te.png" />
+      </div>
     </div>
   </div>
 </template>
@@ -62,5 +65,9 @@ export default {
   background-image: url("../assets/2.jpg");
   overflow-y:auto;
   padding: 50px
+}
+.te{
+  width: 30%;
+  padding-top: 10px;
 }
 </style>
