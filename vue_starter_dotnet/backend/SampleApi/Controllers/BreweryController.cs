@@ -61,16 +61,12 @@ namespace SampleApi.Controllers
         /// <returns>A Brewery object. 404 if not found.</returns>
         /// <response code="200">Brewery was not found and returned in body.</response>
         /// <response code="404">Id was not found</response>
-        [HttpGet("brewer")]
+        //[HttpGet("{username}")]
+        [HttpGet("brewer/{username}")]
         [ProducesResponseType(404)]
-        public IActionResult GetBreweryByBrewerId(int id)
+        public IActionResult GetBreweryByBrewerId(string username)
         {
-            Brewery brewery = breweryDAO.GetBreweryByBrewerId(id);
-            if (brewery == null)
-            {
-                return NotFound();
-            }
-            return new JsonResult(brewery);
+            return new JsonResult(breweryDAO.GetBreweryByBrewerId(username));
         }
 
         /// <summary>

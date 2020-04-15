@@ -19,7 +19,7 @@ namespace SampleApi.DAL
         IList<BeerReview> GetReviews();
         void DeleteBeer(int beerID);
         Beer GetRatingByBeerById(int id);
-        Brewery GetBreweryByBrewerId(int id);
+        IList<Brewery> GetBreweryByBrewerId(string username);
         void DeleteReview(int beerID);
     }
 }

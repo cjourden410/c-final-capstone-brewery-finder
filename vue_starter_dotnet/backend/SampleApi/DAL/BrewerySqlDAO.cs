@@ -100,9 +100,10 @@ namespace SampleApi.DAL
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Brewery GetBreweryByBrewerId(int id)
+        public IList<Brewery> GetBreweryByBrewerId(string username)
         {
-            Brewery brewery = null;
+            List<Brewery> output = new List<Brewery>();
+
             try
             {
                 // Create a new connection object
@@ -112,20 +113,21 @@ namespace SampleApi.DAL
                     conn.Open();
 
                     string sql =
-                        @"SELECT * 
-                        FROM breweries 
-                        where userID = @userID";
+                        @"SELECT b.*
+                        FROM breweries b
+                        JOIN users u on b.userID = u.id
+                        WHERE u.id = (SELECT id FROM users WHERE username = @username)";
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@userID", id);
+                    cmd.Parameters.AddWithValue("@username", username);
 
                     // Execute the command
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     // Loop through each row
-                    if (reader.Read())
+                    while (reader.Read())
                     {
-                        // Create a brewery
-                        brewery = RowToObject(reader);
+                        Brewery brewery = RowToObject(reader);
+                        output.Add(brewery);
                     }
                 }
             }
@@ -133,7 +135,8 @@ namespace SampleApi.DAL
             {
                 throw;
             }
-            return brewery;
+
+            return output;
         }
 
         private Brewery RowToObject(SqlDataReader reader)

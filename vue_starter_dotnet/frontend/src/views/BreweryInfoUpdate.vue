@@ -90,7 +90,19 @@ export default {
         });
     },
     GetBreweries() {
-      let url = `${process.env.VUE_APP_REMOTE_API}/breweries`;
+      // let url = `${process.env.VUE_APP_REMOTE_API}/breweries`;
+
+      // fetch(url)
+      //   .then(response => {
+      //     response.json().then(json => {
+      //       this.breweries = json;
+      //     });
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //   });
+      if(this.user.rol === 'Admin'){
+        let url = `${process.env.VUE_APP_REMOTE_API}/breweries`;
 
       fetch(url)
         .then(response => {
@@ -101,6 +113,22 @@ export default {
         .catch(err => {
           console.log(err);
         });
+    }
+    else if (this.user.rol === 'Brewer'){
+        let username = this.user.sub;
+        let url = `${process.env.VUE_APP_REMOTE_API}/breweries/brewer/${username}`;
+        let url2 = `${process.env.VUE_APP_REMOTE_API}/breweries`;
+
+      fetch(url)
+        .then(response => {
+          response.json().then(json => {
+            this.breweries = json;
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
     },
     saveBrewery() {
       let url = `${process.env.VUE_APP_REMOTE_API}/breweries/${this.selectedBrewery.id}`;
