@@ -1,6 +1,6 @@
 <template>
-  <div class="base container-fluid">
-    <div class="viewRatings mx-auto">
+  <div class="base container-fluid mx-auto">
+    <div class="viewRatings container-fluid mx-auto">
       <h1>View Beer Ratings</h1>
       <form>
         <div>
@@ -17,7 +17,7 @@
           <button v-on:click.prevent="GetRatings()">See Reviews</button>
         </div>
         <div>
-          <rating-list :ratings="ratings" class="rating"></rating-list>
+          <rating-list :ratings="ratings" class="rating mx-auto"></rating-list>
         </div>
       </form>
     </div>
@@ -116,10 +116,10 @@ export default {
   background-image: url("../assets/13.jpg");
   background-attachment: fixed;
   overflow-y:auto;
-  padding: 50px
+  padding: auto;
 }
 .rating {
-  padding: 50px;
+  /* padding: 50px; */
 }
 button{
   border: 1px solid black;

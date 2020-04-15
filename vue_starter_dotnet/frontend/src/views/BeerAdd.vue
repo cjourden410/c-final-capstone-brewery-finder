@@ -157,7 +157,7 @@ export default {
   align-content: center;
   overflow-y:auto;
   max-width: 1000px;
-  min-height: 600px;
+  min-height: 300px;
 }
 .base {
   align-items: center;
