@@ -3,7 +3,8 @@
   <div class="brewery mx-auto">
     <h1>{{brewery.name}}</h1>
 
-    <img v-bind:src="`${brewery.images}`" />
+    <img v-bind:src="`${brewery.images}`" v-if="(`${brewery.images}` != '')" />
+    <p>{{brewery.history}}</p>
     <table class="form">
       <tr>
         <td style="font-weight: bold">Name</td>
@@ -45,7 +46,8 @@ export default {
         contact: "",
         daysHours: "",
         picture: "",
-        address: ""
+        address: "",
+        history: ""
       },
       user: Object
     }
