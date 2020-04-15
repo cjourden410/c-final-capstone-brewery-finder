@@ -1,5 +1,5 @@
 <template>
-  <div class="base">
+  <div class="base container-fluid">
     <div class="home">
       <h1>Rate {{beer.name}}</h1>
       <form>
@@ -86,32 +86,31 @@ export default {
 
 <style scoped>
 .home {
+  color: white;
   font-weight: bolder;
-  background-color: whitesmoke;
-  border-radius: 35%;
-  width: 40%;
-  margin-left: 30%;
-  margin-right: 15%;
-  padding: 20px;
-  padding-bottom: 50px;
+  background-color: rgba(100, 100, 100, .9);
   text-align: center;
+  align-content: center;
   overflow-y:auto;
-  padding: 50px;
+  max-width: 1000px;
+  min-height: 600px;
 }
 .base {
- width: 100vw;
+  align-items: center;
+  width: 100vw;
   height: 100vh;
   background-size: cover;
   overflow: hidden;
-  position: fixed; 
-  top: 1; 
+  position: fixed;
+  top: 1;
   left: 0;
   background-attachment: fixed;
   min-width: 100%;
   min-height: 100%;
-  background-image: url("../assets/11.jpg");
+  background-image: url("../assets/13.jpg");
+  background-attachment: fixed;
   overflow-y:auto;
-   padding: 50px
+  padding: 50px
 }
 .comments{
   display:inline-block;

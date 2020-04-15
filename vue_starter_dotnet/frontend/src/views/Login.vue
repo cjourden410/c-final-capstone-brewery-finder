@@ -1,6 +1,6 @@
 <template>
-  <div class="base">
-    <div id="login" class="text-center login">
+  <div class="base container-fluid">
+    <div id="login" class="text-center login mx-auto">
       <form class="form-signin form" @submit.prevent="login">
         <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
         <div
@@ -88,37 +88,33 @@ export default {
 
 <style scoped>
 .login {
+  color: white;
   font-weight: bolder;
-  background-color: whitesmoke;
-  border-radius: 35%;
-  width: 40%;
-  margin-left: 30%;
-  margin-right: 15%;
-  padding: 20px;
-  padding-bottom: 50px;
-  height: auto;
+  background-color: rgba(100, 100, 100, .9);
   text-align: center;
   align-content: center;
   overflow-y:auto;
-  padding: 50px;
+  max-width: 400px;
+  min-height: 600px;
 }
 .form-signin {
   margin: auto;
 }
 .base {
-  background-image: url("../assets/10.jpg");
   width: 100vw;
   height: 100vh;
   background-size: cover;
   overflow: hidden;
-  position: fixed; 
-  top: 1; 
+  position: fixed;
+  top: 1;
   left: 0;
   background-attachment: fixed;
   min-width: 100%;
   min-height: 100%;
+  background-image: url("../assets/13.jpg");
+  background-attachment: fixed;
   overflow-y:auto;
-   padding: 50px
+  padding: 50px
 }
 .btn {
   width: 30%;
