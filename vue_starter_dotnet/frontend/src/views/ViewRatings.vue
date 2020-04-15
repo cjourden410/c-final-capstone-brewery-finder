@@ -88,7 +88,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .viewRatings {
   color: white;
   font-weight: bolder;
@@ -97,13 +97,14 @@ export default {
   align-content: center;
   overflow-y:auto;
   max-width: 1000px;
+  min-height: 600px;
 }
 .rating {
   margin: auto;
 }
 .base {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   background-size: cover;
   overflow: hidden;
   position: fixed;

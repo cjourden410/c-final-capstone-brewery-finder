@@ -87,11 +87,12 @@ export default {
   align-content: center;
   overflow-y:auto;
   max-width: 1000px;
+  min-height: 600px;
 }
 .base {
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: .08vh;
   background-size: cover;
   overflow: hidden;
   position: fixed;

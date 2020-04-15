@@ -95,6 +95,7 @@ export default {
   align-content: center;
   overflow-y:auto;
   max-width: 400px;
+  min-height: 600px;
 }
 .form-signin {
   margin: auto;
