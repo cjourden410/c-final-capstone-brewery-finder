@@ -3,8 +3,8 @@
     <div class="home">
       <h1>Home</h1>
       <div class="text">
-        Welcome {{user.sub}}, to the best craft beer website on the net. Your current role on ths site is {{user.rol}}.
-        Please enjoy searching for breweries and their beers. Feel free to rate and leave comments on beers you might have tried inn the past.
+        Welcome {{user.sub}}, to the best craft beer website on the net. Your current role on this site is {{user.rol}}.
+        Please enjoy searching for breweries and their beers. Feel free to rate and leave comments on beers you might have tried in the past.
         Thank you for your patronage.
       </div>
     </div>
@@ -42,8 +42,6 @@ export default {
   height: auto; 
   overflow-y:auto;  
   padding: 50px;
-  background-image: url("../assets/te.png");
-  background-size: cover;
   font-weight: bold;
  
 }

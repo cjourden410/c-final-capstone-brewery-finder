@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <div class="nav">
+      <div>
+        <img class="te" src="require(../assets/te.png)" />
+      </div>
       <div class="log" v-if="user">
         Logged in        
           <button v-on:click="logout">Logout</button>
