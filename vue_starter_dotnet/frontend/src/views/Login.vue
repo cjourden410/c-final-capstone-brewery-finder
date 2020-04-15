@@ -118,6 +118,7 @@ export default {
   min-width: 100%;
   min-height: 100%;
   overflow-y:auto;
+   padding: 50px
 }
 .btn {
   width: 30%;

@@ -111,6 +111,7 @@ export default {
   min-height: 100%;
   background-image: url("../assets/11.jpg");
   overflow-y:auto;
+   padding: 50px
 }
 .comments{
   display:inline-block;

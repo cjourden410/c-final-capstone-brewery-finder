@@ -190,6 +190,7 @@ form{
   min-height: 100%;
   background-image: url('../assets/6.jpg');
   overflow-y:auto;
+   padding: 50px
 }
 button{
   border: 1px solid black;

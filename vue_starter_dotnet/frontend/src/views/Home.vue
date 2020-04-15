@@ -63,5 +63,6 @@ export default {
   min-height: 100%;
   background-image: url("../assets/2.jpg");
   overflow-y:auto;
+  padding: 50px
 }
 </style>

@@ -156,6 +156,7 @@ export default {
   min-height: 100%;
   background-image: url("../assets/8.jpg");
   overflow-y:auto;
+   padding: 50px
 }
 .infoList {
   align-content: right;

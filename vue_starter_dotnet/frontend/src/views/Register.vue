@@ -130,6 +130,7 @@ export default {
   min-height: 100%;
   background-image: url('../assets/12.jpg');
   overflow-y:auto;
+   padding: 50px
 }
 .btn{
  margin-left: auto;

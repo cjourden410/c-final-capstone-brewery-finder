@@ -120,6 +120,7 @@ export default {
   background-image: url("../assets/13.jpg");
   background-attachment: fixed;
   overflow-y:auto;
+   padding: 50px
 }
 .rating {
   padding: 50px;

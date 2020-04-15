@@ -121,6 +121,7 @@ export default {
   min-height: 100%;;
   background-image: url("../assets/7.jpg");
   overflow-y:auto;
+   padding: 50px
 }
 button{
   border: 1px solid black;
