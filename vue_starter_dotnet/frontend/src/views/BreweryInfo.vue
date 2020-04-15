@@ -1,6 +1,6 @@
 "<template>
 <div class="base">
-  <div class="brewery">
+  <div class="brewery mx-auto">
     <h1>{{brewery.name}}</h1>
 
     <img v-bind:src="`${brewery.images}`" />
@@ -74,35 +74,33 @@ export default {
 
 <style scoped>
 .brewery {
+  color: white;
   font-weight: bolder;
-  background-color: whitesmoke;
-  border-radius: 35%;
-  width: 40%;
-  margin-left: 30%;
-  margin-right: 15%;
-  padding: 20px;
-  padding-bottom: 75px;
+  background-color: rgba(100, 100, 100, .9);
   text-align: center;
+  align-content: center;
   overflow-y:auto;
-  padding: 50px;
+  max-width: 1000px;
 }
-.form{
-  margin: auto;
-}
-.base{
+.base {
+  align-items: center;
   width: 100vw;
   height: 100vh;
   background-size: cover;
   overflow: hidden;
-  position: fixed; 
-  top: 1; 
+  position: fixed;
+  top: 1;
   left: 0;
   background-attachment: fixed;
   min-width: 100%;
   min-height: 100%;
-  background-image: url('../assets/3.jpg');
+  background-image: url("../assets/13.jpg");
+  background-attachment: fixed;
   overflow-y:auto;
-   padding: 50px
+  padding: 50px
+}
+.form{
+  margin: auto;
 }
 img{
   width: 20%;

@@ -1,6 +1,6 @@
   <template v-if="user.rol==='Admin'">
   <div class="base">
-  <div class="BreweryAdd">
+  <div class="BreweryAdd mx-auto">
     <h1>Add Brewery</h1>
     <div>Welcome {{user.sub}}, {{user.rol}}</div>
     <form>
@@ -159,38 +159,36 @@ export default {
 
 <style scoped>
 .BreweryAdd {
+  color: white;
   font-weight: bolder;
-  background-color: whitesmoke;
-  border-radius: 35%;
-  width: 40%;
-  margin-left: 30%;
-  margin-right: 15%;
-  padding: 20px;
-  padding-bottom: 50px;
+  background-color: rgba(100, 100, 100, .9);
   text-align: center;
+  align-content: center;
   overflow-y:auto;
-  padding: 50px;
+  max-width: 1000px;
+}
+.base {
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  overflow: hidden;
+  position: fixed;
+  top: 1;
+  left: 0;
+  background-attachment: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url("../assets/13.jpg");
+  background-attachment: fixed;
+  overflow-y:auto;
+  padding: 50px
 }
 .breweryInput {
   width: auto;
 }
 form{
   -webkit-box-align: start;
-}
-.base{
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  overflow: hidden;
-  position: fixed; 
-  top: 1; 
-  left: 0;
-  background-attachment: fixed;
-  min-width: 100%;
-  min-height: 100%;
-  background-image: url('../assets/6.jpg');
-  overflow-y:auto;
-   padding: 50px
 }
 button{
   border: 1px solid black;
