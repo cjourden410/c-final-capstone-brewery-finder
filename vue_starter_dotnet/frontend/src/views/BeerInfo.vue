@@ -119,6 +119,6 @@ button{
   background-color: gainsboro;
 }
 .stars{
-  width: 75%
+  width: 50%
 }
 </style>
