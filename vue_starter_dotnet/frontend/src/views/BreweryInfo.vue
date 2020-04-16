@@ -1,4 +1,4 @@
-"<template>
+<template>
 <div class="base">
   <div class="brewery mx-auto">
     <h1>{{brewery.name}}</h1>
