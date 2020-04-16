@@ -38,7 +38,7 @@
       </div>
     
       <!-- <button type="submit" @click.stop.prevent="submit()">Submit</button> -->
-      <button v-on:click="register">Submit</button>
+      <button v-on:click.prevent="register">Submit</button>
     </form>
   </div>
   </div>
@@ -144,7 +144,7 @@ export default {
             alert(`Brewery with id ${this.brewery.id} was added!`)
 
             // Redirect to the breweryList page
-            this.$router.push("/BreweryList");
+            this.$router.push({name:'breweryList'});
           });
         }
         else {
