@@ -17,7 +17,7 @@
             <option value="Brewer">Brewer</option>
           </select>
           </div>
-          <button v-on:click="saveUser">Edit Selected User</button>
+          <button v-on:click.prevent="saveUser">Edit Selected User</button>
         </div>
       </form>
     </div>
@@ -77,8 +77,10 @@ export default {
         body: JSON.stringify(this.selectedUser)
       }).then(response => {
         if (response.ok) {
-          alert("User has been updated!");
-        } else {
+          alert("User has been updated!")
+          //this.selectedUser = null;
+          location.reload(); // works but would rather not reload the page
+          } else {
           alert(
             `There was an error updating: ${response.status}: ${response.statusText}`
           );
