@@ -78,8 +78,8 @@ export default {
       }).then(response => {
         if (response.ok) {
           alert("User has been updated!")
-          //this.selectedUser = null;
-          location.reload(); // works but would rather not reload the page
+          this.chosenId = 0;
+          this.selectedUser = null;
           } else {
           alert(
             `There was an error updating: ${response.status}: ${response.statusText}`
