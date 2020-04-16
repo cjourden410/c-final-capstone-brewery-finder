@@ -1,6 +1,6 @@
 <template>
   <div class="base container-fluid">
-    <div class="home">
+    <div class="home mx-auto">
       <h1>Rate {{beer.name}}</h1>
       <form>
         <input type="hidden" v-model="review.beerID"/>
