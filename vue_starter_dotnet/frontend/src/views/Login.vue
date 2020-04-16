@@ -104,16 +104,21 @@ export default {
   height: 100vh;
   background-size: cover;
   overflow: hidden;
-  position: fixed;
+  /* position: fixed; */
   top: 1;
   left: 0;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   min-width: 100%;
   min-height: 100%;
   background-image: url("../assets/13.jpg");
   background-attachment: fixed;
   overflow-y:auto;
   padding: 50px
+}
+@media only screen and (min-width: 1079px) {
+  .base {
+    position: fixed;
+  }
 }
 .btn {
   width: 30%;

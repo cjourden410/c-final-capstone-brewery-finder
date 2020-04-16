@@ -106,6 +106,11 @@ export default {
   overflow-y:auto;
   padding: 50px
 }
+/* @media only screen and (min-width: 1079px) {
+  .base {
+    position: fixed;
+  }
+} */
 .form {
   margin: auto;
 }

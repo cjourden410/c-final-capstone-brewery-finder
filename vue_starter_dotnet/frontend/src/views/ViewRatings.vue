@@ -107,16 +107,21 @@ export default {
   height: 90vh;
   background-size: cover;
   overflow: hidden;
-  position: fixed;
+  /* position: fixed; */
   top: 1;
   left: 0;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   min-width: 100%;
   min-height: 100%;
   background-image: url("../assets/13.jpg");
   background-attachment: fixed;
   overflow-y:auto;
   padding: auto;
+}
+@media only screen and (min-width: 1079px) {
+  .base {
+    position: fixed;
+  }
 }
 .rating {
   /* padding: 50px; */
