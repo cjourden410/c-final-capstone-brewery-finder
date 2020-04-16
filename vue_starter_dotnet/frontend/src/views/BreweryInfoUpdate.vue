@@ -54,7 +54,7 @@
               class="breweryInput"
             />
           </div>
-          <button v-on:click="saveBrewery">Edit Selected Brewery</button>
+          <button v-on:click.prevent="saveBrewery">Edit Selected Brewery</button>
         </div>
       </form>
     </div>
@@ -140,7 +140,8 @@ export default {
         body: JSON.stringify(this.selectedBrewery)
       }).then(response => {
         if (response.ok) {
-          alert("Brewery has been updated!");
+          alert("Brewery has been updated!")
+          this.$router.push(`/breweries/breweryInfo/${this.selectedBrewery.id}`);
         } else {
           alert(
             `There was an error updating: ${response.status}: ${response.statusText}`
