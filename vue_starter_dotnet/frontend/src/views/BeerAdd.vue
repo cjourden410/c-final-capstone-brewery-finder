@@ -36,7 +36,7 @@
         <!-- <input type="number" v-model="beer.breweryId" class="beerInput" placeholder="1" min="1"/> -->
       </div>
       <div v-if="selectedBrewery">
-      <button v-on:click="addBeer">Submit</button>
+      <button v-on:click.prevent="addBeer">Submit</button>
       </div>
     </form>
   </div>
@@ -134,6 +134,7 @@ export default {
           response.json().then(json => {
             this.beer = json;
             alert(`Beer ${this.beer.name} was added!`)
+            this.beer = "";
           });
         }
         else{
