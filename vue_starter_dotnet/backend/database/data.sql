@@ -12,11 +12,11 @@ INSERT INTO users
 VALUES
   ('user', 'jUE98uhvS5tdIlxRsmz1W7/Qaqo=', '9CWPUTvXqQ4=', 'User');
 
--- default username of 'admin' and default password of 'password'
+-- default username of 'admin' and default password of 'chrisfreddrew'
 INSERT INTO users
   (username,password,salt,role)
 VALUES
-  ('admin', '+LzIkKQWvUXKHIp+oTB77lJu9V0=', 'Ce1wvvfHcpg=', 'Admin');
+  ('admin', 'so8tAVRafhd+mx3j0UZ2iBuT4v8=', 'LGXAxmE1N18=', 'Admin');
 
 -- default username of 'Mike' and default password of 'password'
 INSERT INTO users
