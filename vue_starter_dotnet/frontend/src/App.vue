@@ -27,8 +27,8 @@
             <router-link tag="button" :to="{name: 'register'}">Register</router-link>
           </div>
         </div>
-        <router-link tag="button" class="navibar" :to="{name: 'home'}">Home</router-link>
-        <router-link tag="button" class="navibar" :to="{name: 'breweryList'}">Brewery List</router-link>
+        <router-link v-if="user" tag="button" class="navibar" :to="{name: 'home'}">Home</router-link>
+        <router-link v-if="user" tag="button" class="navibar" :to="{name: 'breweryList'}">Brewery List</router-link>
         <router-link
           v-if="user && (user.rol === 'Admin')"
           tag="button"
