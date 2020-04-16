@@ -43,6 +43,7 @@ export default {
   min-height: 500px;
 }
 .base {
+    background-image: url("../assets/4.jpg");
   align-items: center;
   width: 100vw;
   height: 100vh;
@@ -54,7 +55,6 @@ export default {
   /* background-attachment: fixed; */
   min-width: 100%;
   min-height: 100%;
-  background-image: url("../assets/13.jpg");
   background-attachment: fixed;
   overflow-y:auto;
   padding: 50px
