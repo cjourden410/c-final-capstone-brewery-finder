@@ -3,7 +3,7 @@
     <div class="AccountUpdate mx-auto">
       <h1>Update Account</h1>
       <form>
-        <div>
+        <div class="userName">
           Username:
           <select style="width: 30%" @change="getUser(chosenId)" v-model="chosenId">
             <option v-for="user in users" :key="user.id" v-bind:value="user.id">{{user.username}}</option>
@@ -133,5 +133,10 @@ button{
   border-radius: 12px;
   margin: 3px;
   background-color: gainsboro;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.userName {
+  margin-bottom: 10px;
 }
 </style>

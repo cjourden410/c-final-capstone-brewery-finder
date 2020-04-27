@@ -136,7 +136,21 @@ export default {
 }
 .btn{
  margin-left: auto;
- margin-right: 25%;
-  width: 50%;
+ margin-right: 20%;
+  width: 60%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+#username {
+  margin-bottom: 10px;
+}
+#password {
+  margin-bottom: 10px;
+}
+#confirmPassword {
+  margin-bottom: 5px;
+}
+.needAccount {
+  margin-bottom: 10px;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="base">
   <div class="BreweryAdd mx-auto">
     <h1>Add Brewery</h1>
-    <div>Welcome {{user.sub}}, {{user.rol}}</div>
+    <!-- <div>Welcome {{user.sub}}, {{user.rol}}</div> -->
     <form>
       <!-- <div>
         Name of Brewery:
@@ -191,6 +191,7 @@ export default {
 }
 .breweryInput {
   width: auto;
+  margin-bottom: 10px;
 }
 form{
   -webkit-box-align: start;
@@ -200,5 +201,7 @@ button{
   border-radius: 12px;
   margin: 3px;
   background-color: gainsboro;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 </style>

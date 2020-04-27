@@ -184,11 +184,14 @@ export default {
 }
 .beerInput {
   width: auto;
+  margin-bottom: 10px;
 }
 button{
   border: 1px solid black;
   border-radius: 12px;
   margin: 3px;
   background-color: gainsboro;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 </style>

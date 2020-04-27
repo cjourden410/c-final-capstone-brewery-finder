@@ -118,5 +118,6 @@ button{
   border-radius: 12px;
   margin: 3px;
   background-color: gainsboro;
+  margin-top: 10px;
 }
 </style>

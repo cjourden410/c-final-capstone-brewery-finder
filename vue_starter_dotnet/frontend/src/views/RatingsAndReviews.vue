@@ -5,7 +5,7 @@
       <form>
         <input type="hidden" v-model="review.beerID"/>
         <div>Name of Beer: {{beer.name}}</div>
-        <div>
+        <div class="rating">
           Beer Rating (out of 5):
           <input type="number" v-model="review.rating" class="ratingInput" placeholder="1" min="1" max="5" />
           </div>
@@ -129,5 +129,10 @@ button{
   border-radius: 12px;
   margin: 3px;
   background-color: gainsboro;
+  margin-bottom: 10px;
+}
+.rating{
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
 </style>

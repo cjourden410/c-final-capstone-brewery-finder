@@ -3,7 +3,7 @@
     <div class="BreweryInfoUpdate mx-auto">
       <h1>Update Brewery Info</h1>
       <form>
-        <div>
+        <div class="breweryName">
           Brewery Name:
           <select @change="getBrewery(chosenId)" v-model="chosenId">
             <option
@@ -205,5 +205,12 @@ button{
   border-radius: 12px;
   margin: 3px;
   background-color: gainsboro;
+  margin-bottom: 10px;
+}
+.breweryInput {
+  margin-bottom: 10px;
+}
+.breweryName {
+  margin-bottom: 10px;
 }
 </style>

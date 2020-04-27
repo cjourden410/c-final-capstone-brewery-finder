@@ -123,9 +123,17 @@ export default {
 .btn {
   width: 30%;
   position: inherit;
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
 .center {
   margin-left: 35%;
   margin-right: 35%;
+}
+#username {
+  margin-bottom: 10px;
+}
+#password {
+  margin-bottom: 5px;
 }
 </style>
