@@ -12,31 +12,31 @@ INSERT INTO users
 VALUES
   ('user', 'jUE98uhvS5tdIlxRsmz1W7/Qaqo=', '9CWPUTvXqQ4=', 'User');
 
--- default username of 'admin' and default password of 'chrisfreddrew'
+
 INSERT INTO users
   (username,password,salt,role)
 VALUES
   ('admin', 'so8tAVRafhd+mx3j0UZ2iBuT4v8=', 'LGXAxmE1N18=', 'Admin');
 
--- default username of 'Mike' and default password of 'password'
+
 INSERT INTO users
   (username,password,salt,role)
 VALUES
   ('Mike', 'INZ+8Cfe3TLRO5lM2skBfWr7Wkc=', 'K5ZEctZBc+g=', 'Brewer');
 
--- default username of 'Chris' and default password of 'password'
+
 INSERT INTO users
   (username,password,salt,role)
 VALUES
   ('Chris', '0kilsGIOPQswmXJc/ZgNfaoytq8=', 'ZdtiSGQJw40=', 'Brewer');
 
--- default username of 'Andrew' and default password of 'password'
+
 INSERT INTO users
   (username,password,salt,role)
 VALUES
   ('Andrew', 'RWFOvW9/Qptuufnz8gs1vRt+CwA=', 'NRI9jbtf3jo=', 'Brewer');
 
--- default username of 'Fred' and default password of 'password'
+
 INSERT INTO users
   (username,password,salt,role)
 VALUES
